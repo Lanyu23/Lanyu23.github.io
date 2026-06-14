@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  
+  
+  
+  <entry>
+    <title>影视记录模板：一部电影或剧</title>
+    <link href="/2026/06/14/movie-note-template/"/>
+    <url>/2026/06/14/movie-note-template/</url>
+    
+    <content type="html"><![CDATA[<p>这是一篇可以复制的影视记录模板。以后你看完一部电影、剧集、动画，直接复制这篇文章，改标题、日期、分类、标签和图片就可以。</p><h2 id="基本信息"><a href="#基本信息" class="headerlink" title="基本信息"></a>基本信息</h2><ul><li>名称：</li><li>类型：</li><li>观看日期：</li><li>我的评分：</li><li>推荐程度：</li></ul><h2 id="为什么想看"><a href="#为什么想看" class="headerlink" title="为什么想看"></a>为什么想看</h2><p>这里写你开始看它的原因，比如朋友推荐、演员、导演、题材，或者只是某天突然想看。</p><h2 id="看完之后"><a href="#看完之后" class="headerlink" title="看完之后"></a>看完之后</h2><p>这里写你的真实感受。不需要写成长影评，几句话也很好。</p><h2 id="印象深刻"><a href="#印象深刻" class="headerlink" title="印象深刻"></a>印象深刻</h2><p>可以记录台词、镜头、音乐、人物，或者某个让你停下来想一想的段落。</p><h2 id="图片记录"><a href="#图片记录" class="headerlink" title="图片记录"></a>图片记录</h2><p>把图片放进当前文章同名资源目录，或者放到 <code>source/images/</code> 下面，然后在文章里引用：</p><figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs md">![<span class="hljs-string">海报</span>](<span class="hljs-link">poster.jpg</span>)<br></code></pre></td></tr></table></figure><p>如果你用文章资源目录，文件结构大概是：</p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs text">source/_posts/movie-note-template.md<br>source/_posts/movie-note-template/poster.jpg<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>影视记录</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>电影</tag>
+      
+      <tag>剧集</tag>
+      
+      <tag>观后感</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  
+</search>
