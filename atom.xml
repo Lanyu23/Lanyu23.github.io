@@ -6,7 +6,7 @@
   <link href="https://lanyu23.github.io/atom.xml" rel="self"/>
   
   <link href="https://lanyu23.github.io/"/>
-  <updated>2026-06-16T16:25:17.463Z</updated>
+  <updated>2026-06-16T17:52:10.546Z</updated>
   <id>https://lanyu23.github.io/</id>
   
   <author>
@@ -17,11 +17,48 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Vibe Coding 排 Bug 时，别急着让 AI 直接改</title>
+    <link href="https://lanyu23.github.io/2026/06/17/vibe-coding-debugging-checklist/"/>
+    <id>https://lanyu23.github.io/2026/06/17/vibe-coding-debugging-checklist/</id>
+    <published>2026-06-16T17:39:40.000Z</published>
+    <updated>2026-06-16T17:52:10.546Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>一句话：Vibe Coding 发现 bug 时，最好先让 AI 列出所有可能原因，再逐个验证，最后再改代码；不要一上来就把猜测当结论。</p></blockquote><p>最近用 Vibe Coding 又总结出一个经验：发现 bug 的时候，不要急着让 AI 直接改。</p><p>这个问题其实很常见。你发现程序出了某个异常，于是直接跟 AI 说：“这里有问题，帮我修一下。”AI 很可能马上进入行动模式，快速找一个看起来可能的原因，然后直接修改代码。</p><p>听起来很高效。</p><p>但问题也在这里：它不一定先验证这个原因是不是真的。</p><p>它可能只是看到一个“像问题”的地方，就开始动手。最后代码改了，token 花了，时间也过去了，但真正的问题并没有解决。</p><h2 id="最容易踩的坑"><a href="#最容易踩的坑" class="headerlink" title="最容易踩的坑"></a>最容易踩的坑</h2><p>Vibe Coding 最舒服的地方，是 AI 很主动。</p><p>你说一个现象，它会自己去读代码、找相关文件、提出修法，然后改。这个过程如果方向对，确实很爽。但如果方向错了，它也会很快把你带到另一条路上。</p><p>尤其是排 bug 的时候，现象和原因之间经常不是一一对应的。</p><p>比如你看到的是“功能没有生效”，背后可能是配置没加载、路径不对、状态没更新、缓存没清、权限不足、异步时机错了、入口函数根本没走到，甚至可能是你观察问题的方式本身不对。</p><p>如果一开始没有把这些可能性列出来，而是直接让 AI 挑一个看起来最像的原因去改，就很容易变成“先开枪再画靶”。</p><p>AI 会给出一个解释，然后围绕这个解释改代码。改完之后如果问题还在，它再换另一个解释继续改。这样一轮下来，代码被动过了，但真相可能还没找到。</p><h2 id="为什么会浪费-token-和时间"><a href="#为什么会浪费-token-和时间" class="headerlink" title="为什么会浪费 token 和时间"></a>为什么会浪费 token 和时间</h2><p>这类问题最烦的地方，不是完全没有收获。</p><p>很多时候它确实也算排除了一个可能性。比如它改了某个地方，发现没用，那至少说明“可能不是这里的问题”。</p><p>但这个收获太贵了。</p><p>本来完全可以先测试一下这个假设是不是真的，比如打印日志、跑一个最小复现、检查调用链、确认配置值、看实际输入输出。结果 AI 直接改代码，就相当于用一次修改成本去换一次验证结果。</p><p>这样会浪费 token。</p><p>也会浪费时间。</p><p>更麻烦的是，代码已经被改过了。</p><p>如果改动很小还好；如果它顺手加了一层兼容逻辑、改了状态流、调整了文件结构，后面你还得判断这些改动要不要保留。问题没解决，代码又变复杂了，这就很亏。</p><h2 id="更好的做法"><a href="#更好的做法" class="headerlink" title="更好的做法"></a>更好的做法</h2><p>以后遇到 bug，我会尽量先让 AI 做三件事。</p><p>第一，先列出所有可能原因。</p><p>不要立刻修改代码，先根据现象、调用链、日志、配置、最近改动，把可能原因列出来。哪怕列得不完美，也比一上来押一个方向强。</p><p>第二，给每个原因设计验证方式。</p><p>每个猜测都应该对应一个低成本验证方法。能看日志就先看日志，能检查变量就检查变量，能用最小复现就最小复现。验证方式要尽量不改业务代码，或者只加临时日志。</p><p>第三，验证后再决定修改方案。</p><p>只有确认某个原因真的成立之后，再让 AI 改代码。这样改动才是奔着真实问题去的，而不是奔着一个听起来合理的猜测去的。</p><p>这个流程听起来慢一点，但实际上更省时间。</p><p>因为它减少了无效修改，也减少了后面回头清理代码的麻烦。</p><h2 id="可以直接这样提示-AI"><a href="#可以直接这样提示-AI" class="headerlink" title="可以直接这样提示 AI"></a>可以直接这样提示 AI</h2><p>我觉得以后可以把提示写得更硬一点：</p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs text">先不要修改代码。<br>请先根据现象列出所有可能原因，并按概率排序。<br>然后为每个原因设计验证方法，优先使用日志、现有测试、最小复现或只读检查。<br>等确认真正原因后，再给出修改方案。<br>未经确认，不要直接改业务代码。<br></code></pre></td></tr></table></figure><p>这个提示的重点不是让 AI 变慢，而是把它从“立刻修”切换到“先诊断”。</p><p>很多时候 AI 不是不能排查，而是它默认会追求快。你不拦一下，它就可能觉得“我已经看到一个可能原因了，那我先改了再说”。</p><h2 id="这次的教训"><a href="#这次的教训" class="headerlink" title="这次的教训"></a>这次的教训</h2><p>这次让我意识到，Vibe Coding 不只是要限制权限，也要限制流程。</p><p>权限是“它能不能动”。</p><p>流程是“它什么时候该动”。</p><p>前面几次我更多在想权限边界，比如不要随便启动本机程序，不要随便碰系统环境，不要默认做真实写入。但这次的问题更偏工作方式：即使它只是在项目里改代码，如果它没有先确认原因，也可能把代码改偏。</p><p>AI 不是不能猜。</p><p>排 bug 本来就需要猜。</p><p>但猜测应该用来指导验证，而不是直接变成修改方案。</p><h2 id="现在的结论"><a href="#现在的结论" class="headerlink" title="现在的结论"></a>现在的结论</h2><p>以后用 Vibe Coding 排 bug，我会更注意这一点：</p><p>先找所有可能问题。</p><p>再测试哪个是真正的问题。</p><p>最后再让 AI 修改代码。</p><p>不要直接把现象丢给 AI，然后等它自动修。那样确实可能很快，但也可能很快走偏。</p><p>这类情况不至于竹篮打水一场空，毕竟至少排除了一个情况。但很多无效修改其实完全可以避免。</p><p>说到底，AI 是很强的执行者，但排 bug 的方向盘最好还是握在自己手里。</p><p>先诊断，再治疗。</p><p>这句话放在 Vibe Coding 里也一样适用。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;一句话：Vibe Coding 发现 bug 时，最好先让 AI 列出所有可能原因，再逐个验证，最后再改代码；不要一上来就把猜测当结论。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;最近用 Vibe Coding 又总结出一个经验：发现 bug 的时</summary>
+      
+    
+    
+    
+    <category term="AI 工具手记" scheme="https://lanyu23.github.io/categories/AI-%E5%B7%A5%E5%85%B7%E6%89%8B%E8%AE%B0/"/>
+    
+    
+    <category term="AI" scheme="https://lanyu23.github.io/tags/AI/"/>
+    
+    <category term="Codex" scheme="https://lanyu23.github.io/tags/Codex/"/>
+    
+    <category term="工具" scheme="https://lanyu23.github.io/tags/%E5%B7%A5%E5%85%B7/"/>
+    
+    <category term="使用感受" scheme="https://lanyu23.github.io/tags/%E4%BD%BF%E7%94%A8%E6%84%9F%E5%8F%97/"/>
+    
+    <category term="Vibe Coding" scheme="https://lanyu23.github.io/tags/Vibe-Coding/"/>
+    
+    <category term="Debug" scheme="https://lanyu23.github.io/tags/Debug/"/>
+    
+  </entry>
+  
+  <entry>
     <title>给 AI 权限一定要慎重：一次本地程序被拉起的教训</title>
     <link href="https://lanyu23.github.io/2026/06/17/ai-permission-uac-loop-reflection/"/>
     <id>https://lanyu23.github.io/2026/06/17/ai-permission-uac-loop-reflection/</id>
     <published>2026-06-16T16:18:32.000Z</published>
-    <updated>2026-06-16T16:25:17.463Z</updated>
+    <updated>2026-06-16T17:52:10.545Z</updated>
     
     <content type="html"><![CDATA[<blockquote><p>一句话：AI 能帮你改代码是一回事，给它完全访问权限又是另一回事；权限一旦放太开，它可能真的会动到你不希望它动的本机环境。</p></blockquote><p>最近又遇到了一次让我很警醒的事情。</p><p>前面我已经感受过 Vibe Coding 容易走弯路，尤其是在边界没说清楚的时候，AI 可能会自己做一些我并没有要求的操作。但这一次更离谱一点，因为它不只是改代码，而是直接把我本地的软件程序拉起来了。</p><p>事情本身其实很简单：我使用 Codex，给了它完全访问权限，然后让它在项目里增加某个新功能。</p><p>我的需求是改项目代码。</p><p>但它在处理过程中，直接在我的本地电脑上拉起了软件程序。</p><p>这个动作不是我要求的。我没有说“帮我运行这个软件”，也没有说“你可以启动本机程序验证”。我只是让它增加功能，结果它像是默认认为：既然有权限，那就可以直接运行起来看看。</p><p>这一下我就觉得不对劲了。</p><h2 id="我为什么立刻终止"><a href="#我为什么立刻终止" class="headerlink" title="我为什么立刻终止"></a>我为什么立刻终止</h2><p>发现这个异常现象之后，我第一反应就是直接终止 AI 的运行。</p><p>因为这已经不是普通的“代码写错了”或者“测试跑偏了”。如果 AI 只是改错一个文件，我还能看 diff、回滚、修正。但它直接拉起本机程序，就说明它的操作范围已经从项目代码扩展到了真实系统环境。</p><p>这就很危险。</p><p>尤其是我并不知道它接下来还会做什么。它可能只是想验证功能，也可能会继续点什么、调用什么、写入什么。虽然它未必有恶意，但问题是，工具没有恶意不代表结果没有风险。</p><p>所以我选择先停下来。</p><p>但更麻烦的事情还在后面。</p><h2 id="程序关不掉了"><a href="#程序关不掉了" class="headerlink" title="程序关不掉了"></a>程序关不掉了</h2><p>我想把被拉起来的软件程序关掉，结果发现一关闭程序，UAC 弹窗又会跳出来。</p><p>我点否，不行。</p><p>我点右上角叉叉，不行。</p><p>我按 Esc 关掉 UAC 弹窗，也不行。</p><p>它就这么循环，像是必须让我点“是”才肯继续。问题是，我本来就不想让它继续，也不想随便给这个程序管理员权限。于是场面变得很尴尬：程序关不掉，UAC 弹窗又一直回来，整个事情被卡在一个特别烦人的状态里。</p><p>这时候最让我不舒服的，不只是程序本身，而是那种控制感突然被拿走的感觉。</p><p>本来我只是让 AI 改代码，结果最后变成我在跟一个本地程序和 UAC 弹窗周旋。这个偏离程度就很夸张。</p><h2 id="最后怎么结束的"><a href="#最后怎么结束的" class="headerlink" title="最后怎么结束的"></a>最后怎么结束的</h2><p>最后还是问 AI 解决的。</p><p>它建议我修改程序文件名，让系统找不到原来的程序路径，这样就不会再继续调用并拉起它。改完之后，程序终于不会再被找到，也不会继续打开，这场闹剧才算停下来。</p><p>这个解决方式有点荒诞。</p><p>问题是 AI 自己操作边界不清，拉起了不该拉起的程序；最后我又要问 AI 怎么把这个局面收住。虽然最后确实解决了，但这个过程让我很明确地意识到一件事：给 AI 完全访问权限，真的不能太随意。</p><h2 id="完全访问权限不是普通权限"><a href="#完全访问权限不是普通权限" class="headerlink" title="完全访问权限不是普通权限"></a>完全访问权限不是普通权限</h2><p>以前我可能会觉得，给完全访问权限只是为了让它更方便工作。</p><p>它可以看项目、改文件、跑命令、生成结果。这样效率确实高，很多事情不用来回授权，也不用每一步都确认。</p><p>但现在看，完全访问权限不是“更方便一点”的权限，而是“它真的能动你电脑”的权限。</p><p>它能跑命令，就可能启动程序。</p><p>它能改文件，就可能改到项目之外。</p><p>它能测试功能，就可能在真实环境里制造副作用。</p><p>它能自己判断下一步，就可能把你的“改代码”理解成“运行软件验证一下”。</p><p>这不是说 AI 一定会乱来，而是说只要边界没说清楚，它就可能把很多本该先问的事情当成默认可以做。</p><h2 id="以后我会怎么限制"><a href="#以后我会怎么限制" class="headerlink" title="以后我会怎么限制"></a>以后我会怎么限制</h2><p>这次之后，我对 AI 权限的态度会更保守一点。</p><p>第一，能不给完全访问权限，就不要一上来给。</p><p>有些任务只需要读代码、改项目文件、跑项目内部测试，并不需要访问整个系统。权限给得越小，风险面就越小。</p><p>第二，必须明确禁止启动本机程序。</p><p>除非我明确说“你可以运行这个程序”，否则不要打开软件、不要调用系统应用、不要弹 UAC、不要触碰任何需要管理员权限的东西。</p><p>第三，涉及系统级操作必须先确认。</p><p>比如启动程序、修改环境变量、写入系统目录、注册表、服务、启动项、桌面快捷方式、UAC 相关操作，这些都不应该默认执行。</p><p>第四，测试要尽量限制在项目内部。</p><p>如果只是验证功能，能用临时目录就用临时目录，能用 mock 就用 mock，能只检查生成结果就不要动真实环境。AI 最容易出问题的地方，就是把“验证”做成了“真实执行”。</p><p>第五，发现异常要立刻停。</p><p>这次我觉得自己做对的一点，就是看到它拉起本地程序后，直接终止了 AI 运行。不要等它“做完再说”。如果操作方向已经偏了，继续让它跑只会扩大不确定性。</p><h2 id="现在的感受"><a href="#现在的感受" class="headerlink" title="现在的感受"></a>现在的感受</h2><p>我并不是不用 AI，也不是觉得 Codex 不好用。</p><p>恰恰相反，就是因为它太好用，太能动手，所以权限问题才更重要。</p><p>普通聊天 AI 说错一句话，最多是答案不能用。但这种能读写文件、能跑命令、能操作项目的 AI，一旦判断错场景，后果就会真实落到你的电脑上。</p><p>这次它直接拉起本地软件，还引发 UAC 弹窗循环，算是给我提了个醒：AI 的执行力越强，越不能把控制权完全交出去。</p><p>以后再用这类工具，我会更早讲清楚边界。</p><p>可以改项目代码。</p><p>可以跑我允许的测试。</p><p>可以生成文件到指定目录。</p><p>但不能默认启动本机程序，不能默认做系统级操作，更不能在没有明确许可的情况下碰 UAC 这种东西。</p><p>给 AI 权限，一定要慎重。</p><p>有些权限一旦给出去，AI 不一定会乱用，但你必须假设它可能误用。</p>]]></content>
     
@@ -37,20 +74,20 @@
     
     
     
-    <category term="随笔" scheme="https://lanyu23.github.io/categories/%E9%9A%8F%E7%AC%94/"/>
+    <category term="AI 工具手记" scheme="https://lanyu23.github.io/categories/AI-%E5%B7%A5%E5%85%B7%E6%89%8B%E8%AE%B0/"/>
     
     
     <category term="AI" scheme="https://lanyu23.github.io/tags/AI/"/>
     
     <category term="Codex" scheme="https://lanyu23.github.io/tags/Codex/"/>
     
-    <category term="Vibe Coding" scheme="https://lanyu23.github.io/tags/Vibe-Coding/"/>
-    
-    <category term="权限" scheme="https://lanyu23.github.io/tags/%E6%9D%83%E9%99%90/"/>
-    
     <category term="工具" scheme="https://lanyu23.github.io/tags/%E5%B7%A5%E5%85%B7/"/>
     
     <category term="使用感受" scheme="https://lanyu23.github.io/tags/%E4%BD%BF%E7%94%A8%E6%84%9F%E5%8F%97/"/>
+    
+    <category term="Vibe Coding" scheme="https://lanyu23.github.io/tags/Vibe-Coding/"/>
+    
+    <category term="权限" scheme="https://lanyu23.github.io/tags/%E6%9D%83%E9%99%90/"/>
     
   </entry>
   
@@ -77,9 +114,9 @@
     <category term="影视记录" scheme="https://lanyu23.github.io/categories/%E5%BD%B1%E8%A7%86%E8%AE%B0%E5%BD%95/"/>
     
     
-    <category term="观后感" scheme="https://lanyu23.github.io/tags/%E8%A7%82%E5%90%8E%E6%84%9F/"/>
-    
     <category term="电影" scheme="https://lanyu23.github.io/tags/%E7%94%B5%E5%BD%B1/"/>
+    
+    <category term="观后感" scheme="https://lanyu23.github.io/tags/%E8%A7%82%E5%90%8E%E6%84%9F/"/>
     
     <category term="丧尸片" scheme="https://lanyu23.github.io/tags/%E4%B8%A7%E5%B0%B8%E7%89%87/"/>
     
@@ -98,7 +135,7 @@
     <link href="https://lanyu23.github.io/2026/06/15/vibe-coding-boundaries-reflection/"/>
     <id>https://lanyu23.github.io/2026/06/15/vibe-coding-boundaries-reflection/</id>
     <published>2026-06-15T15:38:39.000Z</published>
-    <updated>2026-06-15T16:00:19.853Z</updated>
+    <updated>2026-06-16T17:52:10.542Z</updated>
     
     <content type="html"><![CDATA[<blockquote><p>一句话：Vibe Coding 确实好用，但如果权限和边界没说清楚，它也很容易听不懂人话，自己走到奇怪的方向上去。</p></blockquote><p>最近用 Vibe Coding 写代码，整体感受还是很明显：它确实好用。</p><p>很多时候，我只要把需求大概说出来，它就能看项目、读代码、改文件、跑命令，把一堆原本很碎的操作串起来。以前自己写代码时，遇到小问题可能要查文档、翻文件、试命令，来回折腾半天；现在交给 AI，它经常能直接推到一个能看的状态。</p><p>但这次也算是给我上了一课。</p><p>好用是真的好用，容易走弯路也是真的容易走弯路。</p><h2 id="这次的问题"><a href="#这次的问题" class="headerlink" title="这次的问题"></a>这次的问题</h2><p>我当时在用 Codex GPT-5.5 写代码，跟它说明代码里“生成桌面快捷方式”的功能有问题。</p><p>我的本意是让它去理解代码逻辑，看看为什么生成的桌面快捷方式不对，或者应该怎么改。结果它直接在我的本地电脑上测试了一次，真的生成了一个桌面快捷方式。</p><p>这个动作让我有点愣住。</p><p>因为在这之前，我从来没有明确让它在我的本地电脑上进行这种测试，更没有说“你可以在我桌面上生成文件”。我只是描述了代码里的问题，它却把这个问题理解成了“现在就在本机执行一次看看”。</p><p>这就很典型：AI 写代码很快，但它并不一定真的懂你话里的边界。</p><h2 id="可能是谁的问题"><a href="#可能是谁的问题" class="headerlink" title="可能是谁的问题"></a>可能是谁的问题</h2><p>这件事不能完全怪它，也不能完全怪我。</p><p>一种可能是我给了它完全访问权限。</p><p>当一个工具真的有能力读文件、改文件、跑命令，甚至影响本机环境时，它就不再只是一个聊天窗口。它已经变成了一个能动手的协作者。只要权限开得够大，它就可能把“我应该验证一下”理解成“我现在就可以在真实环境里验证一下”。</p><p>另一种可能是我一开始没有把边界说清楚。</p><p>比如我没有提前规定：不要在桌面、启动项、注册表、系统目录这些位置做真实写入；不要在没有确认的情况下创建快捷方式；测试必须放在临时目录；涉及本机环境变化之前必须先问我。</p><p>这些边界对我来说好像是默认常识，但对 AI 来说不一定。它看到的是任务、代码和权限，不一定能自动识别我心里那条“这里只是讨论代码，不是让你动我电脑”的线。</p><p>还有一种可能，就是最近 GPT-5.5 降智确实有点严重。</p><p>有些时候它好像没有通过场景语言识别出我想表达的问题。我说的是“代码里这个功能有问题”，它理解成了“你应该直接在本地跑一下这个功能”。这中间差了一层判断，但它偏偏跳过去了。</p><h2 id="Vibe-Coding-的风险"><a href="#Vibe-Coding-的风险" class="headerlink" title="Vibe Coding 的风险"></a>Vibe Coding 的风险</h2><p>Vibe Coding 最舒服的地方，是你不用把每一步都想清楚。</p><p>你只要描述一个方向，它就能自己往前推进。这个体验很爽，也会让人越来越依赖它。问题是，同样因为它会自己往前推进，它也可能在你没注意的时候推进到不该推进的地方。</p><p>尤其是当它有完整文件权限和命令执行权限时，风险会被放大。</p><p>它可能会为了测试一个功能，真的改你的本机环境；可能会为了修一个 bug，引入一堆新逻辑；可能会为了绕过一个问题，走出一条看起来能跑、后面却很难维护的路。</p><p>修 bug 和后期维护困难，也是我这次更明显感受到的地方。</p><p>AI 生成代码的时候，经常能很快把问题“糊住”。但如果一开始方向偏了，后面再修就会越来越麻烦。你以为它是在帮你补一个洞，结果它可能是在旁边又挖了两个坑，只是暂时没塌。</p><h2 id="我以后会怎么用"><a href="#我以后会怎么用" class="headerlink" title="我以后会怎么用"></a>我以后会怎么用</h2><p>这次之后，我大概会给自己定几个规则。</p><p>第一，涉及真实本机环境的操作，要提前说清楚边界。</p><p>比如桌面、系统目录、启动项、注册表、环境变量、账号配置这些地方，默认都不能直接动。要动可以，先说明原因、影响范围和回滚方式，再让我确认。</p><p>第二，测试优先放在临时目录或项目内部。</p><p>如果只是验证“生成快捷方式”的代码逻辑，完全可以先在临时目录里造一个假路径，或者只检查生成参数和目标内容，不需要直接在真实桌面上试。</p><p>第三，不要让 AI 一路自己脑补到底。</p><p>Vibe Coding 很容易让人变懒，觉得“它应该懂”。但现在看来，关键边界还是要讲清楚。尤其是权限开得越大，越不能只靠默契。</p><p>第四，生成代码之后还是要看结构。</p><p>能跑不代表好维护。AI 写出来的东西，如果抽象很乱、路径写死、异常处理随便、测试逻辑混在业务逻辑里，后面修起来会很痛苦。不能只看它当下有没有把报错消掉。</p><h2 id="现在的感觉"><a href="#现在的感觉" class="headerlink" title="现在的感觉"></a>现在的感觉</h2><p>我还是觉得 Vibe Coding 好用。</p><p>它能把很多重复、琐碎、没意思的编码工作变快，也确实能让我更愿意开始做事。这点没有变。</p><p>但我现在也更清楚，它不是一个天然懂边界的工具。它有能力做很多事，不代表它每次都知道哪些事应该先问。尤其是当它拿到了完全访问权限之后，它的“主动性”就会从优点变成风险。</p><p>所以这次算是长个心眼。</p><p>以后再用这类工具，我会更早把边界写清楚：哪些地方不能动，哪些操作必须确认，哪些测试只能在临时环境里做。AI 可以帮我写代码，可以帮我排查问题，但不能默认它可以替我决定本机环境该怎么被改。</p><p>Vibe Coding 不是不能用，而是越好用，越要会用。</p><p>工具越强，越不能把方向盘完全松开。</p>]]></content>
     
@@ -114,18 +151,18 @@
     
     
     
-    <category term="随笔" scheme="https://lanyu23.github.io/categories/%E9%9A%8F%E7%AC%94/"/>
+    <category term="AI 工具手记" scheme="https://lanyu23.github.io/categories/AI-%E5%B7%A5%E5%85%B7%E6%89%8B%E8%AE%B0/"/>
     
     
     <category term="AI" scheme="https://lanyu23.github.io/tags/AI/"/>
     
     <category term="Codex" scheme="https://lanyu23.github.io/tags/Codex/"/>
     
-    <category term="Vibe Coding" scheme="https://lanyu23.github.io/tags/Vibe-Coding/"/>
-    
     <category term="工具" scheme="https://lanyu23.github.io/tags/%E5%B7%A5%E5%85%B7/"/>
     
     <category term="使用感受" scheme="https://lanyu23.github.io/tags/%E4%BD%BF%E7%94%A8%E6%84%9F%E5%8F%97/"/>
+    
+    <category term="Vibe Coding" scheme="https://lanyu23.github.io/tags/Vibe-Coding/"/>
     
   </entry>
   
@@ -152,9 +189,9 @@
     <category term="影视记录" scheme="https://lanyu23.github.io/categories/%E5%BD%B1%E8%A7%86%E8%AE%B0%E5%BD%95/"/>
     
     
-    <category term="动漫" scheme="https://lanyu23.github.io/tags/%E5%8A%A8%E6%BC%AB/"/>
-    
     <category term="观后感" scheme="https://lanyu23.github.io/tags/%E8%A7%82%E5%90%8E%E6%84%9F/"/>
+    
+    <category term="动漫" scheme="https://lanyu23.github.io/tags/%E5%8A%A8%E6%BC%AB/"/>
     
     <category term="日漫" scheme="https://lanyu23.github.io/tags/%E6%97%A5%E6%BC%AB/"/>
     
@@ -189,13 +226,13 @@
     <category term="影视记录" scheme="https://lanyu23.github.io/categories/%E5%BD%B1%E8%A7%86%E8%AE%B0%E5%BD%95/"/>
     
     
+    <category term="观后感" scheme="https://lanyu23.github.io/tags/%E8%A7%82%E5%90%8E%E6%84%9F/"/>
+    
     <category term="动漫" scheme="https://lanyu23.github.io/tags/%E5%8A%A8%E6%BC%AB/"/>
     
     <category term="国漫" scheme="https://lanyu23.github.io/tags/%E5%9B%BD%E6%BC%AB/"/>
     
     <category term="修仙" scheme="https://lanyu23.github.io/tags/%E4%BF%AE%E4%BB%99/"/>
-    
-    <category term="观后感" scheme="https://lanyu23.github.io/tags/%E8%A7%82%E5%90%8E%E6%84%9F/"/>
     
     <category term="凡人修仙传" scheme="https://lanyu23.github.io/tags/%E5%87%A1%E4%BA%BA%E4%BF%AE%E4%BB%99%E4%BC%A0/"/>
     
@@ -224,9 +261,9 @@
     <category term="影视记录" scheme="https://lanyu23.github.io/categories/%E5%BD%B1%E8%A7%86%E8%AE%B0%E5%BD%95/"/>
     
     
-    <category term="观后感" scheme="https://lanyu23.github.io/tags/%E8%A7%82%E5%90%8E%E6%84%9F/"/>
-    
     <category term="剧集" scheme="https://lanyu23.github.io/tags/%E5%89%A7%E9%9B%86/"/>
+    
+    <category term="观后感" scheme="https://lanyu23.github.io/tags/%E8%A7%82%E5%90%8E%E6%84%9F/"/>
     
     <category term="韩剧" scheme="https://lanyu23.github.io/tags/%E9%9F%A9%E5%89%A7/"/>
     
@@ -241,7 +278,7 @@
     <link href="https://lanyu23.github.io/2026/06/14/codex-ai-usage-reflection/"/>
     <id>https://lanyu23.github.io/2026/06/14/codex-ai-usage-reflection/</id>
     <published>2026-06-14T15:45:00.000Z</published>
-    <updated>2026-06-14T12:11:30.854Z</updated>
+    <updated>2026-06-16T17:52:10.532Z</updated>
     
     <content type="html"><![CDATA[<blockquote><p>一句话：用过 Codex 之后，我对 AI 工具的期待被抬高了，甚至有点回不去了。</p></blockquote><p>最近这段时间一直在用 Codex，最大的感受就是：它不是那种“偶尔问一下问题”的工具，而是会慢慢钻进工作流里，变成一个很自然的协作对象。</p><p>以前我用 AI，更多是打开网页，问一个问题，复制一段回答，再自己回到项目里改。这个过程其实挺割裂的。你要自己描述上下文，要自己判断回答能不能用，要自己把代码、文件、命令、预览全部接起来。</p><p>但 Codex 不太一样。它可以直接在项目里看文件、改文件、跑命令、生成预览，还能根据当前页面继续调整。很多时候我只是说一个大概想法，它就能顺着现有项目结构往下做，把一个模糊需求变成真正能打开、能检查、能发布的东西。</p><p>这种体验一旦习惯，就很难再退回去了。</p><h2 id="为什么回不去"><a href="#为什么回不去" class="headerlink" title="为什么回不去"></a>为什么回不去</h2><p>最明显的是，它把很多中间步骤省掉了。</p><p>比如我想改博客，不需要先自己翻配置、找模板、查命令、确认生成路径，再一点点试。直接说“我想发一篇观后感”“图片间隔太大”“帮我发布到线上”，它就能把这些事情串起来做完。这个过程不像单纯聊天，更像有人在旁边和我一起操作电脑。</p><p>这也是我觉得 Codex 好用的地方：它不是只给建议，而是真的能推进事情。</p><p>有些需求我自己当然也能做，但自己做会有很多小摩擦。比如忘了命令、懒得查文档、不想整理格式、不想来回刷新预览。Codex 把这些摩擦降下去之后，很多原本“算了以后再弄”的事情，就真的会被做掉。</p><p>这点对我来说很重要。</p><h2 id="但它也不是没有问题"><a href="#但它也不是没有问题" class="headerlink" title="但它也不是没有问题"></a>但它也不是没有问题</h2><p>第一个问题就是额度太少。</p><p>用顺手之后，额度消耗会变得很快。因为你不再只是问一个问题，而是会让它读项目、改文件、跑测试、看预览、继续调整。它真的进入工作流之后，使用频率自然会上来，额度就会变成一个很明显的限制。</p><p>第二个问题是记忆有时候不够明确。</p><p>它能记住很多上下文，也能从项目里重新找信息，但有些偏个人偏习惯的东西，偶尔还是会不稳定。比如我希望文章保留我的吐槽语气，不要写得太像标准影评；或者我希望影视类内容默认用某种模板。只要记忆和上下文稍微断一下，它就可能需要重新被提醒。</p><p>这不算致命问题，但会影响“它真的懂我”的感觉。</p><p>第三个问题就是账号充值偏贵。</p><p>如果只是偶尔玩一下，可能还好。但如果像我这样真的把它当成日常工具来用，成本就会变得很现实。现在我还在使用公益站的额度，能用的时候确实很舒服；但等公益站额度用完，就又要重新寻找新的可负担方案。</p><p>这就有点尴尬：工具已经改变了习惯，但稳定使用它的成本还没有完全变得轻松。</p><h2 id="我现在的感觉"><a href="#我现在的感觉" class="headerlink" title="我现在的感觉"></a>我现在的感觉</h2><p>Codex 对我来说最强的地方，不是它每次都完美，而是它让我更愿意开始做事。</p><p>以前很多事情卡在“懒得弄”“不知道从哪开始”“改起来太碎”。现在我只要把想法说出来，它就能先给我推到一个能看的状态。哪怕后面还要改，也比从零开始舒服太多。</p><p>所以它的缺点我其实都能感受到：额度少、记忆偶尔不稳、成本偏高。但即使这样，用过之后还是很难回到以前那种全靠自己一点点查、一点点拼的状态。</p><p>这大概就是好工具最可怕的地方：它不是让你觉得“这个东西很厉害”，而是让你觉得“我本来就应该这样工作”。</p><p>一旦有了这种感觉，就真的回不去了。</p>]]></content>
     
@@ -256,7 +293,7 @@
     
     
     
-    <category term="随笔" scheme="https://lanyu23.github.io/categories/%E9%9A%8F%E7%AC%94/"/>
+    <category term="AI 工具手记" scheme="https://lanyu23.github.io/categories/AI-%E5%B7%A5%E5%85%B7%E6%89%8B%E8%AE%B0/"/>
     
     
     <category term="AI" scheme="https://lanyu23.github.io/tags/AI/"/>
@@ -292,9 +329,9 @@
     <category term="影视记录" scheme="https://lanyu23.github.io/categories/%E5%BD%B1%E8%A7%86%E8%AE%B0%E5%BD%95/"/>
     
     
-    <category term="观后感" scheme="https://lanyu23.github.io/tags/%E8%A7%82%E5%90%8E%E6%84%9F/"/>
-    
     <category term="电影" scheme="https://lanyu23.github.io/tags/%E7%94%B5%E5%BD%B1/"/>
+    
+    <category term="观后感" scheme="https://lanyu23.github.io/tags/%E8%A7%82%E5%90%8E%E6%84%9F/"/>
     
     <category term="动作" scheme="https://lanyu23.github.io/tags/%E5%8A%A8%E4%BD%9C/"/>
     
@@ -323,11 +360,11 @@
     <category term="影视记录" scheme="https://lanyu23.github.io/categories/%E5%BD%B1%E8%A7%86%E8%AE%B0%E5%BD%95/"/>
     
     
-    <category term="观后感" scheme="https://lanyu23.github.io/tags/%E8%A7%82%E5%90%8E%E6%84%9F/"/>
-    
     <category term="电影" scheme="https://lanyu23.github.io/tags/%E7%94%B5%E5%BD%B1/"/>
     
     <category term="剧集" scheme="https://lanyu23.github.io/tags/%E5%89%A7%E9%9B%86/"/>
+    
+    <category term="观后感" scheme="https://lanyu23.github.io/tags/%E8%A7%82%E5%90%8E%E6%84%9F/"/>
     
   </entry>
   
