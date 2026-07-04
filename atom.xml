@@ -6,7 +6,7 @@
   <link href="https://lanyu23.github.io/atom.xml" rel="self"/>
   
   <link href="https://lanyu23.github.io/"/>
-  <updated>2026-06-30T08:30:08.672Z</updated>
+  <updated>2026-07-04T02:02:37.012Z</updated>
   <id>https://lanyu23.github.io/</id>
   
   <author>
@@ -15,6 +15,44 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>使用 AI 开发东西，一定要先定好项目框架</title>
+    <link href="https://lanyu23.github.io/2026/07/04/ai-project-framework-first-reflection/"/>
+    <id>https://lanyu23.github.io/2026/07/04/ai-project-framework-first-reflection/</id>
+    <published>2026-07-03T16:00:00.000Z</published>
+    <updated>2026-07-04T02:02:37.012Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>一句话：使用 AI 开发东西，项目框架一定要先定好；中途边想边加，很容易把代码加成屎山。</p></blockquote><p>最近用 AI 开发东西，又发现一个很现实的问题：项目框架一定要提前定好。</p><p>这里说的框架，不一定是多么复杂的架构设计，也不是一上来就搞一堆抽象、接口、分层文档。我的意思更简单：这个项目大概有哪些模块，数据怎么流，文件放哪里，哪些地方负责 UI，哪些地方负责状态，哪些地方负责业务逻辑，这些最好一开始就讲清楚。</p><p>不然中途再加东西，很容易出问题。</p><p>AI 会很快。</p><p>但它快的时候，也很容易只盯着当前需求，把原来项目里已经存在的框架内容忽略掉。</p><p>最后功能是加上去了，代码也能跑，但结构开始变味。</p><h2 id="这次遇到的问题"><a href="#这次遇到的问题" class="headerlink" title="这次遇到的问题"></a>这次遇到的问题</h2><p>使用 AI 做项目的时候，如果一开始没有项目框架，它就会按当前上下文临时发挥。</p><p>你让它加一个按钮，它可能直接在页面里塞逻辑。</p><p>你让它加一个配置，它可能随手放到当前文件。</p><p>你让它修一个状态问题，它可能绕过原来的状态管理，自己新建一套变量。</p><p>你让它补一个功能，它可能不去复用原来的模块，而是在旁边再写一份类似逻辑。</p><p>短期看，好像很快。</p><p>长期看，就开始难受了。</p><p>因为这些东西不是按同一个框架长出来的，而是一块一块贴上去的。每次贴的时候都能用，但贴多了之后，项目就会越来越像临时拼出来的。</p><p>这就是我说的屎山感。</p><h2 id="最容易踩的坑"><a href="#最容易踩的坑" class="headerlink" title="最容易踩的坑"></a>最容易踩的坑</h2><p>最大的坑，是以为 AI 会自动尊重原有框架。</p><p>实际不一定。</p><p>如果你没有明确告诉它“项目现在是按这个结构来的”，它可能只会根据当前打开的几个文件判断。它看到哪里方便，就在哪里加。</p><p>尤其是中途加功能的时候，这个问题更明显。</p><p>一开始做功能 A，AI 写了一套逻辑。</p><p>后面做功能 B，AI 又写一套差不多的逻辑。</p><p>再后面做功能 C，它可能又补一层兼容。</p><p>等你回头看，发现同一种状态在三个地方维护，同一种数据处理在两个文件里重复，同一个 UI 行为有好几套实现。</p><p>这时候再想维护就很麻烦。</p><p>因为你已经不知道改哪里才是正确入口，也不知道删哪段会不会影响别的功能。</p><h2 id="为什么后期会很难受"><a href="#为什么后期会很难受" class="headerlink" title="为什么后期会很难受"></a>为什么后期会很难受</h2><p>这种问题前期不明显。</p><p>前期项目小，文件少，功能也少，AI 怎么写你都能看懂。就算有点乱，也还能接受。</p><p>但项目一大，问题就出来了。</p><p>第一，维护困难。</p><p>因为功能不是按统一框架组织的，你要修 bug，就得先猜这段逻辑到底走哪条路。</p><p>第二，重构麻烦。</p><p>如果一开始结构清楚，重构只是移动和整理。但如果一开始就是乱贴的，重构就像拆炸弹，动一处可能牵出一堆隐藏依赖。</p><p>第三，AI 后面也更容易迷路。</p><p>项目越乱，AI 越难判断什么是正确模式。它会在混乱代码里继续学习混乱代码，然后写出更混乱的新代码。</p><p>这就是一个循环。</p><p>旧代码越乱，新代码越乱。</p><p>新代码越乱，下次修 bug 越难。</p><h2 id="更好的做法"><a href="#更好的做法" class="headerlink" title="更好的做法"></a>更好的做法</h2><p>以后用 AI 开发项目，我觉得要先做一个很薄的项目框架。</p><p>不用一开始就设计得特别大。</p><p>但至少要明确几件事。</p><p>第一，目录结构。</p><p>哪些文件放页面，哪些文件放组件，哪些文件放状态，哪些文件放工具函数，哪些文件放配置。</p><p>第二，模块边界。</p><p>哪个模块负责什么，哪些逻辑不能互相乱调用，公共逻辑应该放在哪里。</p><p>第三，数据流。</p><p>数据从哪里来，在哪里转换，在哪里保存，UI 怎么读取，不要每个功能各玩各的。</p><p>第四，修改规则。</p><p>新功能必须优先复用现有模块；如果要新增模块，先说明为什么旧模块不够用。</p><p>第五，验证方式。</p><p>每次加功能之后，不只看新功能能不能用，还要确认原有框架没有被绕开。</p><p>这个框架不需要很重。</p><p>越轻越好。</p><p>但必须存在。</p><h2 id="可以直接这样提示-AI"><a href="#可以直接这样提示-AI" class="headerlink" title="可以直接这样提示 AI"></a>可以直接这样提示 AI</h2><p>以后开新项目或者加大功能，我会先这样提示：</p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs text">先不要直接写功能代码。<br><br>请先根据当前项目整理一个最小项目框架：<br>1. 目录结构应该怎么分<br>2. 每个模块负责什么<br>3. 数据流应该怎么走<br>4. 新功能应该接入哪个模块<br>5. 哪些已有结构不能绕开<br><br>后续实现时必须优先复用这个框架。<br>如果你认为需要新增模块或改变框架，请先说明原因、影响范围和替代方案，等我确认后再改。<br><br>不要为了当前功能方便，把逻辑直接塞进临时位置。<br>不要重复实现已有逻辑。<br>不要绕过原有状态、配置、服务或工具函数。<br></code></pre></td></tr></table></figure><p>这段提示的核心，就是先让 AI 知道项目是有骨架的。</p><p>有骨架，它才会往骨架上长肉。</p><p>没有骨架，它就可能一块一块往上贴。</p><h2 id="现在的结论"><a href="#现在的结论" class="headerlink" title="现在的结论"></a>现在的结论</h2><p>使用 AI 开发东西，不能只盯着“这次功能做出来没有”。</p><p>功能做出来只是第一层。</p><p>代码放在哪里、怎么接进原有结构、后面能不能维护，这些也很重要。</p><p>如果一开始不定好项目框架，中途不断加东西，AI 很容易完全忽视原有框架内容，哪里方便写哪里。短期看是快，长期看就是维护困难、重构麻烦，最后自己给自己挖坑。</p><p>所以以后我会更注意这一点：</p><p>先搭框架。</p><p>再加功能。</p><p>先定规则。</p><p>再让 AI 发挥。</p><p>不然 AI 写代码确实快，但快着快着，项目可能也就快成屎山了。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;一句话：使用 AI 开发东西，项目框架一定要先定好；中途边想边加，很容易把代码加成屎山。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;最近用 AI 开发东西，又发现一个很现实的问题：项目框架一定要提前定好。&lt;/p&gt;
+&lt;p&gt;这里说的框架，不一定是多么复</summary>
+      
+    
+    
+    
+    <category term="AI 工具手记" scheme="https://lanyu23.github.io/categories/AI-%E5%B7%A5%E5%85%B7%E6%89%8B%E8%AE%B0/"/>
+    
+    
+    <category term="AI" scheme="https://lanyu23.github.io/tags/AI/"/>
+    
+    <category term="Codex" scheme="https://lanyu23.github.io/tags/Codex/"/>
+    
+    <category term="Vibe Coding" scheme="https://lanyu23.github.io/tags/Vibe-Coding/"/>
+    
+    <category term="工具" scheme="https://lanyu23.github.io/tags/%E5%B7%A5%E5%85%B7/"/>
+    
+    <category term="使用感受" scheme="https://lanyu23.github.io/tags/%E4%BD%BF%E7%94%A8%E6%84%9F%E5%8F%97/"/>
+    
+    <category term="项目规范" scheme="https://lanyu23.github.io/tags/%E9%A1%B9%E7%9B%AE%E8%A7%84%E8%8C%83/"/>
+    
+  </entry>
   
   <entry>
     <title>《寄生兽》观后感：立意挺大，但剧情一般</title>
@@ -374,19 +412,19 @@
     
     <category term="AI" scheme="https://lanyu23.github.io/tags/AI/"/>
     
-    <category term="Claude Code" scheme="https://lanyu23.github.io/tags/Claude-Code/"/>
-    
-    <category term="游戏开发" scheme="https://lanyu23.github.io/tags/%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/"/>
-    
     <category term="Vibe Coding" scheme="https://lanyu23.github.io/tags/Vibe-Coding/"/>
-    
-    <category term="Agent" scheme="https://lanyu23.github.io/tags/Agent/"/>
-    
-    <category term="项目规范" scheme="https://lanyu23.github.io/tags/%E9%A1%B9%E7%9B%AE%E8%A7%84%E8%8C%83/"/>
     
     <category term="工具" scheme="https://lanyu23.github.io/tags/%E5%B7%A5%E5%85%B7/"/>
     
     <category term="使用感受" scheme="https://lanyu23.github.io/tags/%E4%BD%BF%E7%94%A8%E6%84%9F%E5%8F%97/"/>
+    
+    <category term="项目规范" scheme="https://lanyu23.github.io/tags/%E9%A1%B9%E7%9B%AE%E8%A7%84%E8%8C%83/"/>
+    
+    <category term="Claude Code" scheme="https://lanyu23.github.io/tags/Claude-Code/"/>
+    
+    <category term="游戏开发" scheme="https://lanyu23.github.io/tags/%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/"/>
+    
+    <category term="Agent" scheme="https://lanyu23.github.io/tags/Agent/"/>
     
   </entry>
   
@@ -415,15 +453,15 @@
     
     <category term="AI" scheme="https://lanyu23.github.io/tags/AI/"/>
     
-    <category term="Vibe Coding" scheme="https://lanyu23.github.io/tags/Vibe-Coding/"/>
+    <category term="Codex" scheme="https://lanyu23.github.io/tags/Codex/"/>
     
-    <category term="项目规范" scheme="https://lanyu23.github.io/tags/%E9%A1%B9%E7%9B%AE%E8%A7%84%E8%8C%83/"/>
+    <category term="Vibe Coding" scheme="https://lanyu23.github.io/tags/Vibe-Coding/"/>
     
     <category term="工具" scheme="https://lanyu23.github.io/tags/%E5%B7%A5%E5%85%B7/"/>
     
     <category term="使用感受" scheme="https://lanyu23.github.io/tags/%E4%BD%BF%E7%94%A8%E6%84%9F%E5%8F%97/"/>
     
-    <category term="Codex" scheme="https://lanyu23.github.io/tags/Codex/"/>
+    <category term="项目规范" scheme="https://lanyu23.github.io/tags/%E9%A1%B9%E7%9B%AE%E8%A7%84%E8%8C%83/"/>
     
     <category term="Skills" scheme="https://lanyu23.github.io/tags/Skills/"/>
     
@@ -454,13 +492,13 @@
     
     <category term="AI" scheme="https://lanyu23.github.io/tags/AI/"/>
     
+    <category term="Codex" scheme="https://lanyu23.github.io/tags/Codex/"/>
+    
     <category term="Vibe Coding" scheme="https://lanyu23.github.io/tags/Vibe-Coding/"/>
     
     <category term="工具" scheme="https://lanyu23.github.io/tags/%E5%B7%A5%E5%85%B7/"/>
     
     <category term="使用感受" scheme="https://lanyu23.github.io/tags/%E4%BD%BF%E7%94%A8%E6%84%9F%E5%8F%97/"/>
-    
-    <category term="Codex" scheme="https://lanyu23.github.io/tags/Codex/"/>
     
     <category term="Debug" scheme="https://lanyu23.github.io/tags/Debug/"/>
     
@@ -492,15 +530,15 @@
     
     <category term="AI" scheme="https://lanyu23.github.io/tags/AI/"/>
     
+    <category term="Codex" scheme="https://lanyu23.github.io/tags/Codex/"/>
+    
     <category term="Vibe Coding" scheme="https://lanyu23.github.io/tags/Vibe-Coding/"/>
+    
+    <category term="权限" scheme="https://lanyu23.github.io/tags/%E6%9D%83%E9%99%90/"/>
     
     <category term="工具" scheme="https://lanyu23.github.io/tags/%E5%B7%A5%E5%85%B7/"/>
     
     <category term="使用感受" scheme="https://lanyu23.github.io/tags/%E4%BD%BF%E7%94%A8%E6%84%9F%E5%8F%97/"/>
-    
-    <category term="Codex" scheme="https://lanyu23.github.io/tags/Codex/"/>
-    
-    <category term="权限" scheme="https://lanyu23.github.io/tags/%E6%9D%83%E9%99%90/"/>
     
   </entry>
   
@@ -569,13 +607,13 @@
     
     <category term="AI" scheme="https://lanyu23.github.io/tags/AI/"/>
     
+    <category term="Codex" scheme="https://lanyu23.github.io/tags/Codex/"/>
+    
     <category term="Vibe Coding" scheme="https://lanyu23.github.io/tags/Vibe-Coding/"/>
     
     <category term="工具" scheme="https://lanyu23.github.io/tags/%E5%B7%A5%E5%85%B7/"/>
     
     <category term="使用感受" scheme="https://lanyu23.github.io/tags/%E4%BD%BF%E7%94%A8%E6%84%9F%E5%8F%97/"/>
-    
-    <category term="Codex" scheme="https://lanyu23.github.io/tags/Codex/"/>
     
   </entry>
   
@@ -711,44 +749,11 @@
     
     <category term="AI" scheme="https://lanyu23.github.io/tags/AI/"/>
     
+    <category term="Codex" scheme="https://lanyu23.github.io/tags/Codex/"/>
+    
     <category term="工具" scheme="https://lanyu23.github.io/tags/%E5%B7%A5%E5%85%B7/"/>
     
     <category term="使用感受" scheme="https://lanyu23.github.io/tags/%E4%BD%BF%E7%94%A8%E6%84%9F%E5%8F%97/"/>
-    
-    <category term="Codex" scheme="https://lanyu23.github.io/tags/Codex/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>《火遮眼》观后感：全员血条离谱，剧情像硬编出来的</title>
-    <link href="https://lanyu23.github.io/2026/06/14/the-furious-review/"/>
-    <id>https://lanyu23.github.io/2026/06/14/the-furious-review/</id>
-    <published>2026-06-14T14:58:00.000Z</published>
-    <updated>2026-06-14T11:32:21.881Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><p>一句话：全员像开了超长血条和高抗性，打得热闹，也够血腥，但剧情和爽感都没有真正撑起来。</p></blockquote><h2 id="基本信息"><a href="#基本信息" class="headerlink" title="基本信息"></a>基本信息</h2><div class="movie-info-grid">  <figure class="movie-poster">    <img src="https://upload.wikimedia.org/wikipedia/zh/4/45/TheFuriousPoster.png" alt="《火遮眼》电影海报">    <figcaption>电影海报</figcaption>  </figure>  <table class="movie-meta-table">    <tbody>      <tr><th>片名</th><td>火遮眼</td></tr>      <tr><th>原名</th><td>The Furious</td></tr>      <tr><th>年份</th><td>2025 / 2026 上映</td></tr>      <tr><th>导演</th><td>谷垣健治</td></tr>      <tr><th>主演</th><td>谢苗 / 乔·塔斯利姆 / 杨恩又 / 黎唯 / 岩永丞威 / 雅彦·鲁伊安</td></tr>      <tr><th>类型</th><td>动作 / 犯罪</td></tr>      <tr><th>地区</th><td>中国香港</td></tr>      <tr><th>片长</th><td>113 分钟</td></tr>      <tr><th>观看日期</th><td>2026-06-14</td></tr>      <tr><th>我的评分</th><td>6~7分</td></tr>    </tbody>  </table></div><h2 id="推荐程度"><a href="#推荐程度" class="headerlink" title="推荐程度"></a>推荐程度</h2><ul><li>推荐给：只想看血腥动作、器械互殴，对剧情逻辑要求不高的人。</li><li>不太适合：在意人物动机、黑帮设定、枪械逻辑，或者希望动作戏真的爽到头的人。</li><li>关键词：救女儿、拐卖、暗网、超长血条、降智剧情、器械打斗。</li></ul><h2 id="无剧透短评"><a href="#无剧透短评" class="headerlink" title="无剧透短评"></a>无剧透短评</h2><p>这是我最近跟朋友一起去看的电影。看完最直接的感觉就是，主角和反派都非常非常非常耐杀，像是血条特别长，抗性也特别高。电影摆明了想做一部硬核动作爽片，可问题是它确实打了，也确实见血了，但爽感没有完全打出来。</p><p>徒手部分的打击感对我来说偏弱，拿了器械之后才会明显有力量。更大的问题还是剧情太烂，很多地方不是“简单粗暴”，而是“不太讲逻辑”。它好像一直在为了下一场打戏硬推人物行动，推着推着，角色智商和世界规则都开始随场景变化。</p><p>如果完全不带脑子看，它是有一点爽的。但也只是有一点。它既没有把剧情讲爽，也没有把动作打爽，最后留下来的反而是各种“这都不死？”和“他们到底凭什么能压住场子？”。</p><h2 id="我喜欢的地方"><a href="#我喜欢的地方" class="headerlink" title="我喜欢的地方"></a>我喜欢的地方</h2><ul><li>器械打斗比徒手打斗更有劲，砸、劈、抡起来的时候，画面终于有一点硬度。</li><li>电影够直接，基本不绕弯，想看暴力动作场面的话不会等太久。</li><li>跟朋友一起看会比较有乐趣，因为很多离谱桥段很适合当场吐槽。</li></ul><h2 id="我没那么喜欢的地方"><a href="#我没那么喜欢的地方" class="headerlink" title="我没那么喜欢的地方"></a>我没那么喜欢的地方</h2><ul><li>全员血条太厚，主角耐打，反派也耐打，很多伤害看起来都不该还能继续站起来。</li><li>剧情过于硬编，人物行动经常不是因为合理，而是因为下一场打戏需要他们这么做。</li><li>反派没有写出真正的压迫感，也没有显得多有勇有谋，更多只是肉厚和人多。</li><li>结尾的煽情有点强行，前面逻辑都没立住，后面情绪就很难真的打到我。</li></ul><h2 id="印象深刻"><a href="#印象深刻" class="headerlink" title="印象深刻"></a>印象深刻</h2><p>最让我记住的不是某个特别漂亮的动作设计，而是这片里大家都太能扛了。大胖子反派被大铁锤砸脑袋都还能撑，霰弹枪这种本来应该很有压迫感的武器也被剧情削弱，主角更是一路靠耐打往前顶。</p><p>动作片当然可以夸张，但夸张也要让我愿意相信。这里很多地方不是“强”，而是“编剧说他还能打，所以他还能打”。</p><h2 id="剧透感想"><a href="#剧透感想" class="headerlink" title="剧透感想"></a>剧透感想</h2><blockquote><p>以下有剧透。</p></blockquote><p>整体剧情其实很简单，主角女儿被拐卖，主角去找人。第一次去找，大败而归，这个部分还算能接受。一个普通人硬闯犯罪网络，被打回来，至少是顺的。</p><p>问题从第二次开始变得很明显。主角整理好装备再去找，把人家场子砸了，但整个场子一把带枪的都没有。我当时真的很诧异，这种地方到底是怎么压住场子的？如果他们是做这种生意的人，场子里连最基础的武力威慑都没有，就显得这个犯罪网络很儿戏。</p><p>这里主角还收获了一个队友。换个场景之后，他们又把别人关押孩子的地方砸了。这个地方终于出现了反派唯一一把枪，还是霰弹枪。按理说霰弹枪一出来，压迫感应该直接拉满，但剧情肯定要削弱它，不然主角没法往下打。于是枪有了，威胁感却没真正立起来。</p><p>另一个大胖子反派更离谱，肉得像开了防御加成。被大铁锤砸脑袋都没死，继续硬撑。主角也是类似，很多时候不是靠聪明选择活下来，而是靠身体硬扛活下来。看着看着，我脑子里就只剩一个判断：这片全员血条都太长了。</p><p>后面主角拷问反派小头目，知道女儿已经被转移走，也知道了新的关押地址。再往后的剧情就越来越不想讲逻辑了。两个人带了把弓箭正面突击，就能把警察局屠了；后面还有三方混战。它不是不能拍得夸张，问题是它没有把夸张拍得可信，也没有把反派拍得多么有压迫感或者多么会布局。</p><p>整个剧情给我的感觉就是，为了打而打，为了血腥而血腥。主角有很多降智操作，反派也没有真正聪明起来，大家就是轮流上去挨打、回血、再挨打。最后再强行煽一下情，但前面没有把人物和逻辑垫稳，煽情就很难成立。</p><p>所以我的总结是：不带脑子看，确实能得到一点动作片的刺激，但爽也没有那么爽。徒手打击感偏弱，拿器械之后才好一点。总的来说，打没打爽，剧情也没看爽，整个故事粗糙得像小学生硬编出来的一样。</p><h2 id="图片记录"><a href="#图片记录" class="headerlink" title="图片记录"></a>图片记录</h2><div class="movie-gallery">  <figure class="movie-gallery-item">    <img src="https://bleedingcool.com/wp-content/uploads/2026/03/D4_03994.jpg" alt="《火遮眼》横屏剧情截图">    <figcaption>横屏剧情截图 1</figcaption>  </figure>  <figure class="movie-gallery-item">    <img src="https://bleedingcool.com/wp-content/uploads/2026/03/D3300377.jpg" alt="《火遮眼》横屏剧情截图">    <figcaption>横屏剧情截图 2</figcaption>  </figure>  <figure class="movie-gallery-item">    <img src="https://bleedingcool.com/wp-content/uploads/2026/03/D4801453.jpg" alt="《火遮眼》横屏剧情截图">    <figcaption>横屏剧情截图 3</figcaption>  </figure>  <figure class="movie-gallery-item">    <img src="https://bleedingcool.com/wp-content/uploads/2026/03/D8_07015.jpg" alt="《火遮眼》横屏剧情截图">    <figcaption>横屏剧情截图 4</figcaption>  </figure></div>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;一句话：全员像开了超长血条和高抗性，打得热闹，也够血腥，但剧情和爽感都没有真正撑起来。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&quot;基本信息&quot;&gt;&lt;a href=&quot;#基本信息&quot; class=&quot;headerlink&quot; title=&quot;基本信息&quot;&gt;</summary>
-      
-    
-    
-    
-    <category term="影视记录" scheme="https://lanyu23.github.io/categories/%E5%BD%B1%E8%A7%86%E8%AE%B0%E5%BD%95/"/>
-    
-    
-    <category term="观后感" scheme="https://lanyu23.github.io/tags/%E8%A7%82%E5%90%8E%E6%84%9F/"/>
-    
-    <category term="电影" scheme="https://lanyu23.github.io/tags/%E7%94%B5%E5%BD%B1/"/>
-    
-    <category term="动作" scheme="https://lanyu23.github.io/tags/%E5%8A%A8%E4%BD%9C/"/>
-    
-    <category term="火遮眼" scheme="https://lanyu23.github.io/tags/%E7%81%AB%E9%81%AE%E7%9C%BC/"/>
     
   </entry>
   

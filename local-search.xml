@@ -4,6 +4,41 @@
   
   
   <entry>
+    <title>使用 AI 开发东西，一定要先定好项目框架</title>
+    <link href="/2026/07/04/ai-project-framework-first-reflection/"/>
+    <url>/2026/07/04/ai-project-framework-first-reflection/</url>
+    
+    <content type="html"><![CDATA[<blockquote><p>一句话：使用 AI 开发东西，项目框架一定要先定好；中途边想边加，很容易把代码加成屎山。</p></blockquote><p>最近用 AI 开发东西，又发现一个很现实的问题：项目框架一定要提前定好。</p><p>这里说的框架，不一定是多么复杂的架构设计，也不是一上来就搞一堆抽象、接口、分层文档。我的意思更简单：这个项目大概有哪些模块，数据怎么流，文件放哪里，哪些地方负责 UI，哪些地方负责状态，哪些地方负责业务逻辑，这些最好一开始就讲清楚。</p><p>不然中途再加东西，很容易出问题。</p><p>AI 会很快。</p><p>但它快的时候，也很容易只盯着当前需求，把原来项目里已经存在的框架内容忽略掉。</p><p>最后功能是加上去了，代码也能跑，但结构开始变味。</p><h2 id="这次遇到的问题"><a href="#这次遇到的问题" class="headerlink" title="这次遇到的问题"></a>这次遇到的问题</h2><p>使用 AI 做项目的时候，如果一开始没有项目框架，它就会按当前上下文临时发挥。</p><p>你让它加一个按钮，它可能直接在页面里塞逻辑。</p><p>你让它加一个配置，它可能随手放到当前文件。</p><p>你让它修一个状态问题，它可能绕过原来的状态管理，自己新建一套变量。</p><p>你让它补一个功能，它可能不去复用原来的模块，而是在旁边再写一份类似逻辑。</p><p>短期看，好像很快。</p><p>长期看，就开始难受了。</p><p>因为这些东西不是按同一个框架长出来的，而是一块一块贴上去的。每次贴的时候都能用，但贴多了之后，项目就会越来越像临时拼出来的。</p><p>这就是我说的屎山感。</p><h2 id="最容易踩的坑"><a href="#最容易踩的坑" class="headerlink" title="最容易踩的坑"></a>最容易踩的坑</h2><p>最大的坑，是以为 AI 会自动尊重原有框架。</p><p>实际不一定。</p><p>如果你没有明确告诉它“项目现在是按这个结构来的”，它可能只会根据当前打开的几个文件判断。它看到哪里方便，就在哪里加。</p><p>尤其是中途加功能的时候，这个问题更明显。</p><p>一开始做功能 A，AI 写了一套逻辑。</p><p>后面做功能 B，AI 又写一套差不多的逻辑。</p><p>再后面做功能 C，它可能又补一层兼容。</p><p>等你回头看，发现同一种状态在三个地方维护，同一种数据处理在两个文件里重复，同一个 UI 行为有好几套实现。</p><p>这时候再想维护就很麻烦。</p><p>因为你已经不知道改哪里才是正确入口，也不知道删哪段会不会影响别的功能。</p><h2 id="为什么后期会很难受"><a href="#为什么后期会很难受" class="headerlink" title="为什么后期会很难受"></a>为什么后期会很难受</h2><p>这种问题前期不明显。</p><p>前期项目小，文件少，功能也少，AI 怎么写你都能看懂。就算有点乱，也还能接受。</p><p>但项目一大，问题就出来了。</p><p>第一，维护困难。</p><p>因为功能不是按统一框架组织的，你要修 bug，就得先猜这段逻辑到底走哪条路。</p><p>第二，重构麻烦。</p><p>如果一开始结构清楚，重构只是移动和整理。但如果一开始就是乱贴的，重构就像拆炸弹，动一处可能牵出一堆隐藏依赖。</p><p>第三，AI 后面也更容易迷路。</p><p>项目越乱，AI 越难判断什么是正确模式。它会在混乱代码里继续学习混乱代码，然后写出更混乱的新代码。</p><p>这就是一个循环。</p><p>旧代码越乱，新代码越乱。</p><p>新代码越乱，下次修 bug 越难。</p><h2 id="更好的做法"><a href="#更好的做法" class="headerlink" title="更好的做法"></a>更好的做法</h2><p>以后用 AI 开发项目，我觉得要先做一个很薄的项目框架。</p><p>不用一开始就设计得特别大。</p><p>但至少要明确几件事。</p><p>第一，目录结构。</p><p>哪些文件放页面，哪些文件放组件，哪些文件放状态，哪些文件放工具函数，哪些文件放配置。</p><p>第二，模块边界。</p><p>哪个模块负责什么，哪些逻辑不能互相乱调用，公共逻辑应该放在哪里。</p><p>第三，数据流。</p><p>数据从哪里来，在哪里转换，在哪里保存，UI 怎么读取，不要每个功能各玩各的。</p><p>第四，修改规则。</p><p>新功能必须优先复用现有模块；如果要新增模块，先说明为什么旧模块不够用。</p><p>第五，验证方式。</p><p>每次加功能之后，不只看新功能能不能用，还要确认原有框架没有被绕开。</p><p>这个框架不需要很重。</p><p>越轻越好。</p><p>但必须存在。</p><h2 id="可以直接这样提示-AI"><a href="#可以直接这样提示-AI" class="headerlink" title="可以直接这样提示 AI"></a>可以直接这样提示 AI</h2><p>以后开新项目或者加大功能，我会先这样提示：</p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs text">先不要直接写功能代码。<br><br>请先根据当前项目整理一个最小项目框架：<br>1. 目录结构应该怎么分<br>2. 每个模块负责什么<br>3. 数据流应该怎么走<br>4. 新功能应该接入哪个模块<br>5. 哪些已有结构不能绕开<br><br>后续实现时必须优先复用这个框架。<br>如果你认为需要新增模块或改变框架，请先说明原因、影响范围和替代方案，等我确认后再改。<br><br>不要为了当前功能方便，把逻辑直接塞进临时位置。<br>不要重复实现已有逻辑。<br>不要绕过原有状态、配置、服务或工具函数。<br></code></pre></td></tr></table></figure><p>这段提示的核心，就是先让 AI 知道项目是有骨架的。</p><p>有骨架，它才会往骨架上长肉。</p><p>没有骨架，它就可能一块一块往上贴。</p><h2 id="现在的结论"><a href="#现在的结论" class="headerlink" title="现在的结论"></a>现在的结论</h2><p>使用 AI 开发东西，不能只盯着“这次功能做出来没有”。</p><p>功能做出来只是第一层。</p><p>代码放在哪里、怎么接进原有结构、后面能不能维护，这些也很重要。</p><p>如果一开始不定好项目框架，中途不断加东西，AI 很容易完全忽视原有框架内容，哪里方便写哪里。短期看是快，长期看就是维护困难、重构麻烦，最后自己给自己挖坑。</p><p>所以以后我会更注意这一点：</p><p>先搭框架。</p><p>再加功能。</p><p>先定规则。</p><p>再让 AI 发挥。</p><p>不然 AI 写代码确实快，但快着快着，项目可能也就快成屎山了。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>AI 工具手记</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>AI</tag>
+      
+      <tag>Codex</tag>
+      
+      <tag>Vibe Coding</tag>
+      
+      <tag>工具</tag>
+      
+      <tag>使用感受</tag>
+      
+      <tag>项目规范</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>《寄生兽》观后感：立意挺大，但剧情一般</title>
     <link href="/2026/06/30/parasyte-the-maxim-review/"/>
     <url>/2026/06/30/parasyte-the-maxim-review/</url>
@@ -337,19 +372,19 @@
       
       <tag>AI</tag>
       
-      <tag>Claude Code</tag>
-      
-      <tag>游戏开发</tag>
-      
       <tag>Vibe Coding</tag>
-      
-      <tag>Agent</tag>
-      
-      <tag>项目规范</tag>
       
       <tag>工具</tag>
       
       <tag>使用感受</tag>
+      
+      <tag>项目规范</tag>
+      
+      <tag>Claude Code</tag>
+      
+      <tag>游戏开发</tag>
+      
+      <tag>Agent</tag>
       
     </tags>
     
@@ -376,15 +411,15 @@
       
       <tag>AI</tag>
       
-      <tag>Vibe Coding</tag>
+      <tag>Codex</tag>
       
-      <tag>项目规范</tag>
+      <tag>Vibe Coding</tag>
       
       <tag>工具</tag>
       
       <tag>使用感受</tag>
       
-      <tag>Codex</tag>
+      <tag>项目规范</tag>
       
       <tag>Skills</tag>
       
@@ -413,13 +448,13 @@
       
       <tag>AI</tag>
       
+      <tag>Codex</tag>
+      
       <tag>Vibe Coding</tag>
       
       <tag>工具</tag>
       
       <tag>使用感受</tag>
-      
-      <tag>Codex</tag>
       
       <tag>Debug</tag>
       
@@ -448,15 +483,15 @@
       
       <tag>AI</tag>
       
+      <tag>Codex</tag>
+      
       <tag>Vibe Coding</tag>
+      
+      <tag>权限</tag>
       
       <tag>工具</tag>
       
       <tag>使用感受</tag>
-      
-      <tag>Codex</tag>
-      
-      <tag>权限</tag>
       
     </tags>
     
@@ -520,13 +555,13 @@
       
       <tag>AI</tag>
       
+      <tag>Codex</tag>
+      
       <tag>Vibe Coding</tag>
       
       <tag>工具</tag>
       
       <tag>使用感受</tag>
-      
-      <tag>Codex</tag>
       
     </tags>
     
@@ -654,11 +689,11 @@
       
       <tag>AI</tag>
       
+      <tag>Codex</tag>
+      
       <tag>工具</tag>
       
       <tag>使用感受</tag>
-      
-      <tag>Codex</tag>
       
     </tags>
     
