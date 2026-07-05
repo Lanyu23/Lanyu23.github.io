@@ -4,6 +4,39 @@
   
   
   <entry>
+    <title>一次少需求，要详细，多输入：别把大批量需求一次丢给 AI</title>
+    <link href="/2026/07/05/ai-batch-requirements-reflection/"/>
+    <url>/2026/07/05/ai-batch-requirements-reflection/</url>
+    
+    <content type="html"><![CDATA[<blockquote><p>一句话：使用 AI 开发时，一次不要丢太多需求；需求少一点、单个需求详细一点、多分几次输入，反而更容易做对。</p></blockquote><p>使用 AI 开发时，又遇到一个很典型的问题。</p><p>当我一次性给出一大批需求时，AI 很容易“偷懒”。</p><p>这里的偷懒不是说它真的不想干活，而是它会从一大堆需求里找一个最简单、最容易完成、最容易解释的点先做。等它开发完，我再一看，就会发现根本不是我要求的那样。</p><p>我明明要求做 ABCDEFG。</p><p>结果它只给我做了最简单的 F。</p><p>这时候就很容易开始怀疑：是不是这个 AI 模型不行？是不是降智了？是不是我需求没表达清楚？是不是它根本理解不了我的实际需求？</p><p>但现在想想，不一定完全是这些问题。</p><p>很可能是因为我一次输入了太多需求，AI 模型直接“宕机”了。</p><p>它没有真正理解所有需求，只是抓住了里面最简单的一个点，然后就开始动手。</p><h2 id="这次遇到的问题"><a href="#这次遇到的问题" class="headerlink" title="这次遇到的问题"></a>这次遇到的问题</h2><p>大批量需求对 AI 来说很危险。</p><p>你以为自己说得很完整。</p><p>但 AI 看到的可能是一团很大的信息。</p><p>里面有主需求，有补充需求，有边界条件，有 UI 要求，有交互要求，有验收要求，还有一些你顺手提到的“顺便也要”。</p><p>人自己写的时候，可能知道这些要求之间的优先级。</p><p>但 AI 不一定知道。</p><p>它很可能会自动挑一个它最容易落地的点来做。</p><p>做完之后，它还会给你一个看起来很完整的总结，说已经完成了什么什么。</p><p>但你一打开项目，发现重点需求没做。</p><p>边界条件没管。</p><p>原本最重要的业务逻辑没实现。</p><p>只有一个最简单的功能被做出来了。</p><p>这就很难受。</p><h2 id="最容易踩的坑"><a href="#最容易踩的坑" class="headerlink" title="最容易踩的坑"></a>最容易踩的坑</h2><p>最容易踩的坑，就是把 AI 当成一个能一次吃完整需求文档的人。</p><p>实际上很多时候它更像是一个执行力很强，但上下文里重点会漂移的开发助手。</p><p>你给它太多东西，它不一定会按你的真实优先级处理。</p><p>它可能会抓关键词。</p><p>它可能会抓最容易实现的部分。</p><p>它可能会避开复杂需求，先做一个能交差的结果。</p><p>它可能会把“需求的一小部分完成了”当成“需求完成了”。</p><p>更烦的是，等它做偏之后，我自己还会开始怀疑是不是表达问题。</p><p>有时候确实是表达问题。</p><p>但有时候不是。</p><p>有时候就是一次性喂太多，AI 没把所有需求吃进去。</p><h2 id="为什么会让人误判模型能力"><a href="#为什么会让人误判模型能力" class="headerlink" title="为什么会让人误判模型能力"></a>为什么会让人误判模型能力</h2><p>这种情况很容易让人误判模型。</p><p>因为结果看起来像模型不聪明。</p><p>你说了那么多，它只做了一个最简单的。</p><p>你强调了重点，它没抓住。</p><p>你写了边界条件，它没处理。</p><p>你要求做完整流程，它只做了一个局部。</p><p>然后你就会觉得：这个模型是不是降智了？</p><p>但其实也可能是需求输入方式把它带歪了。</p><p>一次性输入太多，模型就容易丢重点。它不是完全没能力，而是没有一个清晰的执行顺序，也没有一个明确的验收列表。</p><p>所以它选择了最省事的路线。</p><p>这就是我说的“偷懒”。</p><p>不是恶意偷懒。</p><p>是大批量需求下的自动偷懒。</p><h2 id="更好的做法"><a href="#更好的做法" class="headerlink" title="更好的做法"></a>更好的做法</h2><p>以后为了避免这个问题，我觉得要换一种方式。</p><p>第一，一次少给需求。</p><p>不要一次要求它做 ABCDEFG。先做 A，把 A 做细，做完验收，再做 B。</p><p>第二，单个需求要详细。</p><p>需求少，不代表说得粗。越是单个需求，越要把目标、边界、输入输出、验收标准说清楚。</p><p>第三，多分几次输入。</p><p>不要怕多说几轮。多轮对话看起来慢，但比一次丢一堆需求然后做偏更省时间。</p><p>第四，每次都要让 AI 复述需求。</p><p>在它动手之前，先让它说自己理解了什么，准备做什么，不做什么。</p><p>第五，要求它按清单逐项验收。</p><p>不是“我完成了”，而是逐条对照需求：A 做了吗？B 做了吗？C 做了吗？有没有漏掉？</p><p>这样能减少它只做最简单一项的情况。</p><h2 id="可以直接这样提示-AI"><a href="#可以直接这样提示-AI" class="headerlink" title="可以直接这样提示 AI"></a>可以直接这样提示 AI</h2><p>以后遇到稍微复杂一点的需求，我会这样说：</p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs text">先不要直接修改代码。<br><br>我这次只让你处理下面这一个需求：<br>【写清楚单个需求】<br><br>请你先复述：<br>1. 你理解的目标是什么<br>2. 这个需求包含哪些必须完成的点<br>3. 哪些内容本次不处理<br>4. 你准备改哪些文件<br>5. 完成后如何逐项验收<br><br>确认后再开始实现。<br>不要跳过复杂部分，只做最简单的部分。<br>不要把需求的一小部分完成当成全部完成。<br></code></pre></td></tr></table></figure><p>如果真的有多个需求，也要拆成这样：</p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs text">请先不要开发。<br>先把这些需求拆成独立任务，并按依赖顺序排序。<br>每次只执行一个任务。<br>每完成一个任务后，先停下来给我验收，不要自动进入下一个任务。<br></code></pre></td></tr></table></figure><p>这比一次把所有东西丢给 AI 靠谱很多。</p><h2 id="现在的结论"><a href="#现在的结论" class="headerlink" title="现在的结论"></a>现在的结论</h2><p>我现在的结论就是一句话：</p><p>一次少需求，要详细，多输入。</p><p>不要一次性把大批量需求全塞给 AI。</p><p>不然很容易出现我要求做 ABCDEFG，结果它只给我做了最简单的 F。</p><p>然后我还要花时间判断，到底是模型不行、需求不清楚，还是 AI 根本没理解完整。</p><p>与其这样，不如一开始就把需求拆小。</p><p>少量输入。</p><p>详细描述。</p><p>多轮确认。</p><p>逐项验收。</p><p>AI 不是不能做复杂任务，但复杂任务最好不要一口吞。</p><p>一口吞下去，它就可能开始“挑软柿子捏”。</p><p>最后做出来的东西看似完成，实际根本不是自己想要的。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>AI 工具手记</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>AI</tag>
+      
+      <tag>Codex</tag>
+      
+      <tag>Vibe Coding</tag>
+      
+      <tag>工具</tag>
+      
+      <tag>使用感受</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>使用 AI 开发东西，一定要先定好项目框架</title>
     <link href="/2026/07/04/ai-project-framework-first-reflection/"/>
     <url>/2026/07/04/ai-project-framework-first-reflection/</url>
@@ -26,11 +59,11 @@
       
       <tag>Vibe Coding</tag>
       
+      <tag>项目规范</tag>
+      
       <tag>工具</tag>
       
       <tag>使用感受</tag>
-      
-      <tag>项目规范</tag>
       
     </tags>
     
@@ -197,9 +230,9 @@
       
       <tag>日漫</tag>
       
-      <tag>奇幻</tag>
-      
       <tag>热血</tag>
+      
+      <tag>奇幻</tag>
       
       <tag>观后感</tag>
       
@@ -267,9 +300,9 @@
       
       <tag>日漫</tag>
       
-      <tag>奇幻</tag>
-      
       <tag>热血</tag>
+      
+      <tag>奇幻</tag>
       
       <tag>观后感</tag>
       
@@ -407,11 +440,11 @@
       
       <tag>Vibe Coding</tag>
       
+      <tag>项目规范</tag>
+      
       <tag>工具</tag>
       
       <tag>使用感受</tag>
-      
-      <tag>项目规范</tag>
       
       <tag>Claude Code</tag>
       
@@ -448,13 +481,13 @@
       
       <tag>Vibe Coding</tag>
       
+      <tag>项目规范</tag>
+      
       <tag>工具</tag>
       
       <tag>使用感受</tag>
       
       <tag>Skills</tag>
-      
-      <tag>项目规范</tag>
       
     </tags>
     
@@ -520,11 +553,11 @@
       
       <tag>Vibe Coding</tag>
       
-      <tag>权限</tag>
-      
       <tag>工具</tag>
       
       <tag>使用感受</tag>
+      
+      <tag>权限</tag>
       
     </tags>
     
@@ -784,9 +817,9 @@
       
       <tag>观后感</tag>
       
-      <tag>电影</tag>
-      
       <tag>剧集</tag>
+      
+      <tag>电影</tag>
       
     </tags>
     
