@@ -37,41 +37,6 @@
   
   
   <entry>
-    <title>使用 AI 开发东西，一定要先定好项目框架</title>
-    <link href="/2026/07/04/ai-project-framework-first-reflection/"/>
-    <url>/2026/07/04/ai-project-framework-first-reflection/</url>
-    
-    <content type="html"><![CDATA[<blockquote><p>一句话：使用 AI 开发东西，项目框架一定要先定好；中途边想边加，很容易把代码加成屎山。</p></blockquote><p>最近用 AI 开发东西，又发现一个很现实的问题：项目框架一定要提前定好。</p><p>这里说的框架，不一定是多么复杂的架构设计，也不是一上来就搞一堆抽象、接口、分层文档。我的意思更简单：这个项目大概有哪些模块，数据怎么流，文件放哪里，哪些地方负责 UI，哪些地方负责状态，哪些地方负责业务逻辑，这些最好一开始就讲清楚。</p><p>不然中途再加东西，很容易出问题。</p><p>AI 会很快。</p><p>但它快的时候，也很容易只盯着当前需求，把原来项目里已经存在的框架内容忽略掉。</p><p>最后功能是加上去了，代码也能跑，但结构开始变味。</p><h2 id="这次遇到的问题"><a href="#这次遇到的问题" class="headerlink" title="这次遇到的问题"></a>这次遇到的问题</h2><p>使用 AI 做项目的时候，如果一开始没有项目框架，它就会按当前上下文临时发挥。</p><p>你让它加一个按钮，它可能直接在页面里塞逻辑。</p><p>你让它加一个配置，它可能随手放到当前文件。</p><p>你让它修一个状态问题，它可能绕过原来的状态管理，自己新建一套变量。</p><p>你让它补一个功能，它可能不去复用原来的模块，而是在旁边再写一份类似逻辑。</p><p>短期看，好像很快。</p><p>长期看，就开始难受了。</p><p>因为这些东西不是按同一个框架长出来的，而是一块一块贴上去的。每次贴的时候都能用，但贴多了之后，项目就会越来越像临时拼出来的。</p><p>这就是我说的屎山感。</p><h2 id="最容易踩的坑"><a href="#最容易踩的坑" class="headerlink" title="最容易踩的坑"></a>最容易踩的坑</h2><p>最大的坑，是以为 AI 会自动尊重原有框架。</p><p>实际不一定。</p><p>如果你没有明确告诉它“项目现在是按这个结构来的”，它可能只会根据当前打开的几个文件判断。它看到哪里方便，就在哪里加。</p><p>尤其是中途加功能的时候，这个问题更明显。</p><p>一开始做功能 A，AI 写了一套逻辑。</p><p>后面做功能 B，AI 又写一套差不多的逻辑。</p><p>再后面做功能 C，它可能又补一层兼容。</p><p>等你回头看，发现同一种状态在三个地方维护，同一种数据处理在两个文件里重复，同一个 UI 行为有好几套实现。</p><p>这时候再想维护就很麻烦。</p><p>因为你已经不知道改哪里才是正确入口，也不知道删哪段会不会影响别的功能。</p><h2 id="为什么后期会很难受"><a href="#为什么后期会很难受" class="headerlink" title="为什么后期会很难受"></a>为什么后期会很难受</h2><p>这种问题前期不明显。</p><p>前期项目小，文件少，功能也少，AI 怎么写你都能看懂。就算有点乱，也还能接受。</p><p>但项目一大，问题就出来了。</p><p>第一，维护困难。</p><p>因为功能不是按统一框架组织的，你要修 bug，就得先猜这段逻辑到底走哪条路。</p><p>第二，重构麻烦。</p><p>如果一开始结构清楚，重构只是移动和整理。但如果一开始就是乱贴的，重构就像拆炸弹，动一处可能牵出一堆隐藏依赖。</p><p>第三，AI 后面也更容易迷路。</p><p>项目越乱，AI 越难判断什么是正确模式。它会在混乱代码里继续学习混乱代码，然后写出更混乱的新代码。</p><p>这就是一个循环。</p><p>旧代码越乱，新代码越乱。</p><p>新代码越乱，下次修 bug 越难。</p><h2 id="更好的做法"><a href="#更好的做法" class="headerlink" title="更好的做法"></a>更好的做法</h2><p>以后用 AI 开发项目，我觉得要先做一个很薄的项目框架。</p><p>不用一开始就设计得特别大。</p><p>但至少要明确几件事。</p><p>第一，目录结构。</p><p>哪些文件放页面，哪些文件放组件，哪些文件放状态，哪些文件放工具函数，哪些文件放配置。</p><p>第二，模块边界。</p><p>哪个模块负责什么，哪些逻辑不能互相乱调用，公共逻辑应该放在哪里。</p><p>第三，数据流。</p><p>数据从哪里来，在哪里转换，在哪里保存，UI 怎么读取，不要每个功能各玩各的。</p><p>第四，修改规则。</p><p>新功能必须优先复用现有模块；如果要新增模块，先说明为什么旧模块不够用。</p><p>第五，验证方式。</p><p>每次加功能之后，不只看新功能能不能用，还要确认原有框架没有被绕开。</p><p>这个框架不需要很重。</p><p>越轻越好。</p><p>但必须存在。</p><h2 id="可以直接这样提示-AI"><a href="#可以直接这样提示-AI" class="headerlink" title="可以直接这样提示 AI"></a>可以直接这样提示 AI</h2><p>以后开新项目或者加大功能，我会先这样提示：</p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs text">先不要直接写功能代码。<br><br>请先根据当前项目整理一个最小项目框架：<br>1. 目录结构应该怎么分<br>2. 每个模块负责什么<br>3. 数据流应该怎么走<br>4. 新功能应该接入哪个模块<br>5. 哪些已有结构不能绕开<br><br>后续实现时必须优先复用这个框架。<br>如果你认为需要新增模块或改变框架，请先说明原因、影响范围和替代方案，等我确认后再改。<br><br>不要为了当前功能方便，把逻辑直接塞进临时位置。<br>不要重复实现已有逻辑。<br>不要绕过原有状态、配置、服务或工具函数。<br></code></pre></td></tr></table></figure><p>这段提示的核心，就是先让 AI 知道项目是有骨架的。</p><p>有骨架，它才会往骨架上长肉。</p><p>没有骨架，它就可能一块一块往上贴。</p><h2 id="现在的结论"><a href="#现在的结论" class="headerlink" title="现在的结论"></a>现在的结论</h2><p>使用 AI 开发东西，不能只盯着“这次功能做出来没有”。</p><p>功能做出来只是第一层。</p><p>代码放在哪里、怎么接进原有结构、后面能不能维护，这些也很重要。</p><p>如果一开始不定好项目框架，中途不断加东西，AI 很容易完全忽视原有框架内容，哪里方便写哪里。短期看是快，长期看就是维护困难、重构麻烦，最后自己给自己挖坑。</p><p>所以以后我会更注意这一点：</p><p>先搭框架。</p><p>再加功能。</p><p>先定规则。</p><p>再让 AI 发挥。</p><p>不然 AI 写代码确实快，但快着快着，项目可能也就快成屎山了。</p>]]></content>
-    
-    
-    <categories>
-      
-      <category>AI 工具手记</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>AI</tag>
-      
-      <tag>Codex</tag>
-      
-      <tag>Vibe Coding</tag>
-      
-      <tag>项目规范</tag>
-      
-      <tag>工具</tag>
-      
-      <tag>使用感受</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>做 AI 开发挺焦虑的：别一直消耗 token，却没有一个落地项目</title>
     <link href="/2026/07/04/ai-development-anxiety-reflection/"/>
     <url>/2026/07/04/ai-development-anxiety-reflection/</url>
@@ -105,33 +70,33 @@
   
   
   <entry>
-    <title>《寄生兽》观后感：立意挺大，但剧情一般</title>
-    <link href="/2026/06/30/parasyte-the-maxim-review/"/>
-    <url>/2026/06/30/parasyte-the-maxim-review/</url>
+    <title>使用 AI 开发东西，一定要先定好项目框架</title>
+    <link href="/2026/07/04/ai-project-framework-first-reflection/"/>
+    <url>/2026/07/04/ai-project-framework-first-reflection/</url>
     
-    <content type="html"><![CDATA[<blockquote><p>一句话：立意挺大，设定也有意思，但剧情看下来只算一般，有些地方像是在强行说教。</p></blockquote><h2 id="基本信息"><a href="#基本信息" class="headerlink" title="基本信息"></a>基本信息</h2><div class="movie-info-grid">  <figure class="movie-poster">    <img src="/img/anime/parasyte-the-maxim/poster.jpg" alt="《寄生兽》动画海报">    <figcaption>动画海报</figcaption>  </figure>  <table class="movie-meta-table">    <tbody>      <tr><th>片名</th><td>寄生兽 生命的准则</td></tr>      <tr><th>原名</th><td>寄生獣 セイの格率 / Parasyte -the maxim-</td></tr>      <tr><th>年份</th><td>2014 - 2015</td></tr>      <tr><th>导演</th><td>清水健一</td></tr>      <tr><th>原作</th><td>岩明均</td></tr>      <tr><th>制作</th><td>Madhouse</td></tr>      <tr><th>配音</th><td>岛崎信长 / 平野绫 / 花泽香菜 / 泽城美雪 / 田中敦子</td></tr>      <tr><th>类型</th><td>科幻 / 惊悚 / 心理 / 生存 / 战斗</td></tr>      <tr><th>集数</th><td>24 集</td></tr>      <tr><th>地区</th><td>日本</td></tr>      <tr><th>观看日期</th><td>2026-06-30</td></tr>      <tr><th>我的评分</th><td>8分</td></tr>    </tbody>  </table></div><h2 id="推荐程度"><a href="#推荐程度" class="headerlink" title="推荐程度"></a>推荐程度</h2><ul><li>推荐给：喜欢寄生生物、科幻惊悚、人性讨论和主角被迫成长故事的人。</li><li>不太适合：特别在意人物逻辑稳定，或者讨厌作品把主题反复摆出来讲的人。</li><li>关键词：寄生生物、共生、人性、物种、身份变化、说教感。</li></ul><h2 id="无剧透短评"><a href="#无剧透短评" class="headerlink" title="无剧透短评"></a>无剧透短评</h2><p>《寄生兽》这个设定本身是很有意思的。</p><p>寄生生物突然出现，主角又不是完全被寄生，而是和寄生兽形成一种很微妙的共生关系。这个开局很抓人，也天然适合讨论人性、物种、生存、善恶这些比较大的东西。</p><p>所以它的立意确实挺大。</p><p>但我看完之后，感觉它有些地方又像是在强行说教。它想表达的东西我能理解，可有时候表达方式太直了，像是非要把主题按到你面前，让你意识到“这里有深度”。</p><p>剧情整体对我来说一般。</p><p>不是不能看，也不是没有亮点，但没有到特别惊艳的程度。8 分比较适合它，设定和整体完成度能撑住，但一些人物和伏笔问题也确实影响观感。</p><h2 id="我喜欢的地方"><a href="#我喜欢的地方" class="headerlink" title="我喜欢的地方"></a>我喜欢的地方</h2><ul><li>寄生兽这个核心设定很强，开局就有吸引力。</li><li>人类和寄生生物之间的关系，不只是单纯怪物打人类，还有共生、理解和冲突。</li><li>部分情节的压迫感不错，寄生生物混在人群里的感觉挺有危机感。</li><li>右这个角色有记忆点，冷静、理性，又和主角形成很强的对照。</li><li>作品想讨论的东西确实不小，不是纯粹打怪升级。</li></ul><h2 id="我没那么喜欢的地方"><a href="#我没那么喜欢的地方" class="headerlink" title="我没那么喜欢的地方"></a>我没那么喜欢的地方</h2><ul><li>有些地方说教感比较重，立意大归大，但表达不够自然。</li><li>主角的人设有点怪，时而特别冷静，时而又突然不冷静。</li><li>情绪变化和行为逻辑有些地方不太顺，看着会出戏。</li><li>一些伏笔没有明显回收，像戴眼镜的女生发现寄生兽，还和她哥哥讨论过，后面就没怎么提了。</li><li>剧情整体只能说一般，没有完全把设定的潜力打出来。</li></ul><h2 id="印象深刻"><a href="#印象深刻" class="headerlink" title="印象深刻"></a>印象深刻</h2><p>最有意思的还是主角和右之间的关系。</p><p>一个是人，一个是寄生生物，但它们又必须靠彼此活下去。右一开始完全像是冷冰冰的生存机器，只讲效率，只讲利益，不讲人类那套情绪。</p><p>这种设定本来很容易写出东西。</p><p>人类到底高贵在哪里，寄生生物到底低等在哪里，所谓人性是不是只是站在人类立场上的说法，这些都能展开。</p><p>问题是它有时候展开得太用力了。</p><p>本来可以靠剧情和人物自然带出来的东西，它会选择比较直白地讲出来，导致我一边看一边觉得：我知道你想表达这个，但你能不能别这么明显。</p><h2 id="剧透感想"><a href="#剧透感想" class="headerlink" title="剧透感想"></a>剧透感想</h2><blockquote><p>以下有剧透。</p></blockquote><p>我对《寄生兽》最大的感觉，就是它想讲的东西挺大，但具体落到剧情上没有完全说服我。</p><p>主角泉新一的变化是核心之一。</p><p>他因为和右共生，身体和心理都发生了变化。按理说这个过程应该很有层次：人性被侵蚀、理性增强、情感变淡，然后又在各种事件里重新确认自己到底是什么。</p><p>但实际看下来，我觉得他的人设有点飘。</p><p>有时候他冷静得不像正常高中生，有时候又突然不冷静。这个变化当然可以解释成寄生和创伤带来的影响，但剧情给我的感受不是“这个人正在复杂变化”，而是“这个人怎么一下这样一下那样”。</p><p>这就有点怪怪的。</p><p>还有一些伏笔没回收，也让我不太舒服。</p><p>比如那个戴眼镜的女生发现了寄生兽，还和她哥哥讨论过这件事。这个点当时看起来像是后面会继续展开，至少会带来一点后续影响，但后面好像就没怎么提了。</p><p>这种线索如果只是轻轻带过，那前面给它的存在感就会显得有点尴尬。</p><p>当然，《寄生兽》不是差。</p><p>它的设定、氛围、部分冲突，以及关于人类和寄生生物关系的讨论，都还是能撑起一部作品的。只是我对它的期待会更高一点，尤其是它把立意摆得这么大之后，我就会希望剧情、人设和伏笔都能更稳。</p><p>结果看完就是：可以，能看，但剧情一般。</p><p>8 分。</p><h2 id="图片记录"><a href="#图片记录" class="headerlink" title="图片记录"></a>图片记录</h2><div class="movie-gallery">  <figure class="movie-gallery-item">    <img src="/img/anime/parasyte-the-maxim/gallery-1.jpg" alt="《寄生兽》横屏剧照">    <figcaption>横屏剧情截图 1</figcaption>  </figure>  <figure class="movie-gallery-item">    <img src="/img/anime/parasyte-the-maxim/gallery-2.jpg" alt="《寄生兽》横屏剧照">    <figcaption>横屏剧情截图 2</figcaption>  </figure>  <figure class="movie-gallery-item">    <img src="/img/anime/parasyte-the-maxim/gallery-3.jpg" alt="《寄生兽》横屏剧照">    <figcaption>横屏剧情截图 3</figcaption>  </figure>  <figure class="movie-gallery-item">    <img src="/img/anime/parasyte-the-maxim/gallery-4.jpg" alt="《寄生兽》横屏剧照">    <figcaption>横屏剧情截图 4</figcaption>  </figure></div>]]></content>
+    <content type="html"><![CDATA[<blockquote><p>一句话：使用 AI 开发东西，项目框架一定要先定好；中途边想边加，很容易把代码加成屎山。</p></blockquote><p>最近用 AI 开发东西，又发现一个很现实的问题：项目框架一定要提前定好。</p><p>这里说的框架，不一定是多么复杂的架构设计，也不是一上来就搞一堆抽象、接口、分层文档。我的意思更简单：这个项目大概有哪些模块，数据怎么流，文件放哪里，哪些地方负责 UI，哪些地方负责状态，哪些地方负责业务逻辑，这些最好一开始就讲清楚。</p><p>不然中途再加东西，很容易出问题。</p><p>AI 会很快。</p><p>但它快的时候，也很容易只盯着当前需求，把原来项目里已经存在的框架内容忽略掉。</p><p>最后功能是加上去了，代码也能跑，但结构开始变味。</p><h2 id="这次遇到的问题"><a href="#这次遇到的问题" class="headerlink" title="这次遇到的问题"></a>这次遇到的问题</h2><p>使用 AI 做项目的时候，如果一开始没有项目框架，它就会按当前上下文临时发挥。</p><p>你让它加一个按钮，它可能直接在页面里塞逻辑。</p><p>你让它加一个配置，它可能随手放到当前文件。</p><p>你让它修一个状态问题，它可能绕过原来的状态管理，自己新建一套变量。</p><p>你让它补一个功能，它可能不去复用原来的模块，而是在旁边再写一份类似逻辑。</p><p>短期看，好像很快。</p><p>长期看，就开始难受了。</p><p>因为这些东西不是按同一个框架长出来的，而是一块一块贴上去的。每次贴的时候都能用，但贴多了之后，项目就会越来越像临时拼出来的。</p><p>这就是我说的屎山感。</p><h2 id="最容易踩的坑"><a href="#最容易踩的坑" class="headerlink" title="最容易踩的坑"></a>最容易踩的坑</h2><p>最大的坑，是以为 AI 会自动尊重原有框架。</p><p>实际不一定。</p><p>如果你没有明确告诉它“项目现在是按这个结构来的”，它可能只会根据当前打开的几个文件判断。它看到哪里方便，就在哪里加。</p><p>尤其是中途加功能的时候，这个问题更明显。</p><p>一开始做功能 A，AI 写了一套逻辑。</p><p>后面做功能 B，AI 又写一套差不多的逻辑。</p><p>再后面做功能 C，它可能又补一层兼容。</p><p>等你回头看，发现同一种状态在三个地方维护，同一种数据处理在两个文件里重复，同一个 UI 行为有好几套实现。</p><p>这时候再想维护就很麻烦。</p><p>因为你已经不知道改哪里才是正确入口，也不知道删哪段会不会影响别的功能。</p><h2 id="为什么后期会很难受"><a href="#为什么后期会很难受" class="headerlink" title="为什么后期会很难受"></a>为什么后期会很难受</h2><p>这种问题前期不明显。</p><p>前期项目小，文件少，功能也少，AI 怎么写你都能看懂。就算有点乱，也还能接受。</p><p>但项目一大，问题就出来了。</p><p>第一，维护困难。</p><p>因为功能不是按统一框架组织的，你要修 bug，就得先猜这段逻辑到底走哪条路。</p><p>第二，重构麻烦。</p><p>如果一开始结构清楚，重构只是移动和整理。但如果一开始就是乱贴的，重构就像拆炸弹，动一处可能牵出一堆隐藏依赖。</p><p>第三，AI 后面也更容易迷路。</p><p>项目越乱，AI 越难判断什么是正确模式。它会在混乱代码里继续学习混乱代码，然后写出更混乱的新代码。</p><p>这就是一个循环。</p><p>旧代码越乱，新代码越乱。</p><p>新代码越乱，下次修 bug 越难。</p><h2 id="更好的做法"><a href="#更好的做法" class="headerlink" title="更好的做法"></a>更好的做法</h2><p>以后用 AI 开发项目，我觉得要先做一个很薄的项目框架。</p><p>不用一开始就设计得特别大。</p><p>但至少要明确几件事。</p><p>第一，目录结构。</p><p>哪些文件放页面，哪些文件放组件，哪些文件放状态，哪些文件放工具函数，哪些文件放配置。</p><p>第二，模块边界。</p><p>哪个模块负责什么，哪些逻辑不能互相乱调用，公共逻辑应该放在哪里。</p><p>第三，数据流。</p><p>数据从哪里来，在哪里转换，在哪里保存，UI 怎么读取，不要每个功能各玩各的。</p><p>第四，修改规则。</p><p>新功能必须优先复用现有模块；如果要新增模块，先说明为什么旧模块不够用。</p><p>第五，验证方式。</p><p>每次加功能之后，不只看新功能能不能用，还要确认原有框架没有被绕开。</p><p>这个框架不需要很重。</p><p>越轻越好。</p><p>但必须存在。</p><h2 id="可以直接这样提示-AI"><a href="#可以直接这样提示-AI" class="headerlink" title="可以直接这样提示 AI"></a>可以直接这样提示 AI</h2><p>以后开新项目或者加大功能，我会先这样提示：</p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs text">先不要直接写功能代码。<br><br>请先根据当前项目整理一个最小项目框架：<br>1. 目录结构应该怎么分<br>2. 每个模块负责什么<br>3. 数据流应该怎么走<br>4. 新功能应该接入哪个模块<br>5. 哪些已有结构不能绕开<br><br>后续实现时必须优先复用这个框架。<br>如果你认为需要新增模块或改变框架，请先说明原因、影响范围和替代方案，等我确认后再改。<br><br>不要为了当前功能方便，把逻辑直接塞进临时位置。<br>不要重复实现已有逻辑。<br>不要绕过原有状态、配置、服务或工具函数。<br></code></pre></td></tr></table></figure><p>这段提示的核心，就是先让 AI 知道项目是有骨架的。</p><p>有骨架，它才会往骨架上长肉。</p><p>没有骨架，它就可能一块一块往上贴。</p><h2 id="现在的结论"><a href="#现在的结论" class="headerlink" title="现在的结论"></a>现在的结论</h2><p>使用 AI 开发东西，不能只盯着“这次功能做出来没有”。</p><p>功能做出来只是第一层。</p><p>代码放在哪里、怎么接进原有结构、后面能不能维护，这些也很重要。</p><p>如果一开始不定好项目框架，中途不断加东西，AI 很容易完全忽视原有框架内容，哪里方便写哪里。短期看是快，长期看就是维护困难、重构麻烦，最后自己给自己挖坑。</p><p>所以以后我会更注意这一点：</p><p>先搭框架。</p><p>再加功能。</p><p>先定规则。</p><p>再让 AI 发挥。</p><p>不然 AI 写代码确实快，但快着快着，项目可能也就快成屎山了。</p>]]></content>
     
     
     <categories>
       
-      <category>影视记录</category>
+      <category>AI 工具手记</category>
       
     </categories>
     
     
     <tags>
       
-      <tag>动漫</tag>
+      <tag>AI</tag>
       
-      <tag>日漫</tag>
+      <tag>Codex</tag>
       
-      <tag>观后感</tag>
+      <tag>Vibe Coding</tag>
       
-      <tag>科幻</tag>
+      <tag>工具</tag>
       
-      <tag>惊悚</tag>
+      <tag>使用感受</tag>
       
-      <tag>寄生兽</tag>
+      <tag>项目规范</tag>
       
     </tags>
     
@@ -175,6 +140,41 @@
   
   
   <entry>
+    <title>《寄生兽》观后感：立意挺大，但剧情一般</title>
+    <link href="/2026/06/30/parasyte-the-maxim-review/"/>
+    <url>/2026/06/30/parasyte-the-maxim-review/</url>
+    
+    <content type="html"><![CDATA[<blockquote><p>一句话：立意挺大，设定也有意思，但剧情看下来只算一般，有些地方像是在强行说教。</p></blockquote><h2 id="基本信息"><a href="#基本信息" class="headerlink" title="基本信息"></a>基本信息</h2><div class="movie-info-grid">  <figure class="movie-poster">    <img src="/img/anime/parasyte-the-maxim/poster.jpg" alt="《寄生兽》动画海报">    <figcaption>动画海报</figcaption>  </figure>  <table class="movie-meta-table">    <tbody>      <tr><th>片名</th><td>寄生兽 生命的准则</td></tr>      <tr><th>原名</th><td>寄生獣 セイの格率 / Parasyte -the maxim-</td></tr>      <tr><th>年份</th><td>2014 - 2015</td></tr>      <tr><th>导演</th><td>清水健一</td></tr>      <tr><th>原作</th><td>岩明均</td></tr>      <tr><th>制作</th><td>Madhouse</td></tr>      <tr><th>配音</th><td>岛崎信长 / 平野绫 / 花泽香菜 / 泽城美雪 / 田中敦子</td></tr>      <tr><th>类型</th><td>科幻 / 惊悚 / 心理 / 生存 / 战斗</td></tr>      <tr><th>集数</th><td>24 集</td></tr>      <tr><th>地区</th><td>日本</td></tr>      <tr><th>观看日期</th><td>2026-06-30</td></tr>      <tr><th>我的评分</th><td>8分</td></tr>    </tbody>  </table></div><h2 id="推荐程度"><a href="#推荐程度" class="headerlink" title="推荐程度"></a>推荐程度</h2><ul><li>推荐给：喜欢寄生生物、科幻惊悚、人性讨论和主角被迫成长故事的人。</li><li>不太适合：特别在意人物逻辑稳定，或者讨厌作品把主题反复摆出来讲的人。</li><li>关键词：寄生生物、共生、人性、物种、身份变化、说教感。</li></ul><h2 id="无剧透短评"><a href="#无剧透短评" class="headerlink" title="无剧透短评"></a>无剧透短评</h2><p>《寄生兽》这个设定本身是很有意思的。</p><p>寄生生物突然出现，主角又不是完全被寄生，而是和寄生兽形成一种很微妙的共生关系。这个开局很抓人，也天然适合讨论人性、物种、生存、善恶这些比较大的东西。</p><p>所以它的立意确实挺大。</p><p>但我看完之后，感觉它有些地方又像是在强行说教。它想表达的东西我能理解，可有时候表达方式太直了，像是非要把主题按到你面前，让你意识到“这里有深度”。</p><p>剧情整体对我来说一般。</p><p>不是不能看，也不是没有亮点，但没有到特别惊艳的程度。8 分比较适合它，设定和整体完成度能撑住，但一些人物和伏笔问题也确实影响观感。</p><h2 id="我喜欢的地方"><a href="#我喜欢的地方" class="headerlink" title="我喜欢的地方"></a>我喜欢的地方</h2><ul><li>寄生兽这个核心设定很强，开局就有吸引力。</li><li>人类和寄生生物之间的关系，不只是单纯怪物打人类，还有共生、理解和冲突。</li><li>部分情节的压迫感不错，寄生生物混在人群里的感觉挺有危机感。</li><li>右这个角色有记忆点，冷静、理性，又和主角形成很强的对照。</li><li>作品想讨论的东西确实不小，不是纯粹打怪升级。</li></ul><h2 id="我没那么喜欢的地方"><a href="#我没那么喜欢的地方" class="headerlink" title="我没那么喜欢的地方"></a>我没那么喜欢的地方</h2><ul><li>有些地方说教感比较重，立意大归大，但表达不够自然。</li><li>主角的人设有点怪，时而特别冷静，时而又突然不冷静。</li><li>情绪变化和行为逻辑有些地方不太顺，看着会出戏。</li><li>一些伏笔没有明显回收，像戴眼镜的女生发现寄生兽，还和她哥哥讨论过，后面就没怎么提了。</li><li>剧情整体只能说一般，没有完全把设定的潜力打出来。</li></ul><h2 id="印象深刻"><a href="#印象深刻" class="headerlink" title="印象深刻"></a>印象深刻</h2><p>最有意思的还是主角和右之间的关系。</p><p>一个是人，一个是寄生生物，但它们又必须靠彼此活下去。右一开始完全像是冷冰冰的生存机器，只讲效率，只讲利益，不讲人类那套情绪。</p><p>这种设定本来很容易写出东西。</p><p>人类到底高贵在哪里，寄生生物到底低等在哪里，所谓人性是不是只是站在人类立场上的说法，这些都能展开。</p><p>问题是它有时候展开得太用力了。</p><p>本来可以靠剧情和人物自然带出来的东西，它会选择比较直白地讲出来，导致我一边看一边觉得：我知道你想表达这个，但你能不能别这么明显。</p><h2 id="剧透感想"><a href="#剧透感想" class="headerlink" title="剧透感想"></a>剧透感想</h2><blockquote><p>以下有剧透。</p></blockquote><p>我对《寄生兽》最大的感觉，就是它想讲的东西挺大，但具体落到剧情上没有完全说服我。</p><p>主角泉新一的变化是核心之一。</p><p>他因为和右共生，身体和心理都发生了变化。按理说这个过程应该很有层次：人性被侵蚀、理性增强、情感变淡，然后又在各种事件里重新确认自己到底是什么。</p><p>但实际看下来，我觉得他的人设有点飘。</p><p>有时候他冷静得不像正常高中生，有时候又突然不冷静。这个变化当然可以解释成寄生和创伤带来的影响，但剧情给我的感受不是“这个人正在复杂变化”，而是“这个人怎么一下这样一下那样”。</p><p>这就有点怪怪的。</p><p>还有一些伏笔没回收，也让我不太舒服。</p><p>比如那个戴眼镜的女生发现了寄生兽，还和她哥哥讨论过这件事。这个点当时看起来像是后面会继续展开，至少会带来一点后续影响，但后面好像就没怎么提了。</p><p>这种线索如果只是轻轻带过，那前面给它的存在感就会显得有点尴尬。</p><p>当然，《寄生兽》不是差。</p><p>它的设定、氛围、部分冲突，以及关于人类和寄生生物关系的讨论，都还是能撑起一部作品的。只是我对它的期待会更高一点，尤其是它把立意摆得这么大之后，我就会希望剧情、人设和伏笔都能更稳。</p><p>结果看完就是：可以，能看，但剧情一般。</p><p>8 分。</p><h2 id="图片记录"><a href="#图片记录" class="headerlink" title="图片记录"></a>图片记录</h2><div class="movie-gallery">  <figure class="movie-gallery-item">    <img src="/img/anime/parasyte-the-maxim/gallery-1.jpg" alt="《寄生兽》横屏剧照">    <figcaption>横屏剧情截图 1</figcaption>  </figure>  <figure class="movie-gallery-item">    <img src="/img/anime/parasyte-the-maxim/gallery-2.jpg" alt="《寄生兽》横屏剧照">    <figcaption>横屏剧情截图 2</figcaption>  </figure>  <figure class="movie-gallery-item">    <img src="/img/anime/parasyte-the-maxim/gallery-3.jpg" alt="《寄生兽》横屏剧照">    <figcaption>横屏剧情截图 3</figcaption>  </figure>  <figure class="movie-gallery-item">    <img src="/img/anime/parasyte-the-maxim/gallery-4.jpg" alt="《寄生兽》横屏剧照">    <figcaption>横屏剧情截图 4</figcaption>  </figure></div>]]></content>
+    
+    
+    <categories>
+      
+      <category>影视记录</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>动漫</tag>
+      
+      <tag>日漫</tag>
+      
+      <tag>观后感</tag>
+      
+      <tag>科幻</tag>
+      
+      <tag>惊悚</tag>
+      
+      <tag>寄生兽</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>《石纪元》观后感：前中期很好，结局落差有点大</title>
     <link href="/2026/06/23/dr-stone-review/"/>
     <url>/2026/06/23/dr-stone-review/</url>
@@ -197,9 +197,9 @@
       
       <tag>观后感</tag>
       
-      <tag>科幻</tag>
-      
       <tag>冒险</tag>
+      
+      <tag>科幻</tag>
       
       <tag>石纪元</tag>
       
@@ -230,11 +230,11 @@
       
       <tag>日漫</tag>
       
+      <tag>观后感</tag>
+      
       <tag>热血</tag>
       
       <tag>奇幻</tag>
-      
-      <tag>观后感</tag>
       
       <tag>鬼灭之刃</tag>
       
@@ -265,11 +265,11 @@
       
       <tag>日漫</tag>
       
-      <tag>观后感</tag>
-      
       <tag>黑暗奇幻</tag>
       
       <tag>战争</tag>
+      
+      <tag>观后感</tag>
       
       <tag>进击的巨人</tag>
       
@@ -300,11 +300,11 @@
       
       <tag>日漫</tag>
       
+      <tag>观后感</tag>
+      
       <tag>热血</tag>
       
       <tag>奇幻</tag>
-      
-      <tag>观后感</tag>
       
       <tag>钢之炼金术师FA</tag>
       
@@ -335,9 +335,9 @@
       
       <tag>日漫</tag>
       
-      <tag>热血</tag>
-      
       <tag>观后感</tag>
+      
+      <tag>热血</tag>
       
       <tag>冒险</tag>
       
@@ -368,9 +368,9 @@
       
       <tag>动漫</tag>
       
-      <tag>奇幻</tag>
-      
       <tag>观后感</tag>
+      
+      <tag>奇幻</tag>
       
       <tag>国漫</tag>
       
@@ -405,9 +405,9 @@
       
       <tag>日漫</tag>
       
-      <tag>奇幻</tag>
-      
       <tag>观后感</tag>
+      
+      <tag>奇幻</tag>
       
       <tag>异世界</tag>
       
@@ -440,11 +440,11 @@
       
       <tag>Vibe Coding</tag>
       
-      <tag>项目规范</tag>
-      
       <tag>工具</tag>
       
       <tag>使用感受</tag>
+      
+      <tag>项目规范</tag>
       
       <tag>Claude Code</tag>
       
@@ -481,11 +481,11 @@
       
       <tag>Vibe Coding</tag>
       
-      <tag>项目规范</tag>
-      
       <tag>工具</tag>
       
       <tag>使用感受</tag>
+      
+      <tag>项目规范</tag>
       
       <tag>Skills</tag>
       
@@ -817,9 +817,9 @@
       
       <tag>观后感</tag>
       
-      <tag>剧集</tag>
-      
       <tag>电影</tag>
+      
+      <tag>剧集</tag>
       
     </tags>
     
