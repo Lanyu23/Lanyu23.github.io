@@ -19,28 +19,27 @@
   <meta name="author" content="Lanyu23">
   <meta name="keywords" content="game dev, blog, movies, notes">
   
-    <meta name="description" content="一句话：做 AI 开发最怕的不是不会用 AI，而是一直消耗 token、一直开新坑，最后没有一个真正落地的项目。  最近做 AI 开发，感觉其实挺焦虑的。 一方面，看别人都在用 AI 开发赚钱了。各种项目、产品、插件、自动化、小工具，好像别人随便一做就能变现。 另一方面，自己这边消耗了一堆 token，折腾了很多想法，但回头一看，好像还是什么都没有。 这感觉就挺难受的。 不是完全没做事。 而是做">
+    <meta name="description" content="一句话：用 AI 启动新项目时，版本管理和项目文档一定要先搭好，不然项目做到一半，很容易跑偏，最后连自己一开始参考了什么都记不住。  最近用 AI 开新项目时，又意识到一个很现实的问题：不能只想着“先让 AI 写起来再说”。 如果一开始没有用 GitHub，或者别的版本管理网站把项目管起来，后面出问题就会很难受。AI 改代码很快，但它改偏也很快。没有版本管理的话，等你发现项目方向不对、功能跑偏、">
 <meta property="og:type" content="article">
-<meta property="og:title" content="做 AI 开发挺焦虑的：别一直消耗 token，却没有一个落地项目">
-<meta property="og:url" content="https://lanyu23.github.io/2026/07/04/ai-development-anxiety-reflection/index.html">
+<meta property="og:title" content="用 AI 启动新项目，先把版本管理和项目文档搭起来">
+<meta property="og:url" content="https://lanyu23.github.io/2026/07/08/ai-new-project-version-docs-reflection/index.html">
 <meta property="og:site_name" content="Lanyu 的博客">
-<meta property="og:description" content="一句话：做 AI 开发最怕的不是不会用 AI，而是一直消耗 token、一直开新坑，最后没有一个真正落地的项目。  最近做 AI 开发，感觉其实挺焦虑的。 一方面，看别人都在用 AI 开发赚钱了。各种项目、产品、插件、自动化、小工具，好像别人随便一做就能变现。 另一方面，自己这边消耗了一堆 token，折腾了很多想法，但回头一看，好像还是什么都没有。 这感觉就挺难受的。 不是完全没做事。 而是做">
+<meta property="og:description" content="一句话：用 AI 启动新项目时，版本管理和项目文档一定要先搭好，不然项目做到一半，很容易跑偏，最后连自己一开始参考了什么都记不住。  最近用 AI 开新项目时，又意识到一个很现实的问题：不能只想着“先让 AI 写起来再说”。 如果一开始没有用 GitHub，或者别的版本管理网站把项目管起来，后面出问题就会很难受。AI 改代码很快，但它改偏也很快。没有版本管理的话，等你发现项目方向不对、功能跑偏、">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://lanyu23.github.io/img/default.png">
-<meta property="article:published_time" content="2026-07-03T16:00:00.000Z">
-<meta property="article:modified_time" content="2026-07-04T12:54:41.356Z">
+<meta property="article:published_time" content="2026-07-07T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-07-07T20:26:06.183Z">
 <meta property="article:author" content="Lanyu23">
 <meta property="article:tag" content="AI">
-<meta property="article:tag" content="Codex">
 <meta property="article:tag" content="Vibe Coding">
-<meta property="article:tag" content="工具">
 <meta property="article:tag" content="使用感受">
+<meta property="article:tag" content="项目规范">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://lanyu23.github.io/img/default.png">
   
   
   
-  <title>做 AI 开发挺焦虑的：别一直消耗 token，却没有一个落地项目 - Lanyu 的博客</title>
+  <title>用 AI 启动新项目，先把版本管理和项目文档搭起来 - Lanyu 的博客</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -314,7 +313,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="做 AI 开发挺焦虑的：别一直消耗 token，却没有一个落地项目"></span>
+            <span id="subtitle" data-typed-text="用 AI 启动新项目，先把版本管理和项目文档搭起来"></span>
           
         </div>
 
@@ -325,8 +324,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2026-07-04 00:00" pubdate>
-          2026年7月4日 凌晨
+        <time datetime="2026-07-08 00:00" pubdate>
+          2026年7月8日 凌晨
         </time>
       </span>
     
@@ -337,7 +336,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.7k 字
+          1.1k 字
         
       </span>
     
@@ -348,7 +347,7 @@
         
         
         
-          14 分钟
+          10 分钟
         
       </span>
     
@@ -387,78 +386,34 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">做 AI 开发挺焦虑的：别一直消耗 token，却没有一个落地项目</h1>
+            <h1 id="seo-header">用 AI 启动新项目，先把版本管理和项目文档搭起来</h1>
             
             
               <div class="markdown-body">
                 
                 <blockquote>
-<p>一句话：做 AI 开发最怕的不是不会用 AI，而是一直消耗 token、一直开新坑，最后没有一个真正落地的项目。</p>
+<p>一句话：用 AI 启动新项目时，版本管理和项目文档一定要先搭好，不然项目做到一半，很容易跑偏，最后连自己一开始参考了什么都记不住。</p>
 </blockquote>
-<p>最近做 AI 开发，感觉其实挺焦虑的。</p>
-<p>一方面，看别人都在用 AI 开发赚钱了。各种项目、产品、插件、自动化、小工具，好像别人随便一做就能变现。</p>
-<p>另一方面，自己这边消耗了一堆 token，折腾了很多想法，但回头一看，好像还是什么都没有。</p>
-<p>这感觉就挺难受的。</p>
-<p>不是完全没做事。</p>
-<p>而是做了很多，但没有一个项目真正落地。</p>
-<h2 id="这次遇到的问题"><a href="#这次遇到的问题" class="headerlink" title="这次遇到的问题"></a>这次遇到的问题</h2><p>最大的问题是：自己什么都想做。</p>
-<p>看到一个方向，觉得有机会。</p>
-<p>看到另一个项目，觉得也很有意思。</p>
-<p>刷到别人靠 AI 做了什么东西赚钱，又觉得这个方向也应该试试。</p>
-<p>于是今天做这个，明天做那个，做到一半又冒出新想法。新想法看起来更有价值，旧项目就先放一放。</p>
-<p>结果旧项目没做完，新项目也没做完。</p>
-<p>最后就是一堆半成品。</p>
-<p>AI 倒是一直在干活，token 也一直在烧，但真正能拿出来用、能上线、能变现、能持续迭代的东西，反而没有。</p>
-<p>这就很尴尬。</p>
-<h2 id="最容易踩的坑"><a href="#最容易踩的坑" class="headerlink" title="最容易踩的坑"></a>最容易踩的坑</h2><p>做 AI 开发很容易产生一种错觉：只要 AI 能写代码，那项目就快完成了。</p>
-<p>但实际不是。</p>
-<p>AI 能把代码写出来，不代表项目能落地。</p>
-<p>项目落地还需要明确需求、稳定框架、验收标准、真实用户场景、部署、维护、推广，甚至还要想清楚这个东西到底解决谁的问题。</p>
-<p>如果这些都没想清楚，AI 写得越快，可能只是越快把你带到下一个半成品。</p>
-<p>还有一个坑，就是看别人赚钱会放大焦虑。</p>
-<p>别人展示出来的，往往是结果。</p>
-<p>你看到的是他上线了、卖钱了、有用户了，但你看不到他前面踩了多少坑，砍掉多少方向，熬了多少时间。</p>
-<p>然后自己一对比，就会觉得：别人都成了，我怎么还在原地。</p>
-<p>这种对比很容易让人心态变乱。</p>
-<p>心态一乱，就更想换方向。</p>
-<p>换方向越多，越没有结果。</p>
-<p>越没有结果，越焦虑。</p>
-<p>这就是循环。</p>
-<h2 id="更好的做法"><a href="#更好的做法" class="headerlink" title="更好的做法"></a>更好的做法</h2><p>我现在觉得，做 AI 开发不能再只靠兴奋感推进。</p>
-<p>兴奋感只能让人开坑。</p>
-<p>不能保证项目落地。</p>
-<p>以后最好给自己设几个限制。</p>
-<p>第一，一段时间只做一个主项目。</p>
-<p>不是说其他想法不能记，而是不能每个想法都立刻开工。新想法先丢到待办池，主项目没有到最小可用版本之前，不开新坑。</p>
-<p>第二，先做最小可用版本。</p>
-<p>不要一开始就想做完整产品。先做一个能跑、能演示、能解决一个具体问题的小版本。哪怕很丑，哪怕功能很少，也比一堆宏大规划强。</p>
-<p>第三，给项目设一个结束条件。</p>
-<p>比如三天内做出 demo，一周内做出可用版本，两周内上线第一版。没有结束条件，项目就会一直变成“再优化一下”。</p>
-<p>第四，限制 token 消耗。</p>
-<p>不是舍不得用，而是要让 token 花在最该花的地方。比如先让 AI 帮你定范围、拆任务、做验收清单，再进入实现。不要一上来就疯狂生成代码，最后发现方向错了。</p>
-<p>第五，每天都要问一句：今天有没有让项目更接近上线。</p>
-<p>如果答案是否定的，那可能只是又在探索、又在优化、又在换方向。</p>
-<p>探索当然有价值。</p>
-<p>但不能一直探索。</p>
-<h2 id="可以直接这样提示-AI"><a href="#可以直接这样提示-AI" class="headerlink" title="可以直接这样提示 AI"></a>可以直接这样提示 AI</h2><p>以后我想开新项目时，可以先这样问 AI：</p>
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs text">我现在想做这个项目，但我的目标不是继续开坑，而是落地一个最小可用版本。<br><br>请你先帮我做三件事：<br>1. 把这个想法压缩成一个最小可用版本，只保留必须功能<br>2. 列出 3 天内能完成的任务清单<br>3. 写出明确的验收标准：做到什么程度就算第一版完成<br><br>不要扩展新功能。<br>不要做长期规划。<br>不要建议我同时做多个方向。<br>如果我提出新想法，请先帮我判断它是否会影响当前版本落地。<br></code></pre></td></tr></table></figure>
+<p>最近用 AI 开新项目时，又意识到一个很现实的问题：不能只想着“先让 AI 写起来再说”。</p>
+<p>如果一开始没有用 GitHub，或者别的版本管理网站把项目管起来，后面出问题就会很难受。AI 改代码很快，但它改偏也很快。没有版本管理的话，等你发现项目方向不对、功能跑偏、原来能用的东西被改坏了，再想回退就很麻烦。</p>
+<p>更麻烦的是项目文档。</p>
+<p>很多时候，刚开始做项目的时候，脑子里是有一套想法的：这个项目要做什么、参考了哪些内容、功能边界在哪里、哪些东西不能乱改、哪些地方是核心逻辑。但是如果这些东西没有提前写成文档，项目做到一半就容易开始飘。</p>
+<p>AI 也不是真的能一直记住你前面所有参考内容。</p>
+<p>会话长了以后，它可能忘掉前面的约束，也可能抓错重点。你以为它还记得项目最初的设计目标，实际上它可能已经只盯着当前这条需求在改了。改着改着，项目就变成了另一种东西。</p>
+<p>所以以后用 AI 启动新项目，我觉得至少要先做两件事：</p>
+<h2 id="先把版本管理开起来"><a href="#先把版本管理开起来" class="headerlink" title="先把版本管理开起来"></a>先把版本管理开起来</h2><p>项目刚创建的时候，就应该直接用 GitHub 或者别的版本管理网站管理起来。</p>
+<p>不用等项目做得差不多了再上传。越早上传，越早有回退点。哪怕 AI 后面某次改崩了，也能很快看 diff、回退版本，或者至少知道它到底动了哪些地方。</p>
+<p>这不是为了显得专业，而是为了给自己留后路。</p>
+<h2 id="再把项目文档写清楚"><a href="#再把项目文档写清楚" class="headerlink" title="再把项目文档写清楚"></a>再把项目文档写清楚</h2><p>项目文档也不能等后面再补。</p>
+<p>一开始就应该写清楚项目目标、技术方案、目录结构、功能边界、参考资料、当前阶段要做什么。尤其是参考资料和核心约束，一定要写下来，不然等项目做到一半，自己都可能忘了最开始为什么这么设计。</p>
+<p>文档写好了，后面让 AI 做事时，就可以直接让它先读文档，再执行任务。这样至少能降低它跑偏的概率。</p>
+<h2 id="可以直接这样提示-AI"><a href="#可以直接这样提示-AI" class="headerlink" title="可以直接这样提示 AI"></a>可以直接这样提示 AI</h2><p>以后开新项目时，我可能会先这样要求 AI：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs text">这个项目先不要急着写功能。<br>先帮我建立项目文档，包括项目目标、功能边界、技术方案、目录结构、参考资料和开发注意事项。<br>然后初始化 Git 仓库，确保每完成一个明确阶段都提交一次。<br>后续每次改代码前，先阅读项目文档，再说明你准备改哪些文件。<br></code></pre></td></tr></table></figure>
 
-<p>这段提示的重点，是把 AI 从“帮我继续想”拉回到“帮我落地”。</p>
-<p>AI 很适合扩展。</p>
-<p>但现在我更需要收束。</p>
-<h2 id="现在的结论"><a href="#现在的结论" class="headerlink" title="现在的结论"></a>现在的结论</h2><p>做 AI 开发挺焦虑的，这很正常。</p>
-<p>因为 AI 把开发门槛降低了，也把对比速度拉高了。你会感觉别人都在快速产出，别人都在赚钱，自己如果还没做出东西，就像落后了一大截。</p>
-<p>但焦虑本身不能产出项目。</p>
-<p>一直换方向也不能。</p>
-<p>真正能缓解焦虑的，可能不是再开一个新项目，而是先把一个旧项目做完，哪怕只是做完一个很小的版本。</p>
-<p>消耗 token 不等于进度。</p>
-<p>AI 写了很多代码，也不等于项目落地。</p>
-<p>以后我得更克制一点。</p>
-<p>少开坑。</p>
-<p>少比较。</p>
-<p>少幻想一步到位。</p>
-<p>先做出一个能上线、能使用、能展示的东西。</p>
-<p>哪怕它很小，也比一堆做到一半的项目强。</p>
+<p>这不一定能完全避免问题，但至少能让 AI 不至于想到哪做到哪。</p>
+<h2 id="现在的结论"><a href="#现在的结论" class="headerlink" title="现在的结论"></a>现在的结论</h2><p>用 AI 开发新项目，前期越省事，后期越容易还债。</p>
+<p>版本管理和项目文档看起来像是准备工作，但其实是在给整个项目上保险。尤其是 AI 写代码速度太快了，如果没有版本和文档兜底，项目很容易做到一半才发现：方向偏了，参考内容忘了，代码也不知道从哪里开始变味了。</p>
+<p>所以以后再开新项目，第一步不是让 AI 直接开写，而是先把 GitHub 和项目文档安排上。</p>
 
                 
               </div>
@@ -494,13 +449,11 @@
       
         <a href="/tags/AI/" class="print-no-link">#AI</a>
       
-        <a href="/tags/Codex/" class="print-no-link">#Codex</a>
-      
         <a href="/tags/Vibe-Coding/" class="print-no-link">#Vibe Coding</a>
       
-        <a href="/tags/%E5%B7%A5%E5%85%B7/" class="print-no-link">#工具</a>
-      
         <a href="/tags/%E4%BD%BF%E7%94%A8%E6%84%9F%E5%8F%97/" class="print-no-link">#使用感受</a>
+      
+        <a href="/tags/%E9%A1%B9%E7%9B%AE%E8%A7%84%E8%8C%83/" class="print-no-link">#项目规范</a>
       
     </div>
   
@@ -512,8 +465,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>做 AI 开发挺焦虑的：别一直消耗 token，却没有一个落地项目</div>
-      <div>https://lanyu23.github.io/2026/07/04/ai-development-anxiety-reflection/</div>
+      <div>用 AI 启动新项目，先把版本管理和项目文档搭起来</div>
+      <div>https://lanyu23.github.io/2026/07/08/ai-new-project-version-docs-reflection/</div>
     </div>
     <div class="license-meta">
       
@@ -525,7 +478,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2026年7月4日</div>
+          <div>2026年7月8日</div>
         </div>
       
       
@@ -569,9 +522,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2026/07/04/ai-conversation-boundaries-reflection/" title="使用 AI 对话做东西，一定要先设置好约束">
+                      <a href="/2026/07/08/ai-project-technical-plan-first-reflection/" title="用 AI 开新项目前，技术方案一定要先想清楚">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">使用 AI 对话做东西，一定要先设置好约束</span>
+                        <span class="hidden-mobile">用 AI 开新项目前，技术方案一定要先想清楚</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -579,8 +532,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2026/07/04/ai-project-framework-first-reflection/" title="使用 AI 开发东西，一定要先定好项目框架">
-                        <span class="hidden-mobile">使用 AI 开发东西，一定要先定好项目框架</span>
+                      <a href="/2026/07/07/ai-large-materials-context-overload-reflection/" title="让 AI 执行任务时，别把大图材料都塞进对话上下文">
+                        <span class="hidden-mobile">让 AI 执行任务时，别把大图材料都塞进对话上下文</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

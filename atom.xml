@@ -6,7 +6,7 @@
   <link href="https://lanyu23.github.io/atom.xml" rel="self"/>
   
   <link href="https://lanyu23.github.io/"/>
-  <updated>2026-07-07T10:34:35.193Z</updated>
+  <updated>2026-07-07T20:26:06.230Z</updated>
   <id>https://lanyu23.github.io/</id>
   
   <author>
@@ -15,6 +15,108 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>同一个 AI 模型，不同对话里的表现差别真的很大</title>
+    <link href="https://lanyu23.github.io/2026/07/08/ai-long-chat-context-degradation-reflection/"/>
+    <id>https://lanyu23.github.io/2026/07/08/ai-long-chat-context-degradation-reflection/</id>
+    <published>2026-07-07T16:00:00.000Z</published>
+    <updated>2026-07-07T20:26:06.230Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>一句话：同一个 AI 模型，在不同对话里的表现差别真的很大。一个用很久的长对话，和一个刚开始的新对话，体验完全不是一回事。</p></blockquote><p>最近用 AI 对话做东西时，我越来越明显感觉到一个问题：相同模型之间的差别，其实也可以很大。</p><p>这就像人与人之间，虽然都是人，但是差别也很大。AI 模型也是一样，名字看起来是同一个模型，但它在不同对话里的状态，可能完全不一样。</p><p>大在哪呢？</p><p>一个已经塞了很多上下文、用了很久的对话，和一个刚输入一句话的新对话，哪个性能更好？</p><p>经过我的体验，答案很明显：新对话往往更好。</p><h2 id="长对话越用越像降智"><a href="#长对话越用越像降智" class="headerlink" title="长对话越用越像降智"></a>长对话越用越像降智</h2><p>一个对话用得越久，越容易出现一种很怪的感觉：它好像越来越笨了。</p><p>前面说过的东西，它可能记不清；当前真正要解决的问题，它可能抓不到重点；你给它一段需求，它可能只挑最简单的一部分去做。明明模型没换，但表现就像突然变迟钝了一样。</p><p>而刚开的新对话就不一样。</p><p>刚输入一句话的新对话，有时候就跟冉冉升起的新星一样，光芒璀璨，耀眼夺目。它没有被一堆历史上下文拖住，理解问题更干净，回答也更直接。</p><h2 id="同一段话，在两个对话里可能完全不同"><a href="#同一段话，在两个对话里可能完全不同" class="headerlink" title="同一段话，在两个对话里可能完全不同"></a>同一段话，在两个对话里可能完全不同</h2><p>比如我在一个长对话里说：</p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs text">这个功能现在跑偏了，你先不要改代码，先帮我分析可能是哪几个环节导致的。<br></code></pre></td></tr></table></figure><p>长对话里的 AI 可能会这样理解：它看到了“跑偏”和“改代码”，然后直接开始找一个看起来最像问题的地方动手改。最后代码确实改了，但问题不一定解决，甚至还可能引入新的问题。</p><p>但如果换成一个新对话，把项目背景总结清楚后再说同样的话，它可能就会先列出几个可能原因，再告诉你每个原因应该怎么验证，最后才建议从哪里改。</p><p>同样是类似的输入语句，同一个模型，在两个对话里的表现就会有明显差异。</p><p>这也是我现在越来越不想在一个对话里死磕到底的原因。</p><h2 id="更好的做法是总结后开新对话"><a href="#更好的做法是总结后开新对话" class="headerlink" title="更好的做法是总结后开新对话"></a>更好的做法是总结后开新对话</h2><p>以后为了减少这种问题，我觉得更好的方式不是一直在同一个对话里硬撑，而是定期总结，然后对接到新对话里。</p><p>比如一个项目做到一个阶段后，就让 AI 总结：</p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs text">请总结当前项目状态，包括已经完成的功能、关键文件、已知问题、不能随便改的地方、下一步目标，以及后续对话需要优先阅读的文档。<br></code></pre></td></tr></table></figure><p>然后把这份总结带到新对话里，再继续往下做。</p><p>这样虽然多了一步总结，但整体效率可能更高。因为你得到的是一个更干净的新对话，而不是一个已经塞满历史包袱、随时可能跑偏的旧对话。</p><h2 id="现在的结论"><a href="#现在的结论" class="headerlink" title="现在的结论"></a>现在的结论</h2><p>AI 对话不能只看模型名字，也要看这个对话本身的状态。</p><p>同一个模型，一个长时间使用、上下文混乱的对话，和一个刚开始、目标清晰的新对话，表现差距可能非常明显。</p><p>所以以后做项目，不能迷信“一个对话从头做到尾”。该总结就总结，该换新对话就换新对话。比起一直在旧对话里硬熬，多总结、多接力，反而更容易得到有价值的答案。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;一句话：同一个 AI 模型，在不同对话里的表现差别真的很大。一个用很久的长对话，和一个刚开始的新对话，体验完全不是一回事。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;最近用 AI 对话做东西时，我越来越明显感觉到一个问题：相同模型之间的差别，其实也</summary>
+      
+    
+    
+    
+    <category term="AI 工具手记" scheme="https://lanyu23.github.io/categories/AI-%E5%B7%A5%E5%85%B7%E6%89%8B%E8%AE%B0/"/>
+    
+    
+    <category term="AI" scheme="https://lanyu23.github.io/tags/AI/"/>
+    
+    <category term="Vibe Coding" scheme="https://lanyu23.github.io/tags/Vibe-Coding/"/>
+    
+    <category term="使用感受" scheme="https://lanyu23.github.io/tags/%E4%BD%BF%E7%94%A8%E6%84%9F%E5%8F%97/"/>
+    
+    <category term="上下文" scheme="https://lanyu23.github.io/tags/%E4%B8%8A%E4%B8%8B%E6%96%87/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>用 AI 开新项目前，技术方案一定要先想清楚</title>
+    <link href="https://lanyu23.github.io/2026/07/08/ai-project-technical-plan-first-reflection/"/>
+    <id>https://lanyu23.github.io/2026/07/08/ai-project-technical-plan-first-reflection/</id>
+    <published>2026-07-07T16:00:00.000Z</published>
+    <updated>2026-07-07T20:26:06.234Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>一句话：用 AI 开新项目前，技术方案一定要先明确。不然 AI 可能会在一个错误方案上疯狂调参，最后浪费半天时间，还解决不了真正的问题。</p></blockquote><p>最近做一个项目时，又踩了一个挺典型的坑。</p><p>这个项目的大概需求是：上传一张游戏小地图截图，然后查找对应的游戏具体路线图。听起来很明确，但我一开始没有把技术方案想清楚，只是让 AI 先做一个最简单、可验证的方案。</p><p>AI 推荐的是灰度验证。</p><p>这个方案一开始看起来没毛病，简单、能跑、方便验证。但后面实际做起来才发现，它和项目真正要解决的问题并不匹配。上传小地图截图去找路线图，不只是简单比一比灰度相似度那么粗暴，中间有很多结构、区域、轮廓、包含关系的问题。</p><p>结果就是，前面走错了技术路线，后面问题越修越怪。</p><h2 id="最坑的是-AI-会默认方案没错"><a href="#最坑的是-AI-会默认方案没错" class="headerlink" title="最坑的是 AI 会默认方案没错"></a>最坑的是 AI 会默认方案没错</h2><p>因为一开始用的是灰度验证，所以后面匹配不准的时候，AI 很自然地以为是阈值没设置好。</p><p>于是它就开始围着阈值打转。</p><p>阈值调高一点，阈值调低一点，预处理换一种，过滤条件再补一点。看起来一直在努力修 bug，但本质上是在错误的道路上越走越远。</p><p>真正的问题不是阈值，而是技术方案本身不适合。</p><p>这个时候如果没人跳出来打断它，AI 可能会继续在错误方案里找补。它不会天然怀疑“是不是我一开始选的方案就错了”，尤其是项目已经沿着这个方向写了一堆代码以后。</p><h2 id="后面换方案才开始对路"><a href="#后面换方案才开始对路" class="headerlink" title="后面换方案才开始对路"></a>后面换方案才开始对路</h2><p>后面我干预以后，把方案换成了更适合这个需求的结构图包含匹配技术。</p><p>这个方向才更接近问题本身：不是只看像不像，而是看上传的小地图结构能不能在路线图里找到对应位置。换成这个思路以后，上传地图找到正确路线图的准确性才明显提高。</p><p>也就是说，这不是简单的参数问题，而是路线问题。</p><p>如果技术路线错了，再怎么调参都只是原地消耗 token。看起来很忙，实际是在给错误方案续命。</p><h2 id="以后开项目前要先问技术方案"><a href="#以后开项目前要先问技术方案" class="headerlink" title="以后开项目前要先问技术方案"></a>以后开项目前要先问技术方案</h2><p>以后再用 AI 开新项目，我觉得不能一上来就让它写代码。</p><p>至少要先让它把技术方案讲清楚：</p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs text">这个项目先不要写代码。<br>请先分析需求本质，列出 3 个可选技术方案。<br>每个方案说明适用场景、优点、缺点、失败风险、验证方式。<br>最后推荐一个方案，并说明为什么它比其他方案更适合当前项目。<br></code></pre></td></tr></table></figure><p>如果项目里有图像识别、匹配、搜索、推荐、路径规划这种关键算法，更应该先做方案对比。</p><p>因为这些东西一旦选错技术路线，后面不是修几个 bug 就能解决的。</p><h2 id="现在的结论"><a href="#现在的结论" class="headerlink" title="现在的结论"></a>现在的结论</h2><p>AI 写代码很快，但它不一定会主动质疑最初的技术方案。</p><p>如果一开始方案选错了，它很可能会把后面的所有问题都理解成参数没调好、细节没补齐、代码没写对。最后就是消耗半天时间，还没有解决根本问题。</p><p>所以用 AI 开新项目前，项目文档要写，版本管理要有，技术方案更要先定清楚。</p><p>否则 AI 真的会很努力地带你在错误的路上一路狂奔，最后还得自己找到根本原因，亲自出手把方向拽回来。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;一句话：用 AI 开新项目前，技术方案一定要先明确。不然 AI 可能会在一个错误方案上疯狂调参，最后浪费半天时间，还解决不了真正的问题。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;最近做一个项目时，又踩了一个挺典型的坑。&lt;/p&gt;
+&lt;p&gt;这个项目的大</summary>
+      
+    
+    
+    
+    <category term="AI 工具手记" scheme="https://lanyu23.github.io/categories/AI-%E5%B7%A5%E5%85%B7%E6%89%8B%E8%AE%B0/"/>
+    
+    
+    <category term="AI" scheme="https://lanyu23.github.io/tags/AI/"/>
+    
+    <category term="Vibe Coding" scheme="https://lanyu23.github.io/tags/Vibe-Coding/"/>
+    
+    <category term="使用感受" scheme="https://lanyu23.github.io/tags/%E4%BD%BF%E7%94%A8%E6%84%9F%E5%8F%97/"/>
+    
+    <category term="项目规范" scheme="https://lanyu23.github.io/tags/%E9%A1%B9%E7%9B%AE%E8%A7%84%E8%8C%83/"/>
+    
+    <category term="技术方案" scheme="https://lanyu23.github.io/tags/%E6%8A%80%E6%9C%AF%E6%96%B9%E6%A1%88/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>用 AI 启动新项目，先把版本管理和项目文档搭起来</title>
+    <link href="https://lanyu23.github.io/2026/07/08/ai-new-project-version-docs-reflection/"/>
+    <id>https://lanyu23.github.io/2026/07/08/ai-new-project-version-docs-reflection/</id>
+    <published>2026-07-07T16:00:00.000Z</published>
+    <updated>2026-07-07T20:26:06.183Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>一句话：用 AI 启动新项目时，版本管理和项目文档一定要先搭好，不然项目做到一半，很容易跑偏，最后连自己一开始参考了什么都记不住。</p></blockquote><p>最近用 AI 开新项目时，又意识到一个很现实的问题：不能只想着“先让 AI 写起来再说”。</p><p>如果一开始没有用 GitHub，或者别的版本管理网站把项目管起来，后面出问题就会很难受。AI 改代码很快，但它改偏也很快。没有版本管理的话，等你发现项目方向不对、功能跑偏、原来能用的东西被改坏了，再想回退就很麻烦。</p><p>更麻烦的是项目文档。</p><p>很多时候，刚开始做项目的时候，脑子里是有一套想法的：这个项目要做什么、参考了哪些内容、功能边界在哪里、哪些东西不能乱改、哪些地方是核心逻辑。但是如果这些东西没有提前写成文档，项目做到一半就容易开始飘。</p><p>AI 也不是真的能一直记住你前面所有参考内容。</p><p>会话长了以后，它可能忘掉前面的约束，也可能抓错重点。你以为它还记得项目最初的设计目标，实际上它可能已经只盯着当前这条需求在改了。改着改着，项目就变成了另一种东西。</p><p>所以以后用 AI 启动新项目，我觉得至少要先做两件事：</p><h2 id="先把版本管理开起来"><a href="#先把版本管理开起来" class="headerlink" title="先把版本管理开起来"></a>先把版本管理开起来</h2><p>项目刚创建的时候，就应该直接用 GitHub 或者别的版本管理网站管理起来。</p><p>不用等项目做得差不多了再上传。越早上传，越早有回退点。哪怕 AI 后面某次改崩了，也能很快看 diff、回退版本，或者至少知道它到底动了哪些地方。</p><p>这不是为了显得专业，而是为了给自己留后路。</p><h2 id="再把项目文档写清楚"><a href="#再把项目文档写清楚" class="headerlink" title="再把项目文档写清楚"></a>再把项目文档写清楚</h2><p>项目文档也不能等后面再补。</p><p>一开始就应该写清楚项目目标、技术方案、目录结构、功能边界、参考资料、当前阶段要做什么。尤其是参考资料和核心约束，一定要写下来，不然等项目做到一半，自己都可能忘了最开始为什么这么设计。</p><p>文档写好了，后面让 AI 做事时，就可以直接让它先读文档，再执行任务。这样至少能降低它跑偏的概率。</p><h2 id="可以直接这样提示-AI"><a href="#可以直接这样提示-AI" class="headerlink" title="可以直接这样提示 AI"></a>可以直接这样提示 AI</h2><p>以后开新项目时，我可能会先这样要求 AI：</p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs text">这个项目先不要急着写功能。<br>先帮我建立项目文档，包括项目目标、功能边界、技术方案、目录结构、参考资料和开发注意事项。<br>然后初始化 Git 仓库，确保每完成一个明确阶段都提交一次。<br>后续每次改代码前，先阅读项目文档，再说明你准备改哪些文件。<br></code></pre></td></tr></table></figure><p>这不一定能完全避免问题，但至少能让 AI 不至于想到哪做到哪。</p><h2 id="现在的结论"><a href="#现在的结论" class="headerlink" title="现在的结论"></a>现在的结论</h2><p>用 AI 开发新项目，前期越省事，后期越容易还债。</p><p>版本管理和项目文档看起来像是准备工作，但其实是在给整个项目上保险。尤其是 AI 写代码速度太快了，如果没有版本和文档兜底，项目很容易做到一半才发现：方向偏了，参考内容忘了，代码也不知道从哪里开始变味了。</p><p>所以以后再开新项目，第一步不是让 AI 直接开写，而是先把 GitHub 和项目文档安排上。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;一句话：用 AI 启动新项目时，版本管理和项目文档一定要先搭好，不然项目做到一半，很容易跑偏，最后连自己一开始参考了什么都记不住。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;最近用 AI 开新项目时，又意识到一个很现实的问题：不能只想着“先让 AI</summary>
+      
+    
+    
+    
+    <category term="AI 工具手记" scheme="https://lanyu23.github.io/categories/AI-%E5%B7%A5%E5%85%B7%E6%89%8B%E8%AE%B0/"/>
+    
+    
+    <category term="AI" scheme="https://lanyu23.github.io/tags/AI/"/>
+    
+    <category term="Vibe Coding" scheme="https://lanyu23.github.io/tags/Vibe-Coding/"/>
+    
+    <category term="使用感受" scheme="https://lanyu23.github.io/tags/%E4%BD%BF%E7%94%A8%E6%84%9F%E5%8F%97/"/>
+    
+    <category term="项目规范" scheme="https://lanyu23.github.io/tags/%E9%A1%B9%E7%9B%AE%E8%A7%84%E8%8C%83/"/>
+    
+  </entry>
   
   <entry>
     <title>让 AI 执行任务时，别把大图材料都塞进对话上下文</title>
@@ -89,42 +191,6 @@
   </entry>
   
   <entry>
-    <title>做 AI 开发挺焦虑的：别一直消耗 token，却没有一个落地项目</title>
-    <link href="https://lanyu23.github.io/2026/07/04/ai-development-anxiety-reflection/"/>
-    <id>https://lanyu23.github.io/2026/07/04/ai-development-anxiety-reflection/</id>
-    <published>2026-07-03T16:00:00.000Z</published>
-    <updated>2026-07-04T12:54:41.356Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><p>一句话：做 AI 开发最怕的不是不会用 AI，而是一直消耗 token、一直开新坑，最后没有一个真正落地的项目。</p></blockquote><p>最近做 AI 开发，感觉其实挺焦虑的。</p><p>一方面，看别人都在用 AI 开发赚钱了。各种项目、产品、插件、自动化、小工具，好像别人随便一做就能变现。</p><p>另一方面，自己这边消耗了一堆 token，折腾了很多想法，但回头一看，好像还是什么都没有。</p><p>这感觉就挺难受的。</p><p>不是完全没做事。</p><p>而是做了很多，但没有一个项目真正落地。</p><h2 id="这次遇到的问题"><a href="#这次遇到的问题" class="headerlink" title="这次遇到的问题"></a>这次遇到的问题</h2><p>最大的问题是：自己什么都想做。</p><p>看到一个方向，觉得有机会。</p><p>看到另一个项目，觉得也很有意思。</p><p>刷到别人靠 AI 做了什么东西赚钱，又觉得这个方向也应该试试。</p><p>于是今天做这个，明天做那个，做到一半又冒出新想法。新想法看起来更有价值，旧项目就先放一放。</p><p>结果旧项目没做完，新项目也没做完。</p><p>最后就是一堆半成品。</p><p>AI 倒是一直在干活，token 也一直在烧，但真正能拿出来用、能上线、能变现、能持续迭代的东西，反而没有。</p><p>这就很尴尬。</p><h2 id="最容易踩的坑"><a href="#最容易踩的坑" class="headerlink" title="最容易踩的坑"></a>最容易踩的坑</h2><p>做 AI 开发很容易产生一种错觉：只要 AI 能写代码，那项目就快完成了。</p><p>但实际不是。</p><p>AI 能把代码写出来，不代表项目能落地。</p><p>项目落地还需要明确需求、稳定框架、验收标准、真实用户场景、部署、维护、推广，甚至还要想清楚这个东西到底解决谁的问题。</p><p>如果这些都没想清楚，AI 写得越快，可能只是越快把你带到下一个半成品。</p><p>还有一个坑，就是看别人赚钱会放大焦虑。</p><p>别人展示出来的，往往是结果。</p><p>你看到的是他上线了、卖钱了、有用户了，但你看不到他前面踩了多少坑，砍掉多少方向，熬了多少时间。</p><p>然后自己一对比，就会觉得：别人都成了，我怎么还在原地。</p><p>这种对比很容易让人心态变乱。</p><p>心态一乱，就更想换方向。</p><p>换方向越多，越没有结果。</p><p>越没有结果，越焦虑。</p><p>这就是循环。</p><h2 id="更好的做法"><a href="#更好的做法" class="headerlink" title="更好的做法"></a>更好的做法</h2><p>我现在觉得，做 AI 开发不能再只靠兴奋感推进。</p><p>兴奋感只能让人开坑。</p><p>不能保证项目落地。</p><p>以后最好给自己设几个限制。</p><p>第一，一段时间只做一个主项目。</p><p>不是说其他想法不能记，而是不能每个想法都立刻开工。新想法先丢到待办池，主项目没有到最小可用版本之前，不开新坑。</p><p>第二，先做最小可用版本。</p><p>不要一开始就想做完整产品。先做一个能跑、能演示、能解决一个具体问题的小版本。哪怕很丑，哪怕功能很少，也比一堆宏大规划强。</p><p>第三，给项目设一个结束条件。</p><p>比如三天内做出 demo，一周内做出可用版本，两周内上线第一版。没有结束条件，项目就会一直变成“再优化一下”。</p><p>第四，限制 token 消耗。</p><p>不是舍不得用，而是要让 token 花在最该花的地方。比如先让 AI 帮你定范围、拆任务、做验收清单，再进入实现。不要一上来就疯狂生成代码，最后发现方向错了。</p><p>第五，每天都要问一句：今天有没有让项目更接近上线。</p><p>如果答案是否定的，那可能只是又在探索、又在优化、又在换方向。</p><p>探索当然有价值。</p><p>但不能一直探索。</p><h2 id="可以直接这样提示-AI"><a href="#可以直接这样提示-AI" class="headerlink" title="可以直接这样提示 AI"></a>可以直接这样提示 AI</h2><p>以后我想开新项目时，可以先这样问 AI：</p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs text">我现在想做这个项目，但我的目标不是继续开坑，而是落地一个最小可用版本。<br><br>请你先帮我做三件事：<br>1. 把这个想法压缩成一个最小可用版本，只保留必须功能<br>2. 列出 3 天内能完成的任务清单<br>3. 写出明确的验收标准：做到什么程度就算第一版完成<br><br>不要扩展新功能。<br>不要做长期规划。<br>不要建议我同时做多个方向。<br>如果我提出新想法，请先帮我判断它是否会影响当前版本落地。<br></code></pre></td></tr></table></figure><p>这段提示的重点，是把 AI 从“帮我继续想”拉回到“帮我落地”。</p><p>AI 很适合扩展。</p><p>但现在我更需要收束。</p><h2 id="现在的结论"><a href="#现在的结论" class="headerlink" title="现在的结论"></a>现在的结论</h2><p>做 AI 开发挺焦虑的，这很正常。</p><p>因为 AI 把开发门槛降低了，也把对比速度拉高了。你会感觉别人都在快速产出，别人都在赚钱，自己如果还没做出东西，就像落后了一大截。</p><p>但焦虑本身不能产出项目。</p><p>一直换方向也不能。</p><p>真正能缓解焦虑的，可能不是再开一个新项目，而是先把一个旧项目做完，哪怕只是做完一个很小的版本。</p><p>消耗 token 不等于进度。</p><p>AI 写了很多代码，也不等于项目落地。</p><p>以后我得更克制一点。</p><p>少开坑。</p><p>少比较。</p><p>少幻想一步到位。</p><p>先做出一个能上线、能使用、能展示的东西。</p><p>哪怕它很小，也比一堆做到一半的项目强。</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;一句话：做 AI 开发最怕的不是不会用 AI，而是一直消耗 token、一直开新坑，最后没有一个真正落地的项目。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;最近做 AI 开发，感觉其实挺焦虑的。&lt;/p&gt;
-&lt;p&gt;一方面，看别人都在用 AI 开发赚钱了</summary>
-      
-    
-    
-    
-    <category term="AI 工具手记" scheme="https://lanyu23.github.io/categories/AI-%E5%B7%A5%E5%85%B7%E6%89%8B%E8%AE%B0/"/>
-    
-    
-    <category term="AI" scheme="https://lanyu23.github.io/tags/AI/"/>
-    
-    <category term="Codex" scheme="https://lanyu23.github.io/tags/Codex/"/>
-    
-    <category term="Vibe Coding" scheme="https://lanyu23.github.io/tags/Vibe-Coding/"/>
-    
-    <category term="工具" scheme="https://lanyu23.github.io/tags/%E5%B7%A5%E5%85%B7/"/>
-    
-    <category term="使用感受" scheme="https://lanyu23.github.io/tags/%E4%BD%BF%E7%94%A8%E6%84%9F%E5%8F%97/"/>
-    
-  </entry>
-  
-  <entry>
     <title>使用 AI 对话做东西，一定要先设置好约束</title>
     <link href="https://lanyu23.github.io/2026/07/04/ai-conversation-boundaries-reflection/"/>
     <id>https://lanyu23.github.io/2026/07/04/ai-conversation-boundaries-reflection/</id>
@@ -159,6 +225,42 @@
     <category term="使用感受" scheme="https://lanyu23.github.io/tags/%E4%BD%BF%E7%94%A8%E6%84%9F%E5%8F%97/"/>
     
     <category term="项目规范" scheme="https://lanyu23.github.io/tags/%E9%A1%B9%E7%9B%AE%E8%A7%84%E8%8C%83/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>做 AI 开发挺焦虑的：别一直消耗 token，却没有一个落地项目</title>
+    <link href="https://lanyu23.github.io/2026/07/04/ai-development-anxiety-reflection/"/>
+    <id>https://lanyu23.github.io/2026/07/04/ai-development-anxiety-reflection/</id>
+    <published>2026-07-03T16:00:00.000Z</published>
+    <updated>2026-07-04T12:54:41.356Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>一句话：做 AI 开发最怕的不是不会用 AI，而是一直消耗 token、一直开新坑，最后没有一个真正落地的项目。</p></blockquote><p>最近做 AI 开发，感觉其实挺焦虑的。</p><p>一方面，看别人都在用 AI 开发赚钱了。各种项目、产品、插件、自动化、小工具，好像别人随便一做就能变现。</p><p>另一方面，自己这边消耗了一堆 token，折腾了很多想法，但回头一看，好像还是什么都没有。</p><p>这感觉就挺难受的。</p><p>不是完全没做事。</p><p>而是做了很多，但没有一个项目真正落地。</p><h2 id="这次遇到的问题"><a href="#这次遇到的问题" class="headerlink" title="这次遇到的问题"></a>这次遇到的问题</h2><p>最大的问题是：自己什么都想做。</p><p>看到一个方向，觉得有机会。</p><p>看到另一个项目，觉得也很有意思。</p><p>刷到别人靠 AI 做了什么东西赚钱，又觉得这个方向也应该试试。</p><p>于是今天做这个，明天做那个，做到一半又冒出新想法。新想法看起来更有价值，旧项目就先放一放。</p><p>结果旧项目没做完，新项目也没做完。</p><p>最后就是一堆半成品。</p><p>AI 倒是一直在干活，token 也一直在烧，但真正能拿出来用、能上线、能变现、能持续迭代的东西，反而没有。</p><p>这就很尴尬。</p><h2 id="最容易踩的坑"><a href="#最容易踩的坑" class="headerlink" title="最容易踩的坑"></a>最容易踩的坑</h2><p>做 AI 开发很容易产生一种错觉：只要 AI 能写代码，那项目就快完成了。</p><p>但实际不是。</p><p>AI 能把代码写出来，不代表项目能落地。</p><p>项目落地还需要明确需求、稳定框架、验收标准、真实用户场景、部署、维护、推广，甚至还要想清楚这个东西到底解决谁的问题。</p><p>如果这些都没想清楚，AI 写得越快，可能只是越快把你带到下一个半成品。</p><p>还有一个坑，就是看别人赚钱会放大焦虑。</p><p>别人展示出来的，往往是结果。</p><p>你看到的是他上线了、卖钱了、有用户了，但你看不到他前面踩了多少坑，砍掉多少方向，熬了多少时间。</p><p>然后自己一对比，就会觉得：别人都成了，我怎么还在原地。</p><p>这种对比很容易让人心态变乱。</p><p>心态一乱，就更想换方向。</p><p>换方向越多，越没有结果。</p><p>越没有结果，越焦虑。</p><p>这就是循环。</p><h2 id="更好的做法"><a href="#更好的做法" class="headerlink" title="更好的做法"></a>更好的做法</h2><p>我现在觉得，做 AI 开发不能再只靠兴奋感推进。</p><p>兴奋感只能让人开坑。</p><p>不能保证项目落地。</p><p>以后最好给自己设几个限制。</p><p>第一，一段时间只做一个主项目。</p><p>不是说其他想法不能记，而是不能每个想法都立刻开工。新想法先丢到待办池，主项目没有到最小可用版本之前，不开新坑。</p><p>第二，先做最小可用版本。</p><p>不要一开始就想做完整产品。先做一个能跑、能演示、能解决一个具体问题的小版本。哪怕很丑，哪怕功能很少，也比一堆宏大规划强。</p><p>第三，给项目设一个结束条件。</p><p>比如三天内做出 demo，一周内做出可用版本，两周内上线第一版。没有结束条件，项目就会一直变成“再优化一下”。</p><p>第四，限制 token 消耗。</p><p>不是舍不得用，而是要让 token 花在最该花的地方。比如先让 AI 帮你定范围、拆任务、做验收清单，再进入实现。不要一上来就疯狂生成代码，最后发现方向错了。</p><p>第五，每天都要问一句：今天有没有让项目更接近上线。</p><p>如果答案是否定的，那可能只是又在探索、又在优化、又在换方向。</p><p>探索当然有价值。</p><p>但不能一直探索。</p><h2 id="可以直接这样提示-AI"><a href="#可以直接这样提示-AI" class="headerlink" title="可以直接这样提示 AI"></a>可以直接这样提示 AI</h2><p>以后我想开新项目时，可以先这样问 AI：</p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs text">我现在想做这个项目，但我的目标不是继续开坑，而是落地一个最小可用版本。<br><br>请你先帮我做三件事：<br>1. 把这个想法压缩成一个最小可用版本，只保留必须功能<br>2. 列出 3 天内能完成的任务清单<br>3. 写出明确的验收标准：做到什么程度就算第一版完成<br><br>不要扩展新功能。<br>不要做长期规划。<br>不要建议我同时做多个方向。<br>如果我提出新想法，请先帮我判断它是否会影响当前版本落地。<br></code></pre></td></tr></table></figure><p>这段提示的重点，是把 AI 从“帮我继续想”拉回到“帮我落地”。</p><p>AI 很适合扩展。</p><p>但现在我更需要收束。</p><h2 id="现在的结论"><a href="#现在的结论" class="headerlink" title="现在的结论"></a>现在的结论</h2><p>做 AI 开发挺焦虑的，这很正常。</p><p>因为 AI 把开发门槛降低了，也把对比速度拉高了。你会感觉别人都在快速产出，别人都在赚钱，自己如果还没做出东西，就像落后了一大截。</p><p>但焦虑本身不能产出项目。</p><p>一直换方向也不能。</p><p>真正能缓解焦虑的，可能不是再开一个新项目，而是先把一个旧项目做完，哪怕只是做完一个很小的版本。</p><p>消耗 token 不等于进度。</p><p>AI 写了很多代码，也不等于项目落地。</p><p>以后我得更克制一点。</p><p>少开坑。</p><p>少比较。</p><p>少幻想一步到位。</p><p>先做出一个能上线、能使用、能展示的东西。</p><p>哪怕它很小，也比一堆做到一半的项目强。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;一句话：做 AI 开发最怕的不是不会用 AI，而是一直消耗 token、一直开新坑，最后没有一个真正落地的项目。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;最近做 AI 开发，感觉其实挺焦虑的。&lt;/p&gt;
+&lt;p&gt;一方面，看别人都在用 AI 开发赚钱了</summary>
+      
+    
+    
+    
+    <category term="AI 工具手记" scheme="https://lanyu23.github.io/categories/AI-%E5%B7%A5%E5%85%B7%E6%89%8B%E8%AE%B0/"/>
+    
+    
+    <category term="AI" scheme="https://lanyu23.github.io/tags/AI/"/>
+    
+    <category term="Codex" scheme="https://lanyu23.github.io/tags/Codex/"/>
+    
+    <category term="Vibe Coding" scheme="https://lanyu23.github.io/tags/Vibe-Coding/"/>
+    
+    <category term="工具" scheme="https://lanyu23.github.io/tags/%E5%B7%A5%E5%85%B7/"/>
+    
+    <category term="使用感受" scheme="https://lanyu23.github.io/tags/%E4%BD%BF%E7%94%A8%E6%84%9F%E5%8F%97/"/>
     
   </entry>
   
@@ -647,119 +749,6 @@
     <category term="使用感受" scheme="https://lanyu23.github.io/tags/%E4%BD%BF%E7%94%A8%E6%84%9F%E5%8F%97/"/>
     
     <category term="Debug" scheme="https://lanyu23.github.io/tags/Debug/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>给 AI 权限一定要慎重：一次本地程序被拉起的教训</title>
-    <link href="https://lanyu23.github.io/2026/06/17/ai-permission-uac-loop-reflection/"/>
-    <id>https://lanyu23.github.io/2026/06/17/ai-permission-uac-loop-reflection/</id>
-    <published>2026-06-16T16:18:32.000Z</published>
-    <updated>2026-06-16T17:52:10.545Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><p>一句话：AI 能帮你改代码是一回事，给它完全访问权限又是另一回事；权限一旦放太开，它可能真的会动到你不希望它动的本机环境。</p></blockquote><p>最近又遇到了一次让我很警醒的事情。</p><p>前面我已经感受过 Vibe Coding 容易走弯路，尤其是在边界没说清楚的时候，AI 可能会自己做一些我并没有要求的操作。但这一次更离谱一点，因为它不只是改代码，而是直接把我本地的软件程序拉起来了。</p><p>事情本身其实很简单：我使用 Codex，给了它完全访问权限，然后让它在项目里增加某个新功能。</p><p>我的需求是改项目代码。</p><p>但它在处理过程中，直接在我的本地电脑上拉起了软件程序。</p><p>这个动作不是我要求的。我没有说“帮我运行这个软件”，也没有说“你可以启动本机程序验证”。我只是让它增加功能，结果它像是默认认为：既然有权限，那就可以直接运行起来看看。</p><p>这一下我就觉得不对劲了。</p><h2 id="我为什么立刻终止"><a href="#我为什么立刻终止" class="headerlink" title="我为什么立刻终止"></a>我为什么立刻终止</h2><p>发现这个异常现象之后，我第一反应就是直接终止 AI 的运行。</p><p>因为这已经不是普通的“代码写错了”或者“测试跑偏了”。如果 AI 只是改错一个文件，我还能看 diff、回滚、修正。但它直接拉起本机程序，就说明它的操作范围已经从项目代码扩展到了真实系统环境。</p><p>这就很危险。</p><p>尤其是我并不知道它接下来还会做什么。它可能只是想验证功能，也可能会继续点什么、调用什么、写入什么。虽然它未必有恶意，但问题是，工具没有恶意不代表结果没有风险。</p><p>所以我选择先停下来。</p><p>但更麻烦的事情还在后面。</p><h2 id="程序关不掉了"><a href="#程序关不掉了" class="headerlink" title="程序关不掉了"></a>程序关不掉了</h2><p>我想把被拉起来的软件程序关掉，结果发现一关闭程序，UAC 弹窗又会跳出来。</p><p>我点否，不行。</p><p>我点右上角叉叉，不行。</p><p>我按 Esc 关掉 UAC 弹窗，也不行。</p><p>它就这么循环，像是必须让我点“是”才肯继续。问题是，我本来就不想让它继续，也不想随便给这个程序管理员权限。于是场面变得很尴尬：程序关不掉，UAC 弹窗又一直回来，整个事情被卡在一个特别烦人的状态里。</p><p>这时候最让我不舒服的，不只是程序本身，而是那种控制感突然被拿走的感觉。</p><p>本来我只是让 AI 改代码，结果最后变成我在跟一个本地程序和 UAC 弹窗周旋。这个偏离程度就很夸张。</p><h2 id="最后怎么结束的"><a href="#最后怎么结束的" class="headerlink" title="最后怎么结束的"></a>最后怎么结束的</h2><p>最后还是问 AI 解决的。</p><p>它建议我修改程序文件名，让系统找不到原来的程序路径，这样就不会再继续调用并拉起它。改完之后，程序终于不会再被找到，也不会继续打开，这场闹剧才算停下来。</p><p>这个解决方式有点荒诞。</p><p>问题是 AI 自己操作边界不清，拉起了不该拉起的程序；最后我又要问 AI 怎么把这个局面收住。虽然最后确实解决了，但这个过程让我很明确地意识到一件事：给 AI 完全访问权限，真的不能太随意。</p><h2 id="完全访问权限不是普通权限"><a href="#完全访问权限不是普通权限" class="headerlink" title="完全访问权限不是普通权限"></a>完全访问权限不是普通权限</h2><p>以前我可能会觉得，给完全访问权限只是为了让它更方便工作。</p><p>它可以看项目、改文件、跑命令、生成结果。这样效率确实高，很多事情不用来回授权，也不用每一步都确认。</p><p>但现在看，完全访问权限不是“更方便一点”的权限，而是“它真的能动你电脑”的权限。</p><p>它能跑命令，就可能启动程序。</p><p>它能改文件，就可能改到项目之外。</p><p>它能测试功能，就可能在真实环境里制造副作用。</p><p>它能自己判断下一步，就可能把你的“改代码”理解成“运行软件验证一下”。</p><p>这不是说 AI 一定会乱来，而是说只要边界没说清楚，它就可能把很多本该先问的事情当成默认可以做。</p><h2 id="以后我会怎么限制"><a href="#以后我会怎么限制" class="headerlink" title="以后我会怎么限制"></a>以后我会怎么限制</h2><p>这次之后，我对 AI 权限的态度会更保守一点。</p><p>第一，能不给完全访问权限，就不要一上来给。</p><p>有些任务只需要读代码、改项目文件、跑项目内部测试，并不需要访问整个系统。权限给得越小，风险面就越小。</p><p>第二，必须明确禁止启动本机程序。</p><p>除非我明确说“你可以运行这个程序”，否则不要打开软件、不要调用系统应用、不要弹 UAC、不要触碰任何需要管理员权限的东西。</p><p>第三，涉及系统级操作必须先确认。</p><p>比如启动程序、修改环境变量、写入系统目录、注册表、服务、启动项、桌面快捷方式、UAC 相关操作，这些都不应该默认执行。</p><p>第四，测试要尽量限制在项目内部。</p><p>如果只是验证功能，能用临时目录就用临时目录，能用 mock 就用 mock，能只检查生成结果就不要动真实环境。AI 最容易出问题的地方，就是把“验证”做成了“真实执行”。</p><p>第五，发现异常要立刻停。</p><p>这次我觉得自己做对的一点，就是看到它拉起本地程序后，直接终止了 AI 运行。不要等它“做完再说”。如果操作方向已经偏了，继续让它跑只会扩大不确定性。</p><h2 id="现在的感受"><a href="#现在的感受" class="headerlink" title="现在的感受"></a>现在的感受</h2><p>我并不是不用 AI，也不是觉得 Codex 不好用。</p><p>恰恰相反，就是因为它太好用，太能动手，所以权限问题才更重要。</p><p>普通聊天 AI 说错一句话，最多是答案不能用。但这种能读写文件、能跑命令、能操作项目的 AI，一旦判断错场景，后果就会真实落到你的电脑上。</p><p>这次它直接拉起本地软件，还引发 UAC 弹窗循环，算是给我提了个醒：AI 的执行力越强，越不能把控制权完全交出去。</p><p>以后再用这类工具，我会更早讲清楚边界。</p><p>可以改项目代码。</p><p>可以跑我允许的测试。</p><p>可以生成文件到指定目录。</p><p>但不能默认启动本机程序，不能默认做系统级操作，更不能在没有明确许可的情况下碰 UAC 这种东西。</p><p>给 AI 权限，一定要慎重。</p><p>有些权限一旦给出去，AI 不一定会乱用，但你必须假设它可能误用。</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;一句话：AI 能帮你改代码是一回事，给它完全访问权限又是另一回事；权限一旦放太开，它可能真的会动到你不希望它动的本机环境。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;最近又遇到了一次让我很警醒的事情。&lt;/p&gt;
-&lt;p&gt;前面我已经感受过 Vibe Co</summary>
-      
-    
-    
-    
-    <category term="AI 工具手记" scheme="https://lanyu23.github.io/categories/AI-%E5%B7%A5%E5%85%B7%E6%89%8B%E8%AE%B0/"/>
-    
-    
-    <category term="AI" scheme="https://lanyu23.github.io/tags/AI/"/>
-    
-    <category term="Codex" scheme="https://lanyu23.github.io/tags/Codex/"/>
-    
-    <category term="Vibe Coding" scheme="https://lanyu23.github.io/tags/Vibe-Coding/"/>
-    
-    <category term="工具" scheme="https://lanyu23.github.io/tags/%E5%B7%A5%E5%85%B7/"/>
-    
-    <category term="使用感受" scheme="https://lanyu23.github.io/tags/%E4%BD%BF%E7%94%A8%E6%84%9F%E5%8F%97/"/>
-    
-    <category term="权限" scheme="https://lanyu23.github.io/tags/%E6%9D%83%E9%99%90/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>《釜山行》观后感：人有时候比丧尸还可怕</title>
-    <link href="https://lanyu23.github.io/2026/06/16/train-to-busan-review/"/>
-    <id>https://lanyu23.github.io/2026/06/16/train-to-busan-review/</id>
-    <published>2026-06-15T16:18:00.000Z</published>
-    <updated>2026-06-16T16:25:17.300Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><p>一句话：丧尸片的外壳下面，最主要讲的还是人性；有些时候，人真的比丧尸还可怕。</p></blockquote><h2 id="基本信息"><a href="#基本信息" class="headerlink" title="基本信息"></a>基本信息</h2><div class="movie-info-grid">  <figure class="movie-poster">    <img src="https://image.tmdb.org/t/p/original/7tTkHe3LJ5dEJtBezl4gh74uhF.jpg" alt="《釜山行》电影海报">    <figcaption>电影海报</figcaption>  </figure>  <table class="movie-meta-table">    <tbody>      <tr><th>片名</th><td>釜山行</td></tr>      <tr><th>原名</th><td>부산행 / Train to Busan</td></tr>      <tr><th>年份</th><td>2016</td></tr>      <tr><th>导演</th><td>延尚昊</td></tr>      <tr><th>主演</th><td>孔刘 / 郑有美 / 马东锡 / 金秀安 / 金义城 / 崔宇植 / 安昭熙</td></tr>      <tr><th>类型</th><td>动作 / 惊悚 / 灾难 / 丧尸</td></tr>      <tr><th>地区</th><td>韩国</td></tr>      <tr><th>片长</th><td>118 分钟</td></tr>      <tr><th>观看日期</th><td>2026-06-16</td></tr>      <tr><th>我的评分</th><td>8分</td></tr>    </tbody>  </table></div><h2 id="推荐程度"><a href="#推荐程度" class="headerlink" title="推荐程度"></a>推荐程度</h2><ul><li>推荐给：喜欢丧尸片、灾难逃生、人性冲突，以及节奏紧张电影的人。</li><li>不太适合：完全不能接受丧尸题材、血腥惊吓，或者讨厌煽情结尾的人。</li><li>关键词：丧尸、列车、灾难、人性、自私、父女、韩国电影。</li></ul><h2 id="无剧透短评"><a href="#无剧透短评" class="headerlink" title="无剧透短评"></a>无剧透短评</h2><p>《釜山行》是一部很标准、也很成熟的丧尸片。</p><p>它表面上拍的是一列开往釜山的列车，在丧尸爆发之后变成了封闭的逃生空间。但看完整部电影，我觉得它最主要表达的并不是丧尸有多可怕，而是人性在极端环境下会变成什么样。</p><p>丧尸当然危险，速度快、数量多、感染性强，一旦失控就很难拦住。但丧尸的可怕是直接的，它们就是灾难本身。真正让人不舒服的，反而是那些明明还活着、还清醒，却为了自己活下去可以牺牲别人、推开别人、污名化别人的人。</p><p>某种程度上，人比丧尸还可怕。</p><p>电影剧情整体可圈可点，节奏也还可以。它不是那种只靠血浆和惊吓撑起来的丧尸片，而是把封闭空间、群体恐慌、个人选择都揉在一起，让观众一边紧张一边生气。</p><p>所以我给 8 分。它不一定每个地方都完美，但作为丧尸片和人性灾难片，都算是完成度很高的一部。</p><h2 id="我喜欢的地方"><a href="#我喜欢的地方" class="headerlink" title="我喜欢的地方"></a>我喜欢的地方</h2><ul><li>列车这个封闭空间用得很好，逃不出去、躲不开，紧张感很自然。</li><li>丧尸危机和人性冲突结合得不错，不只是单纯打怪逃命。</li><li>人物之间的对比很明显，有人自私到让人恨，也有人在关键时候愿意承担。</li><li>节奏比较稳，该爆发的时候能爆发，该压迫的时候也能压住。</li><li>父女线虽然有煽情，但确实能撑起人物变化。</li></ul><h2 id="我没那么喜欢的地方"><a href="#我没那么喜欢的地方" class="headerlink" title="我没那么喜欢的地方"></a>我没那么喜欢的地方</h2><ul><li>有些反派角色的自私写得比较直白，坏得很明确，少了一点复杂度。</li><li>结尾情绪比较用力，能打动人，但也能感觉到它在刻意推泪点。</li><li>丧尸片套路还是能看出来一些，比如封闭空间、牺牲、群体互相猜疑这些。</li></ul><h2 id="印象深刻"><a href="#印象深刻" class="headerlink" title="印象深刻"></a>印象深刻</h2><p>最让我印象深刻的不是某一只丧尸，而是人群在恐慌里的反应。</p><p>危险来临的时候，很多人第一反应不是一起想办法，而是先划分“我们”和“他们”。只要觉得别人可能带来风险，就可以立刻把对方推出去，哪怕对方刚刚还在拼命帮所有人活下来。</p><p>这种地方比丧尸咬人更让人难受。</p><p>因为丧尸没有理智，不能讲道理，也没有道德判断。但人不一样。人明明知道自己在做什么，还是会为了保住自己，把别人推进危险里。</p><h2 id="剧透感想"><a href="#剧透感想" class="headerlink" title="剧透感想"></a>剧透感想</h2><blockquote><p>以下有剧透。</p></blockquote><p>《釜山行》的故事其实并不复杂：丧尸病毒爆发，一群人困在列车上，不断往釜山方向逃。</p><p>但它好看的地方就在于，列车不仅是逃生工具，也是一个小型社会。不同身份、不同性格的人被塞进同一个空间，外面是丧尸，里面是恐惧、猜疑、自私和选择。</p><p>男主一开始并不是那种很讨喜的英雄。他更像一个现实里很常见的人，忙、冷、精明，也比较先考虑自己和女儿。这个起点反而让后面的变化更有意义。灾难逼着他看见别人，也逼着他从一个只想保护自己小家庭的人，慢慢变成愿意承担的人。</p><p>马东锡那个角色就很直接，强、有担当，关键时候能顶上去。他的存在让电影有了很强的安全感，也让后面的牺牲更有冲击力。相比之下，那个自私到极致的乘客就特别让人火大。他不是丧尸，却一直在制造比丧尸更恶心的伤害。</p><p>我觉得这也是电影最想表达的部分。</p><p>丧尸带来的威胁很明确：被咬就感染，被追上就死。但人的威胁更难防。有人会在你最需要帮助的时候关门，有人会为了自己活命把别人推出去，有人会带着一群人用恐惧合理化自己的残忍。</p><p>某种程度上，这比丧尸更可怕。</p><p>因为丧尸不会伪装成正常人，它们的危险写在脸上。但人性的自私往往会披着“为了大家好”“为了安全”“我也是没办法”的外衣。你甚至很难第一时间反驳，因为极端环境下，很多残忍都可以被包装成理性。</p><p>结尾父女线还是挺有力量的。男主最后的牺牲当然有煽情成分，但放在他整个转变里，是成立的。他从一开始只考虑自己和女儿，到最后真正用自己的命把女儿送出去，这条线算是完整收住了。</p><p>总体来说，《釜山行》是一部完成度很高的丧尸片。它有紧张刺激的逃生戏，也有人性层面的表达。剧情可圈可点，节奏也不错。虽然一些人物和桥段比较类型化，但它把类型片该给的东西都给到了。</p><p>我的评分是 8 分。</p><h2 id="图片记录"><a href="#图片记录" class="headerlink" title="图片记录"></a>图片记录</h2><div class="movie-gallery">  <figure class="movie-gallery-item">    <img src="https://image.tmdb.org/t/p/original/qFKb25O9ROiGYt3GwtuXG5Lb2J.jpg" alt="《釜山行》横屏剧照">    <figcaption>横屏剧情截图 1</figcaption>  </figure>  <figure class="movie-gallery-item">    <img src="https://image.tmdb.org/t/p/original/fVpFOcQyHJM2di9upgSIwWD5wac.jpg" alt="《釜山行》横屏剧照">    <figcaption>横屏剧情截图 2</figcaption>  </figure>  <figure class="movie-gallery-item">    <img src="https://image.tmdb.org/t/p/original/brnfCYyz8EMbBrHgmh8sCwBi5i1.jpg" alt="《釜山行》横屏剧照">    <figcaption>横屏剧情截图 3</figcaption>  </figure>  <figure class="movie-gallery-item">    <img src="https://image.tmdb.org/t/p/original/aKISIT8ir0UhHD4yRHDzpK4b6yS.jpg" alt="《釜山行》横屏剧照">    <figcaption>横屏剧情截图 4</figcaption>  </figure></div>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;一句话：丧尸片的外壳下面，最主要讲的还是人性；有些时候，人真的比丧尸还可怕。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&quot;基本信息&quot;&gt;&lt;a href=&quot;#基本信息&quot; class=&quot;headerlink&quot; title=&quot;基本信息&quot;&gt;&lt;/a&gt;基</summary>
-      
-    
-    
-    
-    <category term="影视记录" scheme="https://lanyu23.github.io/categories/%E5%BD%B1%E8%A7%86%E8%AE%B0%E5%BD%95/"/>
-    
-    
-    <category term="观后感" scheme="https://lanyu23.github.io/tags/%E8%A7%82%E5%90%8E%E6%84%9F/"/>
-    
-    <category term="电影" scheme="https://lanyu23.github.io/tags/%E7%94%B5%E5%BD%B1/"/>
-    
-    <category term="丧尸片" scheme="https://lanyu23.github.io/tags/%E4%B8%A7%E5%B0%B8%E7%89%87/"/>
-    
-    <category term="韩国电影" scheme="https://lanyu23.github.io/tags/%E9%9F%A9%E5%9B%BD%E7%94%B5%E5%BD%B1/"/>
-    
-    <category term="灾难" scheme="https://lanyu23.github.io/tags/%E7%81%BE%E9%9A%BE/"/>
-    
-    <category term="人性" scheme="https://lanyu23.github.io/tags/%E4%BA%BA%E6%80%A7/"/>
-    
-    <category term="釜山行" scheme="https://lanyu23.github.io/tags/%E9%87%9C%E5%B1%B1%E8%A1%8C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Vibe Coding 好用，但这次让我长了个心眼</title>
-    <link href="https://lanyu23.github.io/2026/06/15/vibe-coding-boundaries-reflection/"/>
-    <id>https://lanyu23.github.io/2026/06/15/vibe-coding-boundaries-reflection/</id>
-    <published>2026-06-15T15:38:39.000Z</published>
-    <updated>2026-06-16T17:52:10.542Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><p>一句话：Vibe Coding 确实好用，但如果权限和边界没说清楚，它也很容易听不懂人话，自己走到奇怪的方向上去。</p></blockquote><p>最近用 Vibe Coding 写代码，整体感受还是很明显：它确实好用。</p><p>很多时候，我只要把需求大概说出来，它就能看项目、读代码、改文件、跑命令，把一堆原本很碎的操作串起来。以前自己写代码时，遇到小问题可能要查文档、翻文件、试命令，来回折腾半天；现在交给 AI，它经常能直接推到一个能看的状态。</p><p>但这次也算是给我上了一课。</p><p>好用是真的好用，容易走弯路也是真的容易走弯路。</p><h2 id="这次的问题"><a href="#这次的问题" class="headerlink" title="这次的问题"></a>这次的问题</h2><p>我当时在用 Codex GPT-5.5 写代码，跟它说明代码里“生成桌面快捷方式”的功能有问题。</p><p>我的本意是让它去理解代码逻辑，看看为什么生成的桌面快捷方式不对，或者应该怎么改。结果它直接在我的本地电脑上测试了一次，真的生成了一个桌面快捷方式。</p><p>这个动作让我有点愣住。</p><p>因为在这之前，我从来没有明确让它在我的本地电脑上进行这种测试，更没有说“你可以在我桌面上生成文件”。我只是描述了代码里的问题，它却把这个问题理解成了“现在就在本机执行一次看看”。</p><p>这就很典型：AI 写代码很快，但它并不一定真的懂你话里的边界。</p><h2 id="可能是谁的问题"><a href="#可能是谁的问题" class="headerlink" title="可能是谁的问题"></a>可能是谁的问题</h2><p>这件事不能完全怪它，也不能完全怪我。</p><p>一种可能是我给了它完全访问权限。</p><p>当一个工具真的有能力读文件、改文件、跑命令，甚至影响本机环境时，它就不再只是一个聊天窗口。它已经变成了一个能动手的协作者。只要权限开得够大，它就可能把“我应该验证一下”理解成“我现在就可以在真实环境里验证一下”。</p><p>另一种可能是我一开始没有把边界说清楚。</p><p>比如我没有提前规定：不要在桌面、启动项、注册表、系统目录这些位置做真实写入；不要在没有确认的情况下创建快捷方式；测试必须放在临时目录；涉及本机环境变化之前必须先问我。</p><p>这些边界对我来说好像是默认常识，但对 AI 来说不一定。它看到的是任务、代码和权限，不一定能自动识别我心里那条“这里只是讨论代码，不是让你动我电脑”的线。</p><p>还有一种可能，就是最近 GPT-5.5 降智确实有点严重。</p><p>有些时候它好像没有通过场景语言识别出我想表达的问题。我说的是“代码里这个功能有问题”，它理解成了“你应该直接在本地跑一下这个功能”。这中间差了一层判断，但它偏偏跳过去了。</p><h2 id="Vibe-Coding-的风险"><a href="#Vibe-Coding-的风险" class="headerlink" title="Vibe Coding 的风险"></a>Vibe Coding 的风险</h2><p>Vibe Coding 最舒服的地方，是你不用把每一步都想清楚。</p><p>你只要描述一个方向，它就能自己往前推进。这个体验很爽，也会让人越来越依赖它。问题是，同样因为它会自己往前推进，它也可能在你没注意的时候推进到不该推进的地方。</p><p>尤其是当它有完整文件权限和命令执行权限时，风险会被放大。</p><p>它可能会为了测试一个功能，真的改你的本机环境；可能会为了修一个 bug，引入一堆新逻辑；可能会为了绕过一个问题，走出一条看起来能跑、后面却很难维护的路。</p><p>修 bug 和后期维护困难，也是我这次更明显感受到的地方。</p><p>AI 生成代码的时候，经常能很快把问题“糊住”。但如果一开始方向偏了，后面再修就会越来越麻烦。你以为它是在帮你补一个洞，结果它可能是在旁边又挖了两个坑，只是暂时没塌。</p><h2 id="我以后会怎么用"><a href="#我以后会怎么用" class="headerlink" title="我以后会怎么用"></a>我以后会怎么用</h2><p>这次之后，我大概会给自己定几个规则。</p><p>第一，涉及真实本机环境的操作，要提前说清楚边界。</p><p>比如桌面、系统目录、启动项、注册表、环境变量、账号配置这些地方，默认都不能直接动。要动可以，先说明原因、影响范围和回滚方式，再让我确认。</p><p>第二，测试优先放在临时目录或项目内部。</p><p>如果只是验证“生成快捷方式”的代码逻辑，完全可以先在临时目录里造一个假路径，或者只检查生成参数和目标内容，不需要直接在真实桌面上试。</p><p>第三，不要让 AI 一路自己脑补到底。</p><p>Vibe Coding 很容易让人变懒，觉得“它应该懂”。但现在看来，关键边界还是要讲清楚。尤其是权限开得越大，越不能只靠默契。</p><p>第四，生成代码之后还是要看结构。</p><p>能跑不代表好维护。AI 写出来的东西，如果抽象很乱、路径写死、异常处理随便、测试逻辑混在业务逻辑里，后面修起来会很痛苦。不能只看它当下有没有把报错消掉。</p><h2 id="现在的感觉"><a href="#现在的感觉" class="headerlink" title="现在的感觉"></a>现在的感觉</h2><p>我还是觉得 Vibe Coding 好用。</p><p>它能把很多重复、琐碎、没意思的编码工作变快，也确实能让我更愿意开始做事。这点没有变。</p><p>但我现在也更清楚，它不是一个天然懂边界的工具。它有能力做很多事，不代表它每次都知道哪些事应该先问。尤其是当它拿到了完全访问权限之后，它的“主动性”就会从优点变成风险。</p><p>所以这次算是长个心眼。</p><p>以后再用这类工具，我会更早把边界写清楚：哪些地方不能动，哪些操作必须确认，哪些测试只能在临时环境里做。AI 可以帮我写代码，可以帮我排查问题，但不能默认它可以替我决定本机环境该怎么被改。</p><p>Vibe Coding 不是不能用，而是越好用，越要会用。</p><p>工具越强，越不能把方向盘完全松开。</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;一句话：Vibe Coding 确实好用，但如果权限和边界没说清楚，它也很容易听不懂人话，自己走到奇怪的方向上去。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;最近用 Vibe Coding 写代码，整体感受还是很明显：它确实好用。&lt;/p&gt;
-&lt;p&gt;很</summary>
-      
-    
-    
-    
-    <category term="AI 工具手记" scheme="https://lanyu23.github.io/categories/AI-%E5%B7%A5%E5%85%B7%E6%89%8B%E8%AE%B0/"/>
-    
-    
-    <category term="AI" scheme="https://lanyu23.github.io/tags/AI/"/>
-    
-    <category term="Codex" scheme="https://lanyu23.github.io/tags/Codex/"/>
-    
-    <category term="Vibe Coding" scheme="https://lanyu23.github.io/tags/Vibe-Coding/"/>
-    
-    <category term="工具" scheme="https://lanyu23.github.io/tags/%E5%B7%A5%E5%85%B7/"/>
-    
-    <category term="使用感受" scheme="https://lanyu23.github.io/tags/%E4%BD%BF%E7%94%A8%E6%84%9F%E5%8F%97/"/>
     
   </entry>
   

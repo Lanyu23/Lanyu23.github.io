@@ -2,6 +2,33 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://lanyu23.github.io/2026/07/08/ai-project-technical-plan-first-reflection/</loc>
+    
+    <lastmod>2026-07-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://lanyu23.github.io/2026/07/08/ai-long-chat-context-degradation-reflection/</loc>
+    
+    <lastmod>2026-07-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://lanyu23.github.io/2026/07/08/ai-new-project-version-docs-reflection/</loc>
+    
+    <lastmod>2026-07-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://lanyu23.github.io/2026/07/07/ai-large-materials-context-overload-reflection/</loc>
     
     <lastmod>2026-07-07</lastmod>
@@ -314,7 +341,21 @@
   </url>
   
   <url>
+    <loc>https://lanyu23.github.io/tags/%E4%B8%8A%E4%B8%8B%E6%96%87/</loc>
+    <lastmod>2026-07-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://lanyu23.github.io/tags/%E6%9D%83%E9%99%90/</loc>
+    <lastmod>2026-07-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://lanyu23.github.io/tags/Skills/</loc>
     <lastmod>2026-07-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -363,7 +404,7 @@
   </url>
   
   <url>
-    <loc>https://lanyu23.github.io/tags/Skills/</loc>
+    <loc>https://lanyu23.github.io/tags/%E6%8A%80%E6%9C%AF%E6%96%B9%E6%A1%88/</loc>
     <lastmod>2026-07-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -412,27 +453,6 @@
   </url>
   
   <url>
-    <loc>https://lanyu23.github.io/tags/%E5%9B%BD%E6%BC%AB/</loc>
-    <lastmod>2026-07-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://lanyu23.github.io/tags/%E4%BF%AE%E4%BB%99/</loc>
-    <lastmod>2026-07-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://lanyu23.github.io/tags/%E5%87%A1%E4%BA%BA%E4%BF%AE%E4%BB%99%E4%BC%A0/</loc>
-    <lastmod>2026-07-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://lanyu23.github.io/tags/%E7%A7%91%E5%B9%BB/</loc>
     <lastmod>2026-07-07</lastmod>
     <changefreq>weekly</changefreq>
@@ -468,20 +488,6 @@
   </url>
   
   <url>
-    <loc>https://lanyu23.github.io/tags/%E7%94%B5%E5%BD%B1/</loc>
-    <lastmod>2026-07-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://lanyu23.github.io/tags/%E5%89%A7%E9%9B%86/</loc>
-    <lastmod>2026-07-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://lanyu23.github.io/tags/%E5%BC%82%E4%B8%96%E7%95%8C/</loc>
     <lastmod>2026-07-07</lastmod>
     <changefreq>weekly</changefreq>
@@ -489,7 +495,35 @@
   </url>
   
   <url>
-    <loc>https://lanyu23.github.io/tags/Overlord/</loc>
+    <loc>https://lanyu23.github.io/tags/%E6%99%BA%E6%96%97/</loc>
+    <lastmod>2026-07-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://lanyu23.github.io/tags/%E6%B8%B8%E6%88%8F%E4%BA%BA%E7%94%9F/</loc>
+    <lastmod>2026-07-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://lanyu23.github.io/tags/%E5%9B%BD%E6%BC%AB/</loc>
+    <lastmod>2026-07-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://lanyu23.github.io/tags/%E4%BF%AE%E4%BB%99/</loc>
+    <lastmod>2026-07-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://lanyu23.github.io/tags/%E5%87%A1%E4%BA%BA%E4%BF%AE%E4%BB%99%E4%BC%A0/</loc>
     <lastmod>2026-07-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -510,14 +544,7 @@
   </url>
   
   <url>
-    <loc>https://lanyu23.github.io/tags/%E6%99%BA%E6%96%97/</loc>
-    <lastmod>2026-07-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://lanyu23.github.io/tags/%E6%B8%B8%E6%88%8F%E4%BA%BA%E7%94%9F/</loc>
+    <loc>https://lanyu23.github.io/tags/Overlord/</loc>
     <lastmod>2026-07-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -545,6 +572,20 @@
   </url>
   
   <url>
+    <loc>https://lanyu23.github.io/tags/%E7%94%B5%E5%BD%B1/</loc>
+    <lastmod>2026-07-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://lanyu23.github.io/tags/%E5%89%A7%E9%9B%86/</loc>
+    <lastmod>2026-07-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://lanyu23.github.io/tags/%E9%9F%A9%E5%89%A7/</loc>
     <lastmod>2026-07-07</lastmod>
     <changefreq>weekly</changefreq>
@@ -560,6 +601,34 @@
   
   <url>
     <loc>https://lanyu23.github.io/tags/%E9%93%81%E6%8B%B3%E6%95%99%E8%82%B2/</loc>
+    <lastmod>2026-07-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://lanyu23.github.io/tags/%E5%8A%A8%E4%BD%9C/</loc>
+    <lastmod>2026-07-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://lanyu23.github.io/tags/%E7%81%AB%E9%81%AE%E7%9C%BC/</loc>
+    <lastmod>2026-07-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://lanyu23.github.io/tags/%E5%BC%82%E4%BA%BA/</loc>
+    <lastmod>2026-07-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://lanyu23.github.io/tags/%E4%B8%80%E4%BA%BA%E4%B9%8B%E4%B8%8B/</loc>
     <lastmod>2026-07-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -595,34 +664,6 @@
   
   <url>
     <loc>https://lanyu23.github.io/tags/%E9%87%9C%E5%B1%B1%E8%A1%8C/</loc>
-    <lastmod>2026-07-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://lanyu23.github.io/tags/%E5%8A%A8%E4%BD%9C/</loc>
-    <lastmod>2026-07-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://lanyu23.github.io/tags/%E7%81%AB%E9%81%AE%E7%9C%BC/</loc>
-    <lastmod>2026-07-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://lanyu23.github.io/tags/%E5%BC%82%E4%BA%BA/</loc>
-    <lastmod>2026-07-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://lanyu23.github.io/tags/%E4%B8%80%E4%BA%BA%E4%B9%8B%E4%B8%8B/</loc>
     <lastmod>2026-07-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
