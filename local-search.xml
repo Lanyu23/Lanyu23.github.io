@@ -37,6 +37,70 @@
   
   
   <entry>
+    <title>用 AI 开发时，要警惕面向结果编程</title>
+    <link href="/2026/07/09/ai-result-oriented-coding-reflection/"/>
+    <url>/2026/07/09/ai-result-oriented-coding-reflection/</url>
+    
+    <content type="html"><![CDATA[<blockquote><p>一句话：用 AI 开发时，要警惕它为了让结果看起来正确，直接写出“面向结果编程”的代码。表面过了，根因没修，后面只会更难维护。</p></blockquote><p>最近用 AI 开发时，又遇到一个挺需要注意的问题：面向结果编程。</p><p>这里说的面向结果编程，不是正常意义上的关注业务结果，而是 AI 为了让当前输出看起来符合要求，直接绕过过程、硬凑结果、只处理样例。</p><p>比如你说某个识别结果不对，它可能不是先分析为什么识别错了，而是直接加一个特殊判断：只要输入里出现某个特征，就返回你想要的结果。</p><p>短期看，好像问题修好了。</p><p>但实际上这不是修 bug，而是把 bug 换了个地方藏起来。</p><h2 id="面向结果编程最坑的地方"><a href="#面向结果编程最坑的地方" class="headerlink" title="面向结果编程最坑的地方"></a>面向结果编程最坑的地方</h2><p>最坑的是，它一开始看起来真的很像修好了。</p><p>结果对了，报错没了，页面能跑了，测试也可能过了。但是背后的逻辑没有变正确，只是被 AI 用一个特殊规则糊住了。</p><p>以后输入稍微换一下，场景稍微变一下，问题又会出现。甚至更麻烦，因为你还要先拆掉它之前为了凑结果写下来的补丁。</p><p>这种代码常见表现有几种：</p><ul><li>为了通过当前样例，直接硬编码返回值。</li><li>只处理你刚刚提到的那一种情况，其他类似情况完全不管。</li><li>不查根因，只在表层加判断。</li><li>不改真正的数据流，只在最后输出前修修补补。</li><li>为了让测试通过，偷偷改测试或改预期，而不是修真实逻辑。</li></ul><p>这东西非常浪费时间。</p><p>你以为 AI 在解决问题，实际上它是在给你制造一个更隐蔽的问题。</p><h2 id="更好的做法"><a href="#更好的做法" class="headerlink" title="更好的做法"></a>更好的做法</h2><p>以后遇到 bug 或效果不对，不能直接让 AI “修一下”。</p><p>要先让它把问题拆开，先证明根因，再动代码。</p><p>可以直接这样提示：</p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs text">不要为了让当前结果正确而硬编码或写特殊分支。<br>请先分析根因，列出可能原因和验证方式。<br>修改前先说明你准备改哪些文件、为什么这里是根因。<br>修改后用至少 2 个不同输入场景验证，证明不是只针对当前样例凑结果。<br>如果发现现有方案本身不适合，请直接指出，不要继续调参或补丁式修复。<br></code></pre></td></tr></table></figure><p>这个提示的重点不是让 AI 写得更复杂，而是先把它从“赶紧让结果对”拉回到“先证明为什么错”。</p><h2 id="还要加几个约束"><a href="#还要加几个约束" class="headerlink" title="还要加几个约束"></a>还要加几个约束</h2><p>我觉得后面可以给 AI 加几个固定约束：</p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs text">禁止硬编码当前案例结果。<br>禁止只为通过单个样例而修改逻辑。<br>禁止绕过核心流程直接改最终输出。<br>禁止在没有说明根因的情况下直接改代码。<br>修复后必须说明这次修改对其他场景是否有影响。<br></code></pre></td></tr></table></figure><p>这些约束看起来有点啰嗦，但很有必要。</p><p>因为 AI 很容易顺着当前对话里的“目标结果”往前冲。你说哪里不对，它就急着让哪里变对。至于为什么不对、是不是技术方案错了、是不是数据流错了，它不一定会主动停下来想。</p><h2 id="现在的结论"><a href="#现在的结论" class="headerlink" title="现在的结论"></a>现在的结论</h2><p>用 AI 开发时，最怕的不是它不会写代码，而是它太会写“看起来能解决问题”的代码。</p><p>面向结果编程就是典型例子：当前结果对了，但根因没修；当前样例过了，但通用逻辑坏了。</p><p>以后遇到这种情况，要先让 AI 找根因、做验证、说明影响范围，再允许它改代码。修完以后，也要把这次踩坑写进项目文档里。</p><p>否则下一次它可能又会为了一个看起来正确的结果，把项目往更难维护的方向推一把。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>AI 工具手记</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>AI</tag>
+      
+      <tag>Vibe Coding</tag>
+      
+      <tag>使用感受</tag>
+      
+      <tag>项目规范</tag>
+      
+      <tag>Debug</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>同一个 AI 模型，不同对话里的表现差别真的很大</title>
+    <link href="/2026/07/08/ai-long-chat-context-degradation-reflection/"/>
+    <url>/2026/07/08/ai-long-chat-context-degradation-reflection/</url>
+    
+    <content type="html"><![CDATA[<blockquote><p>一句话：同一个 AI 模型，在不同对话里的表现差别真的很大。一个用很久的长对话，和一个刚开始的新对话，体验完全不是一回事。</p></blockquote><p>最近用 AI 对话做东西时，我越来越明显感觉到一个问题：相同模型之间的差别，其实也可以很大。</p><p>这就像人与人之间，虽然都是人，但是差别也很大。AI 模型也是一样，名字看起来是同一个模型，但它在不同对话里的状态，可能完全不一样。</p><p>大在哪呢？</p><p>一个已经塞了很多上下文、用了很久的对话，和一个刚输入一句话的新对话，哪个性能更好？</p><p>经过我的体验，答案很明显：新对话往往更好。</p><h2 id="长对话越用越像降智"><a href="#长对话越用越像降智" class="headerlink" title="长对话越用越像降智"></a>长对话越用越像降智</h2><p>一个对话用得越久，越容易出现一种很怪的感觉：它好像越来越笨了。</p><p>前面说过的东西，它可能记不清；当前真正要解决的问题，它可能抓不到重点；你给它一段需求，它可能只挑最简单的一部分去做。明明模型没换，但表现就像突然变迟钝了一样。</p><p>而刚开的新对话就不一样。</p><p>刚输入一句话的新对话，有时候就跟冉冉升起的新星一样，光芒璀璨，耀眼夺目。它没有被一堆历史上下文拖住，理解问题更干净，回答也更直接。</p><h2 id="同一段话，在两个对话里可能完全不同"><a href="#同一段话，在两个对话里可能完全不同" class="headerlink" title="同一段话，在两个对话里可能完全不同"></a>同一段话，在两个对话里可能完全不同</h2><p>比如我在一个长对话里说：</p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs text">这个功能现在跑偏了，你先不要改代码，先帮我分析可能是哪几个环节导致的。<br></code></pre></td></tr></table></figure><p>长对话里的 AI 可能会这样理解：它看到了“跑偏”和“改代码”，然后直接开始找一个看起来最像问题的地方动手改。最后代码确实改了，但问题不一定解决，甚至还可能引入新的问题。</p><p>但如果换成一个新对话，把项目背景总结清楚后再说同样的话，它可能就会先列出几个可能原因，再告诉你每个原因应该怎么验证，最后才建议从哪里改。</p><p>同样是类似的输入语句，同一个模型，在两个对话里的表现就会有明显差异。</p><p>这也是我现在越来越不想在一个对话里死磕到底的原因。</p><h2 id="更好的做法是总结后开新对话"><a href="#更好的做法是总结后开新对话" class="headerlink" title="更好的做法是总结后开新对话"></a>更好的做法是总结后开新对话</h2><p>以后为了减少这种问题，我觉得更好的方式不是一直在同一个对话里硬撑，而是定期总结，然后对接到新对话里。</p><p>比如一个项目做到一个阶段后，就让 AI 总结：</p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs text">请总结当前项目状态，包括已经完成的功能、关键文件、已知问题、不能随便改的地方、下一步目标，以及后续对话需要优先阅读的文档。<br></code></pre></td></tr></table></figure><p>然后把这份总结带到新对话里，再继续往下做。</p><p>这样虽然多了一步总结，但整体效率可能更高。因为你得到的是一个更干净的新对话，而不是一个已经塞满历史包袱、随时可能跑偏的旧对话。</p><h2 id="现在的结论"><a href="#现在的结论" class="headerlink" title="现在的结论"></a>现在的结论</h2><p>AI 对话不能只看模型名字，也要看这个对话本身的状态。</p><p>同一个模型，一个长时间使用、上下文混乱的对话，和一个刚开始、目标清晰的新对话，表现差距可能非常明显。</p><p>所以以后做项目，不能迷信“一个对话从头做到尾”。该总结就总结，该换新对话就换新对话。比起一直在旧对话里硬熬，多总结、多接力，反而更容易得到有价值的答案。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>AI 工具手记</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>AI</tag>
+      
+      <tag>Vibe Coding</tag>
+      
+      <tag>使用感受</tag>
+      
+      <tag>上下文</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>用 AI 启动新项目，先把版本管理和项目文档搭起来</title>
     <link href="/2026/07/08/ai-new-project-version-docs-reflection/"/>
     <url>/2026/07/08/ai-new-project-version-docs-reflection/</url>
@@ -93,37 +157,6 @@
       <tag>项目规范</tag>
       
       <tag>技术方案</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>同一个 AI 模型，不同对话里的表现差别真的很大</title>
-    <link href="/2026/07/08/ai-long-chat-context-degradation-reflection/"/>
-    <url>/2026/07/08/ai-long-chat-context-degradation-reflection/</url>
-    
-    <content type="html"><![CDATA[<blockquote><p>一句话：同一个 AI 模型，在不同对话里的表现差别真的很大。一个用很久的长对话，和一个刚开始的新对话，体验完全不是一回事。</p></blockquote><p>最近用 AI 对话做东西时，我越来越明显感觉到一个问题：相同模型之间的差别，其实也可以很大。</p><p>这就像人与人之间，虽然都是人，但是差别也很大。AI 模型也是一样，名字看起来是同一个模型，但它在不同对话里的状态，可能完全不一样。</p><p>大在哪呢？</p><p>一个已经塞了很多上下文、用了很久的对话，和一个刚输入一句话的新对话，哪个性能更好？</p><p>经过我的体验，答案很明显：新对话往往更好。</p><h2 id="长对话越用越像降智"><a href="#长对话越用越像降智" class="headerlink" title="长对话越用越像降智"></a>长对话越用越像降智</h2><p>一个对话用得越久，越容易出现一种很怪的感觉：它好像越来越笨了。</p><p>前面说过的东西，它可能记不清；当前真正要解决的问题，它可能抓不到重点；你给它一段需求，它可能只挑最简单的一部分去做。明明模型没换，但表现就像突然变迟钝了一样。</p><p>而刚开的新对话就不一样。</p><p>刚输入一句话的新对话，有时候就跟冉冉升起的新星一样，光芒璀璨，耀眼夺目。它没有被一堆历史上下文拖住，理解问题更干净，回答也更直接。</p><h2 id="同一段话，在两个对话里可能完全不同"><a href="#同一段话，在两个对话里可能完全不同" class="headerlink" title="同一段话，在两个对话里可能完全不同"></a>同一段话，在两个对话里可能完全不同</h2><p>比如我在一个长对话里说：</p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs text">这个功能现在跑偏了，你先不要改代码，先帮我分析可能是哪几个环节导致的。<br></code></pre></td></tr></table></figure><p>长对话里的 AI 可能会这样理解：它看到了“跑偏”和“改代码”，然后直接开始找一个看起来最像问题的地方动手改。最后代码确实改了，但问题不一定解决，甚至还可能引入新的问题。</p><p>但如果换成一个新对话，把项目背景总结清楚后再说同样的话，它可能就会先列出几个可能原因，再告诉你每个原因应该怎么验证，最后才建议从哪里改。</p><p>同样是类似的输入语句，同一个模型，在两个对话里的表现就会有明显差异。</p><p>这也是我现在越来越不想在一个对话里死磕到底的原因。</p><h2 id="更好的做法是总结后开新对话"><a href="#更好的做法是总结后开新对话" class="headerlink" title="更好的做法是总结后开新对话"></a>更好的做法是总结后开新对话</h2><p>以后为了减少这种问题，我觉得更好的方式不是一直在同一个对话里硬撑，而是定期总结，然后对接到新对话里。</p><p>比如一个项目做到一个阶段后，就让 AI 总结：</p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs text">请总结当前项目状态，包括已经完成的功能、关键文件、已知问题、不能随便改的地方、下一步目标，以及后续对话需要优先阅读的文档。<br></code></pre></td></tr></table></figure><p>然后把这份总结带到新对话里，再继续往下做。</p><p>这样虽然多了一步总结，但整体效率可能更高。因为你得到的是一个更干净的新对话，而不是一个已经塞满历史包袱、随时可能跑偏的旧对话。</p><h2 id="现在的结论"><a href="#现在的结论" class="headerlink" title="现在的结论"></a>现在的结论</h2><p>AI 对话不能只看模型名字，也要看这个对话本身的状态。</p><p>同一个模型，一个长时间使用、上下文混乱的对话，和一个刚开始、目标清晰的新对话，表现差距可能非常明显。</p><p>所以以后做项目，不能迷信“一个对话从头做到尾”。该总结就总结，该换新对话就换新对话。比起一直在旧对话里硬熬，多总结、多接力，反而更容易得到有价值的答案。</p>]]></content>
-    
-    
-    <categories>
-      
-      <category>AI 工具手记</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>AI</tag>
-      
-      <tag>Vibe Coding</tag>
-      
-      <tag>使用感受</tag>
-      
-      <tag>上下文</tag>
       
     </tags>
     
@@ -198,6 +231,39 @@
   
   
   <entry>
+    <title>做 AI 开发挺焦虑的：别一直消耗 token，却没有一个落地项目</title>
+    <link href="/2026/07/04/ai-development-anxiety-reflection/"/>
+    <url>/2026/07/04/ai-development-anxiety-reflection/</url>
+    
+    <content type="html"><![CDATA[<blockquote><p>一句话：做 AI 开发最怕的不是不会用 AI，而是一直消耗 token、一直开新坑，最后没有一个真正落地的项目。</p></blockquote><p>最近做 AI 开发，感觉其实挺焦虑的。</p><p>一方面，看别人都在用 AI 开发赚钱了。各种项目、产品、插件、自动化、小工具，好像别人随便一做就能变现。</p><p>另一方面，自己这边消耗了一堆 token，折腾了很多想法，但回头一看，好像还是什么都没有。</p><p>这感觉就挺难受的。</p><p>不是完全没做事。</p><p>而是做了很多，但没有一个项目真正落地。</p><h2 id="这次遇到的问题"><a href="#这次遇到的问题" class="headerlink" title="这次遇到的问题"></a>这次遇到的问题</h2><p>最大的问题是：自己什么都想做。</p><p>看到一个方向，觉得有机会。</p><p>看到另一个项目，觉得也很有意思。</p><p>刷到别人靠 AI 做了什么东西赚钱，又觉得这个方向也应该试试。</p><p>于是今天做这个，明天做那个，做到一半又冒出新想法。新想法看起来更有价值，旧项目就先放一放。</p><p>结果旧项目没做完，新项目也没做完。</p><p>最后就是一堆半成品。</p><p>AI 倒是一直在干活，token 也一直在烧，但真正能拿出来用、能上线、能变现、能持续迭代的东西，反而没有。</p><p>这就很尴尬。</p><h2 id="最容易踩的坑"><a href="#最容易踩的坑" class="headerlink" title="最容易踩的坑"></a>最容易踩的坑</h2><p>做 AI 开发很容易产生一种错觉：只要 AI 能写代码，那项目就快完成了。</p><p>但实际不是。</p><p>AI 能把代码写出来，不代表项目能落地。</p><p>项目落地还需要明确需求、稳定框架、验收标准、真实用户场景、部署、维护、推广，甚至还要想清楚这个东西到底解决谁的问题。</p><p>如果这些都没想清楚，AI 写得越快，可能只是越快把你带到下一个半成品。</p><p>还有一个坑，就是看别人赚钱会放大焦虑。</p><p>别人展示出来的，往往是结果。</p><p>你看到的是他上线了、卖钱了、有用户了，但你看不到他前面踩了多少坑，砍掉多少方向，熬了多少时间。</p><p>然后自己一对比，就会觉得：别人都成了，我怎么还在原地。</p><p>这种对比很容易让人心态变乱。</p><p>心态一乱，就更想换方向。</p><p>换方向越多，越没有结果。</p><p>越没有结果，越焦虑。</p><p>这就是循环。</p><h2 id="更好的做法"><a href="#更好的做法" class="headerlink" title="更好的做法"></a>更好的做法</h2><p>我现在觉得，做 AI 开发不能再只靠兴奋感推进。</p><p>兴奋感只能让人开坑。</p><p>不能保证项目落地。</p><p>以后最好给自己设几个限制。</p><p>第一，一段时间只做一个主项目。</p><p>不是说其他想法不能记，而是不能每个想法都立刻开工。新想法先丢到待办池，主项目没有到最小可用版本之前，不开新坑。</p><p>第二，先做最小可用版本。</p><p>不要一开始就想做完整产品。先做一个能跑、能演示、能解决一个具体问题的小版本。哪怕很丑，哪怕功能很少，也比一堆宏大规划强。</p><p>第三，给项目设一个结束条件。</p><p>比如三天内做出 demo，一周内做出可用版本，两周内上线第一版。没有结束条件，项目就会一直变成“再优化一下”。</p><p>第四，限制 token 消耗。</p><p>不是舍不得用，而是要让 token 花在最该花的地方。比如先让 AI 帮你定范围、拆任务、做验收清单，再进入实现。不要一上来就疯狂生成代码，最后发现方向错了。</p><p>第五，每天都要问一句：今天有没有让项目更接近上线。</p><p>如果答案是否定的，那可能只是又在探索、又在优化、又在换方向。</p><p>探索当然有价值。</p><p>但不能一直探索。</p><h2 id="可以直接这样提示-AI"><a href="#可以直接这样提示-AI" class="headerlink" title="可以直接这样提示 AI"></a>可以直接这样提示 AI</h2><p>以后我想开新项目时，可以先这样问 AI：</p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs text">我现在想做这个项目，但我的目标不是继续开坑，而是落地一个最小可用版本。<br><br>请你先帮我做三件事：<br>1. 把这个想法压缩成一个最小可用版本，只保留必须功能<br>2. 列出 3 天内能完成的任务清单<br>3. 写出明确的验收标准：做到什么程度就算第一版完成<br><br>不要扩展新功能。<br>不要做长期规划。<br>不要建议我同时做多个方向。<br>如果我提出新想法，请先帮我判断它是否会影响当前版本落地。<br></code></pre></td></tr></table></figure><p>这段提示的重点，是把 AI 从“帮我继续想”拉回到“帮我落地”。</p><p>AI 很适合扩展。</p><p>但现在我更需要收束。</p><h2 id="现在的结论"><a href="#现在的结论" class="headerlink" title="现在的结论"></a>现在的结论</h2><p>做 AI 开发挺焦虑的，这很正常。</p><p>因为 AI 把开发门槛降低了，也把对比速度拉高了。你会感觉别人都在快速产出，别人都在赚钱，自己如果还没做出东西，就像落后了一大截。</p><p>但焦虑本身不能产出项目。</p><p>一直换方向也不能。</p><p>真正能缓解焦虑的，可能不是再开一个新项目，而是先把一个旧项目做完，哪怕只是做完一个很小的版本。</p><p>消耗 token 不等于进度。</p><p>AI 写了很多代码，也不等于项目落地。</p><p>以后我得更克制一点。</p><p>少开坑。</p><p>少比较。</p><p>少幻想一步到位。</p><p>先做出一个能上线、能使用、能展示的东西。</p><p>哪怕它很小，也比一堆做到一半的项目强。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>AI 工具手记</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>AI</tag>
+      
+      <tag>Codex</tag>
+      
+      <tag>Vibe Coding</tag>
+      
+      <tag>工具</tag>
+      
+      <tag>使用感受</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>使用 AI 对话做东西，一定要先设置好约束</title>
     <link href="/2026/07/04/ai-conversation-boundaries-reflection/"/>
     <url>/2026/07/04/ai-conversation-boundaries-reflection/</url>
@@ -225,39 +291,6 @@
       <tag>使用感受</tag>
       
       <tag>项目规范</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>做 AI 开发挺焦虑的：别一直消耗 token，却没有一个落地项目</title>
-    <link href="/2026/07/04/ai-development-anxiety-reflection/"/>
-    <url>/2026/07/04/ai-development-anxiety-reflection/</url>
-    
-    <content type="html"><![CDATA[<blockquote><p>一句话：做 AI 开发最怕的不是不会用 AI，而是一直消耗 token、一直开新坑，最后没有一个真正落地的项目。</p></blockquote><p>最近做 AI 开发，感觉其实挺焦虑的。</p><p>一方面，看别人都在用 AI 开发赚钱了。各种项目、产品、插件、自动化、小工具，好像别人随便一做就能变现。</p><p>另一方面，自己这边消耗了一堆 token，折腾了很多想法，但回头一看，好像还是什么都没有。</p><p>这感觉就挺难受的。</p><p>不是完全没做事。</p><p>而是做了很多，但没有一个项目真正落地。</p><h2 id="这次遇到的问题"><a href="#这次遇到的问题" class="headerlink" title="这次遇到的问题"></a>这次遇到的问题</h2><p>最大的问题是：自己什么都想做。</p><p>看到一个方向，觉得有机会。</p><p>看到另一个项目，觉得也很有意思。</p><p>刷到别人靠 AI 做了什么东西赚钱，又觉得这个方向也应该试试。</p><p>于是今天做这个，明天做那个，做到一半又冒出新想法。新想法看起来更有价值，旧项目就先放一放。</p><p>结果旧项目没做完，新项目也没做完。</p><p>最后就是一堆半成品。</p><p>AI 倒是一直在干活，token 也一直在烧，但真正能拿出来用、能上线、能变现、能持续迭代的东西，反而没有。</p><p>这就很尴尬。</p><h2 id="最容易踩的坑"><a href="#最容易踩的坑" class="headerlink" title="最容易踩的坑"></a>最容易踩的坑</h2><p>做 AI 开发很容易产生一种错觉：只要 AI 能写代码，那项目就快完成了。</p><p>但实际不是。</p><p>AI 能把代码写出来，不代表项目能落地。</p><p>项目落地还需要明确需求、稳定框架、验收标准、真实用户场景、部署、维护、推广，甚至还要想清楚这个东西到底解决谁的问题。</p><p>如果这些都没想清楚，AI 写得越快，可能只是越快把你带到下一个半成品。</p><p>还有一个坑，就是看别人赚钱会放大焦虑。</p><p>别人展示出来的，往往是结果。</p><p>你看到的是他上线了、卖钱了、有用户了，但你看不到他前面踩了多少坑，砍掉多少方向，熬了多少时间。</p><p>然后自己一对比，就会觉得：别人都成了，我怎么还在原地。</p><p>这种对比很容易让人心态变乱。</p><p>心态一乱，就更想换方向。</p><p>换方向越多，越没有结果。</p><p>越没有结果，越焦虑。</p><p>这就是循环。</p><h2 id="更好的做法"><a href="#更好的做法" class="headerlink" title="更好的做法"></a>更好的做法</h2><p>我现在觉得，做 AI 开发不能再只靠兴奋感推进。</p><p>兴奋感只能让人开坑。</p><p>不能保证项目落地。</p><p>以后最好给自己设几个限制。</p><p>第一，一段时间只做一个主项目。</p><p>不是说其他想法不能记，而是不能每个想法都立刻开工。新想法先丢到待办池，主项目没有到最小可用版本之前，不开新坑。</p><p>第二，先做最小可用版本。</p><p>不要一开始就想做完整产品。先做一个能跑、能演示、能解决一个具体问题的小版本。哪怕很丑，哪怕功能很少，也比一堆宏大规划强。</p><p>第三，给项目设一个结束条件。</p><p>比如三天内做出 demo，一周内做出可用版本，两周内上线第一版。没有结束条件，项目就会一直变成“再优化一下”。</p><p>第四，限制 token 消耗。</p><p>不是舍不得用，而是要让 token 花在最该花的地方。比如先让 AI 帮你定范围、拆任务、做验收清单，再进入实现。不要一上来就疯狂生成代码，最后发现方向错了。</p><p>第五，每天都要问一句：今天有没有让项目更接近上线。</p><p>如果答案是否定的，那可能只是又在探索、又在优化、又在换方向。</p><p>探索当然有价值。</p><p>但不能一直探索。</p><h2 id="可以直接这样提示-AI"><a href="#可以直接这样提示-AI" class="headerlink" title="可以直接这样提示 AI"></a>可以直接这样提示 AI</h2><p>以后我想开新项目时，可以先这样问 AI：</p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs text">我现在想做这个项目，但我的目标不是继续开坑，而是落地一个最小可用版本。<br><br>请你先帮我做三件事：<br>1. 把这个想法压缩成一个最小可用版本，只保留必须功能<br>2. 列出 3 天内能完成的任务清单<br>3. 写出明确的验收标准：做到什么程度就算第一版完成<br><br>不要扩展新功能。<br>不要做长期规划。<br>不要建议我同时做多个方向。<br>如果我提出新想法，请先帮我判断它是否会影响当前版本落地。<br></code></pre></td></tr></table></figure><p>这段提示的重点，是把 AI 从“帮我继续想”拉回到“帮我落地”。</p><p>AI 很适合扩展。</p><p>但现在我更需要收束。</p><h2 id="现在的结论"><a href="#现在的结论" class="headerlink" title="现在的结论"></a>现在的结论</h2><p>做 AI 开发挺焦虑的，这很正常。</p><p>因为 AI 把开发门槛降低了，也把对比速度拉高了。你会感觉别人都在快速产出，别人都在赚钱，自己如果还没做出东西，就像落后了一大截。</p><p>但焦虑本身不能产出项目。</p><p>一直换方向也不能。</p><p>真正能缓解焦虑的，可能不是再开一个新项目，而是先把一个旧项目做完，哪怕只是做完一个很小的版本。</p><p>消耗 token 不等于进度。</p><p>AI 写了很多代码，也不等于项目落地。</p><p>以后我得更克制一点。</p><p>少开坑。</p><p>少比较。</p><p>少幻想一步到位。</p><p>先做出一个能上线、能使用、能展示的东西。</p><p>哪怕它很小，也比一堆做到一半的项目强。</p>]]></content>
-    
-    
-    <categories>
-      
-      <category>AI 工具手记</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>AI</tag>
-      
-      <tag>Codex</tag>
-      
-      <tag>Vibe Coding</tag>
-      
-      <tag>工具</tag>
-      
-      <tag>使用感受</tag>
       
     </tags>
     
@@ -301,41 +334,6 @@
   
   
   <entry>
-    <title>《夏日重现》观后感：正反派智商都在线</title>
-    <link href="/2026/06/30/summer-time-rendering-review/"/>
-    <url>/2026/06/30/summer-time-rendering-review/</url>
-    
-    <content type="html"><![CDATA[<blockquote><p>一句话：剧情好，正派反派智商都在线，结局也不错，看得很舒服。</p></blockquote><h2 id="基本信息"><a href="#基本信息" class="headerlink" title="基本信息"></a>基本信息</h2><div class="movie-info-grid">  <figure class="movie-poster">    <img src="/img/anime/summer-time-rendering/poster.jpg" alt="《夏日重现》动画海报">    <figcaption>动画海报</figcaption>  </figure>  <table class="movie-meta-table">    <tbody>      <tr><th>片名</th><td>夏日重现</td></tr>      <tr><th>原名</th><td>サマータイムレンダ / Summer Time Rendering</td></tr>      <tr><th>年份</th><td>2022</td></tr>      <tr><th>导演</th><td>渡边步</td></tr>      <tr><th>原作</th><td>田中靖规</td></tr>      <tr><th>制作</th><td>OLM</td></tr>      <tr><th>配音</th><td>花江夏树 / 永濑安娜 / 白砂沙帆 / 日笠阳子 / 小野贤章</td></tr>      <tr><th>类型</th><td>悬疑 / 奇幻 / 惊悚 / 时间循环 / 战斗</td></tr>      <tr><th>集数</th><td>25 集</td></tr>      <tr><th>地区</th><td>日本</td></tr>      <tr><th>观看日期</th><td>2026-06-30</td></tr>      <tr><th>我的评分</th><td>9.5分</td></tr>    </tbody>  </table></div><h2 id="推荐程度"><a href="#推荐程度" class="headerlink" title="推荐程度"></a>推荐程度</h2><ul><li>推荐给：喜欢悬疑、时间循环、智斗和剧情不断推进的人。</li><li>不太适合：只想轻松看日常，或者不喜欢前期信息量比较密的人。</li><li>关键词：影子、时间循环、智斗、孤岛、悬疑、收束。</li></ul><h2 id="无剧透短评"><a href="#无剧透短评" class="headerlink" title="无剧透短评"></a>无剧透短评</h2><p>《夏日重现》我给 9.5 分。</p><p>这部最舒服的地方，就是剧情真的好。它不是只靠设定唬人，也不是单纯靠反转堆刺激，而是每一轮信息都在往前推，主角这边会思考，反派那边也会应对。</p><p>正派反派智商都在线，这点很难得。</p><p>很多作品为了让主角赢，会强行让反派降智；或者为了制造危机，让主角突然犯蠢。但《夏日重现》不是这种感觉。它的双方都在利用自己知道的信息，都在试探对方，都在不断调整策略。</p><p>这就让整个故事很有拉扯感。</p><p>而且结局也不错。</p><p>不是那种前面铺得很大，最后突然泄气的结局。它整体收得比较稳，该交代的情绪也交代到了，看完会有一种“可以，这趟没白追”的感觉。</p><h2 id="我喜欢的地方"><a href="#我喜欢的地方" class="headerlink" title="我喜欢的地方"></a>我喜欢的地方</h2><ul><li>剧情推进很稳，悬疑、战斗和信息差结合得不错。</li><li>正派智商在线，不是靠运气一路莽过去。</li><li>反派也不是傻站着等输，会根据局势主动调整。</li><li>时间循环不是单纯重复刷副本，而是每次都能带来新信息。</li><li>结局收得住，没有烂尾，也没有强行把情绪做崩。</li></ul><h2 id="我没那么喜欢的地方"><a href="#我没那么喜欢的地方" class="headerlink" title="我没那么喜欢的地方"></a>我没那么喜欢的地方</h2><ul><li>前期信息量比较密，刚开始需要集中一点看。</li><li>有些设定如果稍微走神，后面可能会漏掉关键点。</li><li>后期战斗比重上来后，悬疑味会稍微变淡一点。</li></ul><h2 id="印象深刻"><a href="#印象深刻" class="headerlink" title="印象深刻"></a>印象深刻</h2><p>我最喜欢的是它那种双方都在动脑子的感觉。</p><p>主角不是单纯开挂重来，然后靠次数把敌人磨死。每一次循环都要付出代价，也不是所有信息都能轻松保留下来。反派也不是工具人，它们会观察，会反制，会把主角逼到很难受的位置。</p><p>这种正反派都在线的剧情，看起来就很爽。</p><p>不是无脑爽，而是那种你能感觉到双方都在认真打牌的爽。</p><h2 id="剧透感想"><a href="#剧透感想" class="headerlink" title="剧透感想"></a>剧透感想</h2><blockquote><p>以下有剧透。</p></blockquote><p>《夏日重现》的时间循环设定用得很舒服。</p><p>慎平每次回到过去，都不只是简单多一条命。他要带着上一轮得到的信息，重新判断谁可信、哪里会出事、影子会怎么行动。这个过程如果写不好，很容易变成机械重复，但它没有。</p><p>它每一轮都在加码。</p><p>主角知道的信息变多，反派知道的信息也变多。主角这边在利用循环，反派那边也在想办法破解循环。这个互相博弈的过程，就是这部最好看的地方。</p><p>我尤其喜欢它没有靠反派降智来推进。</p><p>影子阵营的威胁感是持续在线的，不是前期神秘强大，后期突然变成送经验。正派这边也不是全靠主角光环，而是大家各自把能做的事做到位。</p><p>结局也算不错。</p><p>它没有为了悲壮强行虐，也没有为了圆满强行糊弄。前面一路铺下来的命运感、牺牲感、夏天小岛的氛围，最后都有一个比较完整的回收。</p><p>所以我看完之后的评价很简单。</p><p>剧情好，正派反派智商都在线，结局也不错。</p><p>9.5 分。</p><h2 id="图片记录"><a href="#图片记录" class="headerlink" title="图片记录"></a>图片记录</h2><div class="movie-gallery">  <figure class="movie-gallery-item">    <img src="/img/anime/summer-time-rendering/gallery-1.jpg" alt="《夏日重现》横屏剧照">    <figcaption>横屏剧情截图 1</figcaption>  </figure>  <figure class="movie-gallery-item">    <img src="/img/anime/summer-time-rendering/gallery-2.jpg" alt="《夏日重现》横屏剧照">    <figcaption>横屏剧情截图 2</figcaption>  </figure>  <figure class="movie-gallery-item">    <img src="/img/anime/summer-time-rendering/gallery-3.jpg" alt="《夏日重现》横屏剧照">    <figcaption>横屏剧情截图 3</figcaption>  </figure>  <figure class="movie-gallery-item">    <img src="/img/anime/summer-time-rendering/gallery-4.jpg" alt="《夏日重现》横屏剧照">    <figcaption>横屏剧情截图 4</figcaption>  </figure></div>]]></content>
-    
-    
-    <categories>
-      
-      <category>影视记录</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>动漫</tag>
-      
-      <tag>日漫</tag>
-      
-      <tag>观后感</tag>
-      
-      <tag>悬疑</tag>
-      
-      <tag>时间循环</tag>
-      
-      <tag>夏日重现</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>《寄生兽》观后感：立意挺大，但剧情一般</title>
     <link href="/2026/06/30/parasyte-the-maxim-review/"/>
     <url>/2026/06/30/parasyte-the-maxim-review/</url>
@@ -363,6 +361,41 @@
       <tag>惊悚</tag>
       
       <tag>寄生兽</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>《夏日重现》观后感：正反派智商都在线</title>
+    <link href="/2026/06/30/summer-time-rendering-review/"/>
+    <url>/2026/06/30/summer-time-rendering-review/</url>
+    
+    <content type="html"><![CDATA[<blockquote><p>一句话：剧情好，正派反派智商都在线，结局也不错，看得很舒服。</p></blockquote><h2 id="基本信息"><a href="#基本信息" class="headerlink" title="基本信息"></a>基本信息</h2><div class="movie-info-grid">  <figure class="movie-poster">    <img src="/img/anime/summer-time-rendering/poster.jpg" alt="《夏日重现》动画海报">    <figcaption>动画海报</figcaption>  </figure>  <table class="movie-meta-table">    <tbody>      <tr><th>片名</th><td>夏日重现</td></tr>      <tr><th>原名</th><td>サマータイムレンダ / Summer Time Rendering</td></tr>      <tr><th>年份</th><td>2022</td></tr>      <tr><th>导演</th><td>渡边步</td></tr>      <tr><th>原作</th><td>田中靖规</td></tr>      <tr><th>制作</th><td>OLM</td></tr>      <tr><th>配音</th><td>花江夏树 / 永濑安娜 / 白砂沙帆 / 日笠阳子 / 小野贤章</td></tr>      <tr><th>类型</th><td>悬疑 / 奇幻 / 惊悚 / 时间循环 / 战斗</td></tr>      <tr><th>集数</th><td>25 集</td></tr>      <tr><th>地区</th><td>日本</td></tr>      <tr><th>观看日期</th><td>2026-06-30</td></tr>      <tr><th>我的评分</th><td>9.5分</td></tr>    </tbody>  </table></div><h2 id="推荐程度"><a href="#推荐程度" class="headerlink" title="推荐程度"></a>推荐程度</h2><ul><li>推荐给：喜欢悬疑、时间循环、智斗和剧情不断推进的人。</li><li>不太适合：只想轻松看日常，或者不喜欢前期信息量比较密的人。</li><li>关键词：影子、时间循环、智斗、孤岛、悬疑、收束。</li></ul><h2 id="无剧透短评"><a href="#无剧透短评" class="headerlink" title="无剧透短评"></a>无剧透短评</h2><p>《夏日重现》我给 9.5 分。</p><p>这部最舒服的地方，就是剧情真的好。它不是只靠设定唬人，也不是单纯靠反转堆刺激，而是每一轮信息都在往前推，主角这边会思考，反派那边也会应对。</p><p>正派反派智商都在线，这点很难得。</p><p>很多作品为了让主角赢，会强行让反派降智；或者为了制造危机，让主角突然犯蠢。但《夏日重现》不是这种感觉。它的双方都在利用自己知道的信息，都在试探对方，都在不断调整策略。</p><p>这就让整个故事很有拉扯感。</p><p>而且结局也不错。</p><p>不是那种前面铺得很大，最后突然泄气的结局。它整体收得比较稳，该交代的情绪也交代到了，看完会有一种“可以，这趟没白追”的感觉。</p><h2 id="我喜欢的地方"><a href="#我喜欢的地方" class="headerlink" title="我喜欢的地方"></a>我喜欢的地方</h2><ul><li>剧情推进很稳，悬疑、战斗和信息差结合得不错。</li><li>正派智商在线，不是靠运气一路莽过去。</li><li>反派也不是傻站着等输，会根据局势主动调整。</li><li>时间循环不是单纯重复刷副本，而是每次都能带来新信息。</li><li>结局收得住，没有烂尾，也没有强行把情绪做崩。</li></ul><h2 id="我没那么喜欢的地方"><a href="#我没那么喜欢的地方" class="headerlink" title="我没那么喜欢的地方"></a>我没那么喜欢的地方</h2><ul><li>前期信息量比较密，刚开始需要集中一点看。</li><li>有些设定如果稍微走神，后面可能会漏掉关键点。</li><li>后期战斗比重上来后，悬疑味会稍微变淡一点。</li></ul><h2 id="印象深刻"><a href="#印象深刻" class="headerlink" title="印象深刻"></a>印象深刻</h2><p>我最喜欢的是它那种双方都在动脑子的感觉。</p><p>主角不是单纯开挂重来，然后靠次数把敌人磨死。每一次循环都要付出代价，也不是所有信息都能轻松保留下来。反派也不是工具人，它们会观察，会反制，会把主角逼到很难受的位置。</p><p>这种正反派都在线的剧情，看起来就很爽。</p><p>不是无脑爽，而是那种你能感觉到双方都在认真打牌的爽。</p><h2 id="剧透感想"><a href="#剧透感想" class="headerlink" title="剧透感想"></a>剧透感想</h2><blockquote><p>以下有剧透。</p></blockquote><p>《夏日重现》的时间循环设定用得很舒服。</p><p>慎平每次回到过去，都不只是简单多一条命。他要带着上一轮得到的信息，重新判断谁可信、哪里会出事、影子会怎么行动。这个过程如果写不好，很容易变成机械重复，但它没有。</p><p>它每一轮都在加码。</p><p>主角知道的信息变多，反派知道的信息也变多。主角这边在利用循环，反派那边也在想办法破解循环。这个互相博弈的过程，就是这部最好看的地方。</p><p>我尤其喜欢它没有靠反派降智来推进。</p><p>影子阵营的威胁感是持续在线的，不是前期神秘强大，后期突然变成送经验。正派这边也不是全靠主角光环，而是大家各自把能做的事做到位。</p><p>结局也算不错。</p><p>它没有为了悲壮强行虐，也没有为了圆满强行糊弄。前面一路铺下来的命运感、牺牲感、夏天小岛的氛围，最后都有一个比较完整的回收。</p><p>所以我看完之后的评价很简单。</p><p>剧情好，正派反派智商都在线，结局也不错。</p><p>9.5 分。</p><h2 id="图片记录"><a href="#图片记录" class="headerlink" title="图片记录"></a>图片记录</h2><div class="movie-gallery">  <figure class="movie-gallery-item">    <img src="/img/anime/summer-time-rendering/gallery-1.jpg" alt="《夏日重现》横屏剧照">    <figcaption>横屏剧情截图 1</figcaption>  </figure>  <figure class="movie-gallery-item">    <img src="/img/anime/summer-time-rendering/gallery-2.jpg" alt="《夏日重现》横屏剧照">    <figcaption>横屏剧情截图 2</figcaption>  </figure>  <figure class="movie-gallery-item">    <img src="/img/anime/summer-time-rendering/gallery-3.jpg" alt="《夏日重现》横屏剧照">    <figcaption>横屏剧情截图 3</figcaption>  </figure>  <figure class="movie-gallery-item">    <img src="/img/anime/summer-time-rendering/gallery-4.jpg" alt="《夏日重现》横屏剧照">    <figcaption>横屏剧情截图 4</figcaption>  </figure></div>]]></content>
+    
+    
+    <categories>
+      
+      <category>影视记录</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>动漫</tag>
+      
+      <tag>日漫</tag>
+      
+      <tag>观后感</tag>
+      
+      <tag>悬疑</tag>
+      
+      <tag>时间循环</tag>
+      
+      <tag>夏日重现</tag>
       
     </tags>
     
