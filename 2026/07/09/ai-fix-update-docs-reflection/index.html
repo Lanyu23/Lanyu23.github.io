@@ -19,29 +19,28 @@
   <meta name="author" content="Lanyu23">
   <meta name="keywords" content="game dev, blog, movies, notes">
   
-    <meta name="description" content="一句话：使用 AI 开发东西，项目框架一定要先定好；中途边想边加，很容易把代码加成屎山。  最近用 AI 开发东西，又发现一个很现实的问题：项目框架一定要提前定好。 这里说的框架，不一定是多么复杂的架构设计，也不是一上来就搞一堆抽象、接口、分层文档。我的意思更简单：这个项目大概有哪些模块，数据怎么流，文件放哪里，哪些地方负责 UI，哪些地方负责状态，哪些地方负责业务逻辑，这些最好一开始就讲清楚。">
+    <meta name="description" content="一句话：AI 优化修复了问题后，一定要记得把原因、边界和约束更新到文档里。不然这个问题后面很可能还会再出现一次。  最近用 AI 修项目时，又意识到一个细节：问题修好了，不代表这个坑真的结束了。 如果只是当前这一轮对话里修好了，但是没有把修复原因、注意事项、不能再这么做的边界写进项目文档，那后面很可能还会重新踩坑。 原因也很简单：AI 的记忆是有限的。 它不一定能一直记住前面为什么这么改，也不一">
 <meta property="og:type" content="article">
-<meta property="og:title" content="使用 AI 开发东西，一定要先定好项目框架">
-<meta property="og:url" content="https://lanyu23.github.io/2026/07/04/ai-project-framework-first-reflection/index.html">
+<meta property="og:title" content="AI 修复问题后，一定要顺手更新文档">
+<meta property="og:url" content="https://lanyu23.github.io/2026/07/09/ai-fix-update-docs-reflection/index.html">
 <meta property="og:site_name" content="Lanyu 的博客">
-<meta property="og:description" content="一句话：使用 AI 开发东西，项目框架一定要先定好；中途边想边加，很容易把代码加成屎山。  最近用 AI 开发东西，又发现一个很现实的问题：项目框架一定要提前定好。 这里说的框架，不一定是多么复杂的架构设计，也不是一上来就搞一堆抽象、接口、分层文档。我的意思更简单：这个项目大概有哪些模块，数据怎么流，文件放哪里，哪些地方负责 UI，哪些地方负责状态，哪些地方负责业务逻辑，这些最好一开始就讲清楚。">
+<meta property="og:description" content="一句话：AI 优化修复了问题后，一定要记得把原因、边界和约束更新到文档里。不然这个问题后面很可能还会再出现一次。  最近用 AI 修项目时，又意识到一个细节：问题修好了，不代表这个坑真的结束了。 如果只是当前这一轮对话里修好了，但是没有把修复原因、注意事项、不能再这么做的边界写进项目文档，那后面很可能还会重新踩坑。 原因也很简单：AI 的记忆是有限的。 它不一定能一直记住前面为什么这么改，也不一">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://lanyu23.github.io/img/default.png">
-<meta property="article:published_time" content="2026-07-03T16:00:00.000Z">
-<meta property="article:modified_time" content="2026-07-04T02:02:37.012Z">
+<meta property="article:published_time" content="2026-07-08T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-07-09T15:11:08.781Z">
 <meta property="article:author" content="Lanyu23">
 <meta property="article:tag" content="AI">
-<meta property="article:tag" content="Codex">
 <meta property="article:tag" content="Vibe Coding">
-<meta property="article:tag" content="工具">
 <meta property="article:tag" content="使用感受">
 <meta property="article:tag" content="项目规范">
+<meta property="article:tag" content="文档">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://lanyu23.github.io/img/default.png">
   
   
   
-  <title>使用 AI 开发东西，一定要先定好项目框架 - Lanyu 的博客</title>
+  <title>AI 修复问题后，一定要顺手更新文档 - Lanyu 的博客</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -315,7 +314,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="使用 AI 开发东西，一定要先定好项目框架"></span>
+            <span id="subtitle" data-typed-text="AI 修复问题后，一定要顺手更新文档"></span>
           
         </div>
 
@@ -326,8 +325,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2026-07-04 00:00" pubdate>
-          2026年7月4日 凌晨
+        <time datetime="2026-07-09 00:00" pubdate>
+          2026年7月9日 凌晨
         </time>
       </span>
     
@@ -338,7 +337,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.9k 字
+          757 字
         
       </span>
     
@@ -349,7 +348,7 @@
         
         
         
-          16 分钟
+          7 分钟
         
       </span>
     
@@ -388,83 +387,31 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">使用 AI 开发东西，一定要先定好项目框架</h1>
+            <h1 id="seo-header">AI 修复问题后，一定要顺手更新文档</h1>
             
             
               <div class="markdown-body">
                 
                 <blockquote>
-<p>一句话：使用 AI 开发东西，项目框架一定要先定好；中途边想边加，很容易把代码加成屎山。</p>
+<p>一句话：AI 优化修复了问题后，一定要记得把原因、边界和约束更新到文档里。不然这个问题后面很可能还会再出现一次。</p>
 </blockquote>
-<p>最近用 AI 开发东西，又发现一个很现实的问题：项目框架一定要提前定好。</p>
-<p>这里说的框架，不一定是多么复杂的架构设计，也不是一上来就搞一堆抽象、接口、分层文档。我的意思更简单：这个项目大概有哪些模块，数据怎么流，文件放哪里，哪些地方负责 UI，哪些地方负责状态，哪些地方负责业务逻辑，这些最好一开始就讲清楚。</p>
-<p>不然中途再加东西，很容易出问题。</p>
-<p>AI 会很快。</p>
-<p>但它快的时候，也很容易只盯着当前需求，把原来项目里已经存在的框架内容忽略掉。</p>
-<p>最后功能是加上去了，代码也能跑，但结构开始变味。</p>
-<h2 id="这次遇到的问题"><a href="#这次遇到的问题" class="headerlink" title="这次遇到的问题"></a>这次遇到的问题</h2><p>使用 AI 做项目的时候，如果一开始没有项目框架，它就会按当前上下文临时发挥。</p>
-<p>你让它加一个按钮，它可能直接在页面里塞逻辑。</p>
-<p>你让它加一个配置，它可能随手放到当前文件。</p>
-<p>你让它修一个状态问题，它可能绕过原来的状态管理，自己新建一套变量。</p>
-<p>你让它补一个功能，它可能不去复用原来的模块，而是在旁边再写一份类似逻辑。</p>
-<p>短期看，好像很快。</p>
-<p>长期看，就开始难受了。</p>
-<p>因为这些东西不是按同一个框架长出来的，而是一块一块贴上去的。每次贴的时候都能用，但贴多了之后，项目就会越来越像临时拼出来的。</p>
-<p>这就是我说的屎山感。</p>
-<h2 id="最容易踩的坑"><a href="#最容易踩的坑" class="headerlink" title="最容易踩的坑"></a>最容易踩的坑</h2><p>最大的坑，是以为 AI 会自动尊重原有框架。</p>
-<p>实际不一定。</p>
-<p>如果你没有明确告诉它“项目现在是按这个结构来的”，它可能只会根据当前打开的几个文件判断。它看到哪里方便，就在哪里加。</p>
-<p>尤其是中途加功能的时候，这个问题更明显。</p>
-<p>一开始做功能 A，AI 写了一套逻辑。</p>
-<p>后面做功能 B，AI 又写一套差不多的逻辑。</p>
-<p>再后面做功能 C，它可能又补一层兼容。</p>
-<p>等你回头看，发现同一种状态在三个地方维护，同一种数据处理在两个文件里重复，同一个 UI 行为有好几套实现。</p>
-<p>这时候再想维护就很麻烦。</p>
-<p>因为你已经不知道改哪里才是正确入口，也不知道删哪段会不会影响别的功能。</p>
-<h2 id="为什么后期会很难受"><a href="#为什么后期会很难受" class="headerlink" title="为什么后期会很难受"></a>为什么后期会很难受</h2><p>这种问题前期不明显。</p>
-<p>前期项目小，文件少，功能也少，AI 怎么写你都能看懂。就算有点乱，也还能接受。</p>
-<p>但项目一大，问题就出来了。</p>
-<p>第一，维护困难。</p>
-<p>因为功能不是按统一框架组织的，你要修 bug，就得先猜这段逻辑到底走哪条路。</p>
-<p>第二，重构麻烦。</p>
-<p>如果一开始结构清楚，重构只是移动和整理。但如果一开始就是乱贴的，重构就像拆炸弹，动一处可能牵出一堆隐藏依赖。</p>
-<p>第三，AI 后面也更容易迷路。</p>
-<p>项目越乱，AI 越难判断什么是正确模式。它会在混乱代码里继续学习混乱代码，然后写出更混乱的新代码。</p>
-<p>这就是一个循环。</p>
-<p>旧代码越乱，新代码越乱。</p>
-<p>新代码越乱，下次修 bug 越难。</p>
-<h2 id="更好的做法"><a href="#更好的做法" class="headerlink" title="更好的做法"></a>更好的做法</h2><p>以后用 AI 开发项目，我觉得要先做一个很薄的项目框架。</p>
-<p>不用一开始就设计得特别大。</p>
-<p>但至少要明确几件事。</p>
-<p>第一，目录结构。</p>
-<p>哪些文件放页面，哪些文件放组件，哪些文件放状态，哪些文件放工具函数，哪些文件放配置。</p>
-<p>第二，模块边界。</p>
-<p>哪个模块负责什么，哪些逻辑不能互相乱调用，公共逻辑应该放在哪里。</p>
-<p>第三，数据流。</p>
-<p>数据从哪里来，在哪里转换，在哪里保存，UI 怎么读取，不要每个功能各玩各的。</p>
-<p>第四，修改规则。</p>
-<p>新功能必须优先复用现有模块；如果要新增模块，先说明为什么旧模块不够用。</p>
-<p>第五，验证方式。</p>
-<p>每次加功能之后，不只看新功能能不能用，还要确认原有框架没有被绕开。</p>
-<p>这个框架不需要很重。</p>
-<p>越轻越好。</p>
-<p>但必须存在。</p>
-<h2 id="可以直接这样提示-AI"><a href="#可以直接这样提示-AI" class="headerlink" title="可以直接这样提示 AI"></a>可以直接这样提示 AI</h2><p>以后开新项目或者加大功能，我会先这样提示：</p>
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs text">先不要直接写功能代码。<br><br>请先根据当前项目整理一个最小项目框架：<br>1. 目录结构应该怎么分<br>2. 每个模块负责什么<br>3. 数据流应该怎么走<br>4. 新功能应该接入哪个模块<br>5. 哪些已有结构不能绕开<br><br>后续实现时必须优先复用这个框架。<br>如果你认为需要新增模块或改变框架，请先说明原因、影响范围和替代方案，等我确认后再改。<br><br>不要为了当前功能方便，把逻辑直接塞进临时位置。<br>不要重复实现已有逻辑。<br>不要绕过原有状态、配置、服务或工具函数。<br></code></pre></td></tr></table></figure>
+<p>最近用 AI 修项目时，又意识到一个细节：问题修好了，不代表这个坑真的结束了。</p>
+<p>如果只是当前这一轮对话里修好了，但是没有把修复原因、注意事项、不能再这么做的边界写进项目文档，那后面很可能还会重新踩坑。</p>
+<p>原因也很简单：AI 的记忆是有限的。</p>
+<p>它不一定能一直记住前面为什么这么改，也不一定能记住某个方案为什么不能再用。尤其是换新对话、上下文变长、或者后面又提出一堆新需求时，之前好不容易修出来的边界，很容易被冲掉。</p>
+<h2 id="修完不写文档，就像只修了当前对话"><a href="#修完不写文档，就像只修了当前对话" class="headerlink" title="修完不写文档，就像只修了当前对话"></a>修完不写文档，就像只修了当前对话</h2><p>很多问题其实不是单纯的 bug，而是项目里的规则没有写清楚。</p>
+<p>比如某个地方不能随便改，某个技术方案已经证明不适合，某个阈值不是根本原因，某个目录结构有约定，某个流程必须先验证再修改。</p>
+<p>这些东西如果只停留在对话里，就很危险。</p>
+<p>当前 AI 可能记得，但下一轮 AI 不一定记得。当前对话可能知道，但新对话不一定知道。最后就会出现一种很烦的情况：明明之前已经修过了，后面又因为同样的原因出问题。</p>
+<h2 id="更好的做法"><a href="#更好的做法" class="headerlink" title="更好的做法"></a>更好的做法</h2><p>以后让 AI 修完问题后，不能只看它有没有把代码改好，还要顺手让它更新文档。</p>
+<p>可以直接这样提示：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs text">这次问题修复后，请同步更新项目文档。<br>记录问题原因、最终修复方式、以后不能再踩的坑、相关文件和后续开发约束。<br>如果这次修复改变了项目边界或技术方案，也要写进文档。<br></code></pre></td></tr></table></figure>
 
-<p>这段提示的核心，就是先让 AI 知道项目是有骨架的。</p>
-<p>有骨架，它才会往骨架上长肉。</p>
-<p>没有骨架，它就可能一块一块往上贴。</p>
-<h2 id="现在的结论"><a href="#现在的结论" class="headerlink" title="现在的结论"></a>现在的结论</h2><p>使用 AI 开发东西，不能只盯着“这次功能做出来没有”。</p>
-<p>功能做出来只是第一层。</p>
-<p>代码放在哪里、怎么接进原有结构、后面能不能维护，这些也很重要。</p>
-<p>如果一开始不定好项目框架，中途不断加东西，AI 很容易完全忽视原有框架内容，哪里方便写哪里。短期看是快，长期看就是维护困难、重构麻烦，最后自己给自己挖坑。</p>
-<p>所以以后我会更注意这一点：</p>
-<p>先搭框架。</p>
-<p>再加功能。</p>
-<p>先定规则。</p>
-<p>再让 AI 发挥。</p>
-<p>不然 AI 写代码确实快，但快着快着，项目可能也就快成屎山了。</p>
+<p>这样做看起来多一步，但其实是在省后面的时间。</p>
+<p>因为文档才是能跨对话、跨时间保留下来的东西。AI 的记忆会丢，但是项目文档不会自己消失。</p>
+<h2 id="现在的结论"><a href="#现在的结论" class="headerlink" title="现在的结论"></a>现在的结论</h2><p>用 AI 开发时，修 bug 不是终点。</p>
+<p>真正稳定的做法是：问题修完后，把这次经验固化到文档里。让后面的 AI 先读文档，再继续开发。</p>
+<p>否则这次修好了，下次它可能又会因为记忆有限、边界不清楚，把同一个坑重新挖出来。</p>
 
                 
               </div>
@@ -500,15 +447,13 @@
       
         <a href="/tags/AI/" class="print-no-link">#AI</a>
       
-        <a href="/tags/Codex/" class="print-no-link">#Codex</a>
-      
         <a href="/tags/Vibe-Coding/" class="print-no-link">#Vibe Coding</a>
-      
-        <a href="/tags/%E5%B7%A5%E5%85%B7/" class="print-no-link">#工具</a>
       
         <a href="/tags/%E4%BD%BF%E7%94%A8%E6%84%9F%E5%8F%97/" class="print-no-link">#使用感受</a>
       
         <a href="/tags/%E9%A1%B9%E7%9B%AE%E8%A7%84%E8%8C%83/" class="print-no-link">#项目规范</a>
+      
+        <a href="/tags/%E6%96%87%E6%A1%A3/" class="print-no-link">#文档</a>
       
     </div>
   
@@ -520,8 +465,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>使用 AI 开发东西，一定要先定好项目框架</div>
-      <div>https://lanyu23.github.io/2026/07/04/ai-project-framework-first-reflection/</div>
+      <div>AI 修复问题后，一定要顺手更新文档</div>
+      <div>https://lanyu23.github.io/2026/07/09/ai-fix-update-docs-reflection/</div>
     </div>
     <div class="license-meta">
       
@@ -533,7 +478,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2026年7月4日</div>
+          <div>2026年7月9日</div>
         </div>
       
       
@@ -577,18 +522,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2026/07/04/ai-development-anxiety-reflection/" title="做 AI 开发挺焦虑的：别一直消耗 token，却没有一个落地项目">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">做 AI 开发挺焦虑的：别一直消耗 token，却没有一个落地项目</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2026/06/30/summer-time-rendering-review/" title="《夏日重现》观后感：正反派智商都在线">
-                        <span class="hidden-mobile">《夏日重现》观后感：正反派智商都在线</span>
+                      <a href="/2026/07/08/ai-new-project-version-docs-reflection/" title="用 AI 启动新项目，先把版本管理和项目文档搭起来">
+                        <span class="hidden-mobile">用 AI 启动新项目，先把版本管理和项目文档搭起来</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
