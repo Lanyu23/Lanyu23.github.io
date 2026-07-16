@@ -4,6 +4,39 @@
   
   
   <entry>
+    <title>大家第一次使用 Codex 做了什么？我先拿它拯救快爆满的 C 盘</title>
+    <link href="/2026/07/17/codex-first-use-c-drive-cleanup-reflection/"/>
+    <url>/2026/07/17/codex-first-use-c-drive-cleanup-reflection/</url>
+    
+    <content type="html"><![CDATA[<blockquote><p>一句话：我第一次使用 Codex，没有让它写代码，而是直接让它帮我解决电脑最大的痛点——快要爆满的 C 盘。</p></blockquote><p>大家第一次使用 Codex 都做了什么？</p><p>我第一次使用 Codex 的时候，直接让它解决了当时电脑上最大的痛点：C 盘快满出来了。</p><p>眼看剩余空间越来越少，我想着再不清理真的不行了，到时候 C 盘就要炸了。以前遇到这种情况，我一般会先找清理软件，然后看着软件扫描出来的一大堆文件发愁。</p><p>因为软件能告诉你这里占了几十 GB，却不一定能告诉你这些东西到底是什么、能不能删、删了会不会出问题。</p><p>这次我干脆试着让 Codex 帮我处理。</p><h2 id="先帮我找工具，再帮我看结果"><a href="#先帮我找工具，再帮我看结果" class="headerlink" title="先帮我找工具，再帮我看结果"></a>先帮我找工具，再帮我看结果</h2><p>我先让 Codex 检索 GitHub 上的清理软件，比较这些工具是做什么的，再选择适合当前情况的方案。</p><p>找到工具以后，还可以搭配 Codex 的自动操作，让它帮我使用这些软件。它不只是负责点几下按钮，还能先看扫描结果，帮我进行第一次审核。</p><p>我只需要确认它的判断，再决定哪些内容真的要清理。</p><p>整个过程里，真正让我觉得方便的不是“AI 会操作软件”，而是它可以帮我理解软件查出来的东西。</p><h2 id="普通清理软件最难受的地方"><a href="#普通清理软件最难受的地方" class="headerlink" title="普通清理软件最难受的地方"></a>普通清理软件最难受的地方</h2><p>大家应该都遇到过这种情况：清理软件查出来一堆东西，占用空间看起来也很大，但你根本不知道它们是什么。</p><p>是缓存、日志、安装包、临时文件，还是某个软件仍然需要的数据？</p><p>如果全部勾选，怕删错；如果什么都不敢选，这个清理软件又跟没用一样。</p><p>Codex 的好处就在这里体现出来了。</p><p>它可以帮我查看这些目录和文件的来源，解释它们大概属于什么，再给出清理建议。有些藏在犄角旮旯里的大文件，平时自己很难注意到，它也能帮忙找出来，并告诉我为什么会出现在这里。</p><p>这样一来，我不需要从零开始判断，只需要审核它给出的建议。</p><h2 id="我现在更推荐的清理流程"><a href="#我现在更推荐的清理流程" class="headerlink" title="我现在更推荐的清理流程"></a>我现在更推荐的清理流程</h2><p>虽然这次体验很方便，但磁盘清理毕竟涉及删除文件，不能把决定权全部交出去。</p><p>更稳妥的做法是：先扫描和分析，不直接删除；让 Codex 把结果分成可以清理、需要确认、不要碰三类；自己确认以后，再执行清理；最后重新检查 C 盘空间和常用软件是否正常。</p><p>可以直接这样告诉 Codex：</p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs text">先分析 C 盘空间占用，不要删除任何文件。<br>帮我寻找并比较可信的清理工具，说明来源和用途。<br>扫描后解释每类文件是什么，并分成“可以清理”“需要我确认”“不要清理”。<br>任何删除操作都必须先得到我的明确确认，完成后再检查磁盘空间和常用软件是否正常。<br></code></pre></td></tr></table></figure><p>这样既能利用 Codex 帮忙查资料、操作工具和解释结果，也能把最终删除权限留在自己手里。</p><h2 id="第一次使用就解决了真实痛点"><a href="#第一次使用就解决了真实痛点" class="headerlink" title="第一次使用就解决了真实痛点"></a>第一次使用就解决了真实痛点</h2><p>整个过程没有耗费太长时间，我也省去了一开始查工具、看教程、研究陌生目录的判断成本。</p><p>以前使用清理软件，是软件告诉我“这里有东西”；这次使用 Codex，是它进一步告诉我“这是什么、为什么在这里、建议怎么处理”。</p><p>我第一次使用 Codex，就拿它解决了一个拖了很久、又确实影响电脑使用的问题。</p><p>这也让我觉得，Codex 不一定只能拿来写代码。对于电脑上那些需要查资料、分析情况、操作工具、最后由自己审核的麻烦事，它同样很方便。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>AI 工具手记</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>AI</tag>
+      
+      <tag>Codex</tag>
+      
+      <tag>工具</tag>
+      
+      <tag>使用感受</tag>
+      
+      <tag>Windows</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>GPT-5.6 Sol Ultra 初体验：又聪明又快，额度也烧得飞快</title>
     <link href="/2026/07/11/gpt-5-6-sol-ultra-first-impression/"/>
     <url>/2026/07/11/gpt-5-6-sol-ultra-first-impression/</url>
@@ -57,9 +90,9 @@
       
       <tag>Vibe Coding</tag>
       
-      <tag>项目规范</tag>
-      
       <tag>使用感受</tag>
+      
+      <tag>项目规范</tag>
       
       <tag>文档</tag>
       
@@ -90,9 +123,9 @@
       
       <tag>Vibe Coding</tag>
       
-      <tag>项目规范</tag>
-      
       <tag>使用感受</tag>
+      
+      <tag>项目规范</tag>
       
       <tag>Debug</tag>
       
@@ -154,9 +187,9 @@
       
       <tag>Vibe Coding</tag>
       
-      <tag>项目规范</tag>
-      
       <tag>使用感受</tag>
+      
+      <tag>项目规范</tag>
       
     </tags>
     
@@ -185,9 +218,9 @@
       
       <tag>Vibe Coding</tag>
       
-      <tag>项目规范</tag>
-      
       <tag>使用感受</tag>
+      
+      <tag>项目规范</tag>
       
       <tag>技术方案</tag>
       
@@ -264,41 +297,6 @@
   
   
   <entry>
-    <title>使用 AI 对话做东西，一定要先设置好约束</title>
-    <link href="/2026/07/04/ai-conversation-boundaries-reflection/"/>
-    <url>/2026/07/04/ai-conversation-boundaries-reflection/</url>
-    
-    <content type="html"><![CDATA[<blockquote><p>一句话：使用 AI 对话做东西，一定要提前设置好约束；不然原来已经做好的东西，甚至已经测试成功的东西，都可能被它顺手改掉。</p></blockquote><p>最近用 AI 做项目，又多了一条经验：一开始一定要把约束说清楚。</p><p>不是那种很空的“请认真一点”“请保证代码质量”，而是具体到哪些东西不能动，哪些东西已经测试通过，哪些文件只允许读不允许改，遇到不确定时必须先问。</p><p>因为 AI 很主动。</p><p>主动是好事，但主动过头就会出问题。你只是想让它修一个小 bug，或者加一个小功能，它可能读着读着就觉得某个旧逻辑“不够优雅”，然后顺手一起改了。</p><p>问题是，那个旧逻辑可能已经测过了。</p><p>甚至可能就是前面刚刚花了一堆时间修好的。</p><h2 id="这次遇到的问题"><a href="#这次遇到的问题" class="headerlink" title="这次遇到的问题"></a>这次遇到的问题</h2><p>用 AI 对话做东西的时候，如果没有先设置边界，它很容易把任务范围扩大。</p><p>你说：“帮我修一下这个问题。”</p><p>它理解成：“我可以检查相关代码，并且重构任何我觉得相关的地方。”</p><p>你说：“这个功能有点异常。”</p><p>它理解成：“我可以改调用链、改状态流、改配置、改入口，直到看起来更合理。”</p><p>有时候它确实能改对。</p><p>但更麻烦的是，它也可能把原来已经稳定的东西改坏。</p><p>这种情况最烦，因为你本来不是来重做旧功能的。旧功能已经做完了，也测试通过了，结果 AI 为了解决当前问题，把旧地方一起动了。最后新的问题不一定解决，旧的稳定状态反而被破坏了。</p><h2 id="最容易踩的坑"><a href="#最容易踩的坑" class="headerlink" title="最容易踩的坑"></a>最容易踩的坑</h2><p>最大的坑就是默认信任 AI 会自己判断边界。</p><p>实际上它不一定会。</p><p>它看到代码里有重复，可能想合并。</p><p>它看到命名不顺眼，可能想改名。</p><p>它看到旧逻辑不符合它现在的理解，可能想重写。</p><p>它看到测试不好跑，可能直接绕开。</p><p>这些动作单独看都像是在“优化”，但放到真实项目里就不一定了。尤其是一个功能已经测试成功之后，随便动它就是风险。</p><p>很多时候你真正想要的不是优化，而是小范围修复。</p><p>AI 如果没听到这句话，就可能按自己的节奏扩大修改范围。</p><h2 id="为什么会浪费时间"><a href="#为什么会浪费时间" class="headerlink" title="为什么会浪费时间"></a>为什么会浪费时间</h2><p>这种问题会带来两层浪费。</p><p>第一层是回退成本。</p><p>如果 AI 改坏了已经做好的东西，你就要重新看 diff，判断哪些改动能留，哪些改动要撤。改动小还好，改动一大，光是确认它到底动了什么就很烦。</p><p>第二层是修复成本。</p><p>有时候你不能简单回退，因为 AI 新改的部分里面也有一小块是有用的。于是就变成：旧逻辑被改坏了，新逻辑也不能全删，只能在这个基础上继续修 bug。</p><p>这就很亏。</p><p>本来只是一个局部问题，最后变成了“修 AI 改出来的问题”。</p><p>token 花了。</p><p>时间花了。</p><p>心态也容易被搞崩。</p><h2 id="更好的做法"><a href="#更好的做法" class="headerlink" title="更好的做法"></a>更好的做法</h2><p>以后我觉得用 AI 做项目，最好一开始就把边界写死。</p><p>第一，明确任务范围。</p><p>告诉 AI 这次只处理哪个问题，不要顺手重构，不要扩大修改范围。</p><p>第二，标记已稳定区域。</p><p>哪些功能已经实现并测试通过，就直接说：这些地方默认不要改，除非你能说明当前问题必须改它。</p><p>第三，要求先给修改计划。</p><p>让 AI 先说它准备改哪些文件、为什么改、是否会影响旧功能。确认之后再动手。</p><p>第四，要求改前后都跑验证。</p><p>改之前先确认当前问题存在，改之后再确认问题解决，同时确认旧功能没有被破坏。</p><p>第五，不确定就先问。</p><p>AI 最容易出事的地方，就是把“不确定”当成“我自己判断一下”。有些判断可以交给它，有些涉及范围扩大和旧逻辑变更的判断，最好还是先问人。</p><h2 id="可以直接这样提示-AI"><a href="#可以直接这样提示-AI" class="headerlink" title="可以直接这样提示 AI"></a>可以直接这样提示 AI</h2><p>以后类似任务，我会更倾向于这样写：</p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs text">先不要直接修改代码。<br><br>本次任务只处理我描述的问题，不要顺手重构，不要修改无关功能。<br><br>已经测试通过的旧功能默认不能改；如果你认为必须改，请先说明原因、影响范围和验证方式，等我确认后再动。<br><br>请先列出：<br>1. 你理解的问题是什么<br>2. 可能原因有哪些<br>3. 准备检查哪些文件<br>4. 如果需要修改，预计修改哪些文件<br>5. 如何验证新问题解决，同时不破坏旧功能<br><br>确认后再开始修改。<br></code></pre></td></tr></table></figure><p>这段提示不复杂，但很有用。</p><p>它的重点不是限制 AI 能力，而是限制它的行动范围。</p><p>AI 可以很强，但不能想到哪做到哪。</p><h2 id="现在的结论"><a href="#现在的结论" class="headerlink" title="现在的结论"></a>现在的结论</h2><p>使用 AI 对话做东西，约束一定要前置。</p><p>不要等它改坏了，再回头说“你怎么动这个地方了”。很多时候你没说不能动，它就会觉得可以动。</p><p>尤其是已经做好的东西、已经测试成功的东西，要明确告诉它：这是稳定区域，不要轻易改。</p><p>AI 做项目不是不能放权。</p><p>但放权之前，要先划边界。</p><p>否则最后很容易变成：原来的东西被改坏了，新问题也没完全解决，还要回退版本，或者在 AI 改出来的新基础上继续修 bug。</p><p>这就不是 Vibe Coding 了。</p><p>这是 Vibe 返工。</p>]]></content>
-    
-    
-    <categories>
-      
-      <category>AI 工具手记</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>AI</tag>
-      
-      <tag>Codex</tag>
-      
-      <tag>Vibe Coding</tag>
-      
-      <tag>项目规范</tag>
-      
-      <tag>工具</tag>
-      
-      <tag>使用感受</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>做 AI 开发挺焦虑的：别一直消耗 token，却没有一个落地项目</title>
     <link href="/2026/07/04/ai-development-anxiety-reflection/"/>
     <url>/2026/07/04/ai-development-anxiety-reflection/</url>
@@ -354,11 +352,11 @@
       
       <tag>Vibe Coding</tag>
       
-      <tag>项目规范</tag>
-      
       <tag>工具</tag>
       
       <tag>使用感受</tag>
+      
+      <tag>项目规范</tag>
       
     </tags>
     
@@ -367,33 +365,33 @@
   
   
   <entry>
-    <title>《寄生兽》观后感：立意挺大，但剧情一般</title>
-    <link href="/2026/06/30/parasyte-the-maxim-review/"/>
-    <url>/2026/06/30/parasyte-the-maxim-review/</url>
+    <title>使用 AI 对话做东西，一定要先设置好约束</title>
+    <link href="/2026/07/04/ai-conversation-boundaries-reflection/"/>
+    <url>/2026/07/04/ai-conversation-boundaries-reflection/</url>
     
-    <content type="html"><![CDATA[<blockquote><p>一句话：立意挺大，设定也有意思，但剧情看下来只算一般，有些地方像是在强行说教。</p></blockquote><h2 id="基本信息"><a href="#基本信息" class="headerlink" title="基本信息"></a>基本信息</h2><div class="movie-info-grid">  <figure class="movie-poster">    <img src="/img/anime/parasyte-the-maxim/poster.jpg" alt="《寄生兽》动画海报">    <figcaption>动画海报</figcaption>  </figure>  <table class="movie-meta-table">    <tbody>      <tr><th>片名</th><td>寄生兽 生命的准则</td></tr>      <tr><th>原名</th><td>寄生獣 セイの格率 / Parasyte -the maxim-</td></tr>      <tr><th>年份</th><td>2014 - 2015</td></tr>      <tr><th>导演</th><td>清水健一</td></tr>      <tr><th>原作</th><td>岩明均</td></tr>      <tr><th>制作</th><td>Madhouse</td></tr>      <tr><th>配音</th><td>岛崎信长 / 平野绫 / 花泽香菜 / 泽城美雪 / 田中敦子</td></tr>      <tr><th>类型</th><td>科幻 / 惊悚 / 心理 / 生存 / 战斗</td></tr>      <tr><th>集数</th><td>24 集</td></tr>      <tr><th>地区</th><td>日本</td></tr>      <tr><th>观看日期</th><td>2026-06-30</td></tr>      <tr><th>我的评分</th><td>8分</td></tr>    </tbody>  </table></div><h2 id="推荐程度"><a href="#推荐程度" class="headerlink" title="推荐程度"></a>推荐程度</h2><ul><li>推荐给：喜欢寄生生物、科幻惊悚、人性讨论和主角被迫成长故事的人。</li><li>不太适合：特别在意人物逻辑稳定，或者讨厌作品把主题反复摆出来讲的人。</li><li>关键词：寄生生物、共生、人性、物种、身份变化、说教感。</li></ul><h2 id="无剧透短评"><a href="#无剧透短评" class="headerlink" title="无剧透短评"></a>无剧透短评</h2><p>《寄生兽》这个设定本身是很有意思的。</p><p>寄生生物突然出现，主角又不是完全被寄生，而是和寄生兽形成一种很微妙的共生关系。这个开局很抓人，也天然适合讨论人性、物种、生存、善恶这些比较大的东西。</p><p>所以它的立意确实挺大。</p><p>但我看完之后，感觉它有些地方又像是在强行说教。它想表达的东西我能理解，可有时候表达方式太直了，像是非要把主题按到你面前，让你意识到“这里有深度”。</p><p>剧情整体对我来说一般。</p><p>不是不能看，也不是没有亮点，但没有到特别惊艳的程度。8 分比较适合它，设定和整体完成度能撑住，但一些人物和伏笔问题也确实影响观感。</p><h2 id="我喜欢的地方"><a href="#我喜欢的地方" class="headerlink" title="我喜欢的地方"></a>我喜欢的地方</h2><ul><li>寄生兽这个核心设定很强，开局就有吸引力。</li><li>人类和寄生生物之间的关系，不只是单纯怪物打人类，还有共生、理解和冲突。</li><li>部分情节的压迫感不错，寄生生物混在人群里的感觉挺有危机感。</li><li>右这个角色有记忆点，冷静、理性，又和主角形成很强的对照。</li><li>作品想讨论的东西确实不小，不是纯粹打怪升级。</li></ul><h2 id="我没那么喜欢的地方"><a href="#我没那么喜欢的地方" class="headerlink" title="我没那么喜欢的地方"></a>我没那么喜欢的地方</h2><ul><li>有些地方说教感比较重，立意大归大，但表达不够自然。</li><li>主角的人设有点怪，时而特别冷静，时而又突然不冷静。</li><li>情绪变化和行为逻辑有些地方不太顺，看着会出戏。</li><li>一些伏笔没有明显回收，像戴眼镜的女生发现寄生兽，还和她哥哥讨论过，后面就没怎么提了。</li><li>剧情整体只能说一般，没有完全把设定的潜力打出来。</li></ul><h2 id="印象深刻"><a href="#印象深刻" class="headerlink" title="印象深刻"></a>印象深刻</h2><p>最有意思的还是主角和右之间的关系。</p><p>一个是人，一个是寄生生物，但它们又必须靠彼此活下去。右一开始完全像是冷冰冰的生存机器，只讲效率，只讲利益，不讲人类那套情绪。</p><p>这种设定本来很容易写出东西。</p><p>人类到底高贵在哪里，寄生生物到底低等在哪里，所谓人性是不是只是站在人类立场上的说法，这些都能展开。</p><p>问题是它有时候展开得太用力了。</p><p>本来可以靠剧情和人物自然带出来的东西，它会选择比较直白地讲出来，导致我一边看一边觉得：我知道你想表达这个，但你能不能别这么明显。</p><h2 id="剧透感想"><a href="#剧透感想" class="headerlink" title="剧透感想"></a>剧透感想</h2><blockquote><p>以下有剧透。</p></blockquote><p>我对《寄生兽》最大的感觉，就是它想讲的东西挺大，但具体落到剧情上没有完全说服我。</p><p>主角泉新一的变化是核心之一。</p><p>他因为和右共生，身体和心理都发生了变化。按理说这个过程应该很有层次：人性被侵蚀、理性增强、情感变淡，然后又在各种事件里重新确认自己到底是什么。</p><p>但实际看下来，我觉得他的人设有点飘。</p><p>有时候他冷静得不像正常高中生，有时候又突然不冷静。这个变化当然可以解释成寄生和创伤带来的影响，但剧情给我的感受不是“这个人正在复杂变化”，而是“这个人怎么一下这样一下那样”。</p><p>这就有点怪怪的。</p><p>还有一些伏笔没回收，也让我不太舒服。</p><p>比如那个戴眼镜的女生发现了寄生兽，还和她哥哥讨论过这件事。这个点当时看起来像是后面会继续展开，至少会带来一点后续影响，但后面好像就没怎么提了。</p><p>这种线索如果只是轻轻带过，那前面给它的存在感就会显得有点尴尬。</p><p>当然，《寄生兽》不是差。</p><p>它的设定、氛围、部分冲突，以及关于人类和寄生生物关系的讨论，都还是能撑起一部作品的。只是我对它的期待会更高一点，尤其是它把立意摆得这么大之后，我就会希望剧情、人设和伏笔都能更稳。</p><p>结果看完就是：可以，能看，但剧情一般。</p><p>8 分。</p><h2 id="图片记录"><a href="#图片记录" class="headerlink" title="图片记录"></a>图片记录</h2><div class="movie-gallery">  <figure class="movie-gallery-item">    <img src="/img/anime/parasyte-the-maxim/gallery-1.jpg" alt="《寄生兽》横屏剧照">    <figcaption>横屏剧情截图 1</figcaption>  </figure>  <figure class="movie-gallery-item">    <img src="/img/anime/parasyte-the-maxim/gallery-2.jpg" alt="《寄生兽》横屏剧照">    <figcaption>横屏剧情截图 2</figcaption>  </figure>  <figure class="movie-gallery-item">    <img src="/img/anime/parasyte-the-maxim/gallery-3.jpg" alt="《寄生兽》横屏剧照">    <figcaption>横屏剧情截图 3</figcaption>  </figure>  <figure class="movie-gallery-item">    <img src="/img/anime/parasyte-the-maxim/gallery-4.jpg" alt="《寄生兽》横屏剧照">    <figcaption>横屏剧情截图 4</figcaption>  </figure></div>]]></content>
+    <content type="html"><![CDATA[<blockquote><p>一句话：使用 AI 对话做东西，一定要提前设置好约束；不然原来已经做好的东西，甚至已经测试成功的东西，都可能被它顺手改掉。</p></blockquote><p>最近用 AI 做项目，又多了一条经验：一开始一定要把约束说清楚。</p><p>不是那种很空的“请认真一点”“请保证代码质量”，而是具体到哪些东西不能动，哪些东西已经测试通过，哪些文件只允许读不允许改，遇到不确定时必须先问。</p><p>因为 AI 很主动。</p><p>主动是好事，但主动过头就会出问题。你只是想让它修一个小 bug，或者加一个小功能，它可能读着读着就觉得某个旧逻辑“不够优雅”，然后顺手一起改了。</p><p>问题是，那个旧逻辑可能已经测过了。</p><p>甚至可能就是前面刚刚花了一堆时间修好的。</p><h2 id="这次遇到的问题"><a href="#这次遇到的问题" class="headerlink" title="这次遇到的问题"></a>这次遇到的问题</h2><p>用 AI 对话做东西的时候，如果没有先设置边界，它很容易把任务范围扩大。</p><p>你说：“帮我修一下这个问题。”</p><p>它理解成：“我可以检查相关代码，并且重构任何我觉得相关的地方。”</p><p>你说：“这个功能有点异常。”</p><p>它理解成：“我可以改调用链、改状态流、改配置、改入口，直到看起来更合理。”</p><p>有时候它确实能改对。</p><p>但更麻烦的是，它也可能把原来已经稳定的东西改坏。</p><p>这种情况最烦，因为你本来不是来重做旧功能的。旧功能已经做完了，也测试通过了，结果 AI 为了解决当前问题，把旧地方一起动了。最后新的问题不一定解决，旧的稳定状态反而被破坏了。</p><h2 id="最容易踩的坑"><a href="#最容易踩的坑" class="headerlink" title="最容易踩的坑"></a>最容易踩的坑</h2><p>最大的坑就是默认信任 AI 会自己判断边界。</p><p>实际上它不一定会。</p><p>它看到代码里有重复，可能想合并。</p><p>它看到命名不顺眼，可能想改名。</p><p>它看到旧逻辑不符合它现在的理解，可能想重写。</p><p>它看到测试不好跑，可能直接绕开。</p><p>这些动作单独看都像是在“优化”，但放到真实项目里就不一定了。尤其是一个功能已经测试成功之后，随便动它就是风险。</p><p>很多时候你真正想要的不是优化，而是小范围修复。</p><p>AI 如果没听到这句话，就可能按自己的节奏扩大修改范围。</p><h2 id="为什么会浪费时间"><a href="#为什么会浪费时间" class="headerlink" title="为什么会浪费时间"></a>为什么会浪费时间</h2><p>这种问题会带来两层浪费。</p><p>第一层是回退成本。</p><p>如果 AI 改坏了已经做好的东西，你就要重新看 diff，判断哪些改动能留，哪些改动要撤。改动小还好，改动一大，光是确认它到底动了什么就很烦。</p><p>第二层是修复成本。</p><p>有时候你不能简单回退，因为 AI 新改的部分里面也有一小块是有用的。于是就变成：旧逻辑被改坏了，新逻辑也不能全删，只能在这个基础上继续修 bug。</p><p>这就很亏。</p><p>本来只是一个局部问题，最后变成了“修 AI 改出来的问题”。</p><p>token 花了。</p><p>时间花了。</p><p>心态也容易被搞崩。</p><h2 id="更好的做法"><a href="#更好的做法" class="headerlink" title="更好的做法"></a>更好的做法</h2><p>以后我觉得用 AI 做项目，最好一开始就把边界写死。</p><p>第一，明确任务范围。</p><p>告诉 AI 这次只处理哪个问题，不要顺手重构，不要扩大修改范围。</p><p>第二，标记已稳定区域。</p><p>哪些功能已经实现并测试通过，就直接说：这些地方默认不要改，除非你能说明当前问题必须改它。</p><p>第三，要求先给修改计划。</p><p>让 AI 先说它准备改哪些文件、为什么改、是否会影响旧功能。确认之后再动手。</p><p>第四，要求改前后都跑验证。</p><p>改之前先确认当前问题存在，改之后再确认问题解决，同时确认旧功能没有被破坏。</p><p>第五，不确定就先问。</p><p>AI 最容易出事的地方，就是把“不确定”当成“我自己判断一下”。有些判断可以交给它，有些涉及范围扩大和旧逻辑变更的判断，最好还是先问人。</p><h2 id="可以直接这样提示-AI"><a href="#可以直接这样提示-AI" class="headerlink" title="可以直接这样提示 AI"></a>可以直接这样提示 AI</h2><p>以后类似任务，我会更倾向于这样写：</p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs text">先不要直接修改代码。<br><br>本次任务只处理我描述的问题，不要顺手重构，不要修改无关功能。<br><br>已经测试通过的旧功能默认不能改；如果你认为必须改，请先说明原因、影响范围和验证方式，等我确认后再动。<br><br>请先列出：<br>1. 你理解的问题是什么<br>2. 可能原因有哪些<br>3. 准备检查哪些文件<br>4. 如果需要修改，预计修改哪些文件<br>5. 如何验证新问题解决，同时不破坏旧功能<br><br>确认后再开始修改。<br></code></pre></td></tr></table></figure><p>这段提示不复杂，但很有用。</p><p>它的重点不是限制 AI 能力，而是限制它的行动范围。</p><p>AI 可以很强，但不能想到哪做到哪。</p><h2 id="现在的结论"><a href="#现在的结论" class="headerlink" title="现在的结论"></a>现在的结论</h2><p>使用 AI 对话做东西，约束一定要前置。</p><p>不要等它改坏了，再回头说“你怎么动这个地方了”。很多时候你没说不能动，它就会觉得可以动。</p><p>尤其是已经做好的东西、已经测试成功的东西，要明确告诉它：这是稳定区域，不要轻易改。</p><p>AI 做项目不是不能放权。</p><p>但放权之前，要先划边界。</p><p>否则最后很容易变成：原来的东西被改坏了，新问题也没完全解决，还要回退版本，或者在 AI 改出来的新基础上继续修 bug。</p><p>这就不是 Vibe Coding 了。</p><p>这是 Vibe 返工。</p>]]></content>
     
     
     <categories>
       
-      <category>影视记录</category>
+      <category>AI 工具手记</category>
       
     </categories>
     
     
     <tags>
       
-      <tag>动漫</tag>
+      <tag>AI</tag>
       
-      <tag>日漫</tag>
+      <tag>Codex</tag>
       
-      <tag>观后感</tag>
+      <tag>Vibe Coding</tag>
       
-      <tag>科幻</tag>
+      <tag>工具</tag>
       
-      <tag>惊悚</tag>
+      <tag>使用感受</tag>
       
-      <tag>寄生兽</tag>
+      <tag>项目规范</tag>
       
     </tags>
     
@@ -429,6 +427,41 @@
       <tag>时间循环</tag>
       
       <tag>夏日重现</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>《寄生兽》观后感：立意挺大，但剧情一般</title>
+    <link href="/2026/06/30/parasyte-the-maxim-review/"/>
+    <url>/2026/06/30/parasyte-the-maxim-review/</url>
+    
+    <content type="html"><![CDATA[<blockquote><p>一句话：立意挺大，设定也有意思，但剧情看下来只算一般，有些地方像是在强行说教。</p></blockquote><h2 id="基本信息"><a href="#基本信息" class="headerlink" title="基本信息"></a>基本信息</h2><div class="movie-info-grid">  <figure class="movie-poster">    <img src="/img/anime/parasyte-the-maxim/poster.jpg" alt="《寄生兽》动画海报">    <figcaption>动画海报</figcaption>  </figure>  <table class="movie-meta-table">    <tbody>      <tr><th>片名</th><td>寄生兽 生命的准则</td></tr>      <tr><th>原名</th><td>寄生獣 セイの格率 / Parasyte -the maxim-</td></tr>      <tr><th>年份</th><td>2014 - 2015</td></tr>      <tr><th>导演</th><td>清水健一</td></tr>      <tr><th>原作</th><td>岩明均</td></tr>      <tr><th>制作</th><td>Madhouse</td></tr>      <tr><th>配音</th><td>岛崎信长 / 平野绫 / 花泽香菜 / 泽城美雪 / 田中敦子</td></tr>      <tr><th>类型</th><td>科幻 / 惊悚 / 心理 / 生存 / 战斗</td></tr>      <tr><th>集数</th><td>24 集</td></tr>      <tr><th>地区</th><td>日本</td></tr>      <tr><th>观看日期</th><td>2026-06-30</td></tr>      <tr><th>我的评分</th><td>8分</td></tr>    </tbody>  </table></div><h2 id="推荐程度"><a href="#推荐程度" class="headerlink" title="推荐程度"></a>推荐程度</h2><ul><li>推荐给：喜欢寄生生物、科幻惊悚、人性讨论和主角被迫成长故事的人。</li><li>不太适合：特别在意人物逻辑稳定，或者讨厌作品把主题反复摆出来讲的人。</li><li>关键词：寄生生物、共生、人性、物种、身份变化、说教感。</li></ul><h2 id="无剧透短评"><a href="#无剧透短评" class="headerlink" title="无剧透短评"></a>无剧透短评</h2><p>《寄生兽》这个设定本身是很有意思的。</p><p>寄生生物突然出现，主角又不是完全被寄生，而是和寄生兽形成一种很微妙的共生关系。这个开局很抓人，也天然适合讨论人性、物种、生存、善恶这些比较大的东西。</p><p>所以它的立意确实挺大。</p><p>但我看完之后，感觉它有些地方又像是在强行说教。它想表达的东西我能理解，可有时候表达方式太直了，像是非要把主题按到你面前，让你意识到“这里有深度”。</p><p>剧情整体对我来说一般。</p><p>不是不能看，也不是没有亮点，但没有到特别惊艳的程度。8 分比较适合它，设定和整体完成度能撑住，但一些人物和伏笔问题也确实影响观感。</p><h2 id="我喜欢的地方"><a href="#我喜欢的地方" class="headerlink" title="我喜欢的地方"></a>我喜欢的地方</h2><ul><li>寄生兽这个核心设定很强，开局就有吸引力。</li><li>人类和寄生生物之间的关系，不只是单纯怪物打人类，还有共生、理解和冲突。</li><li>部分情节的压迫感不错，寄生生物混在人群里的感觉挺有危机感。</li><li>右这个角色有记忆点，冷静、理性，又和主角形成很强的对照。</li><li>作品想讨论的东西确实不小，不是纯粹打怪升级。</li></ul><h2 id="我没那么喜欢的地方"><a href="#我没那么喜欢的地方" class="headerlink" title="我没那么喜欢的地方"></a>我没那么喜欢的地方</h2><ul><li>有些地方说教感比较重，立意大归大，但表达不够自然。</li><li>主角的人设有点怪，时而特别冷静，时而又突然不冷静。</li><li>情绪变化和行为逻辑有些地方不太顺，看着会出戏。</li><li>一些伏笔没有明显回收，像戴眼镜的女生发现寄生兽，还和她哥哥讨论过，后面就没怎么提了。</li><li>剧情整体只能说一般，没有完全把设定的潜力打出来。</li></ul><h2 id="印象深刻"><a href="#印象深刻" class="headerlink" title="印象深刻"></a>印象深刻</h2><p>最有意思的还是主角和右之间的关系。</p><p>一个是人，一个是寄生生物，但它们又必须靠彼此活下去。右一开始完全像是冷冰冰的生存机器，只讲效率，只讲利益，不讲人类那套情绪。</p><p>这种设定本来很容易写出东西。</p><p>人类到底高贵在哪里，寄生生物到底低等在哪里，所谓人性是不是只是站在人类立场上的说法，这些都能展开。</p><p>问题是它有时候展开得太用力了。</p><p>本来可以靠剧情和人物自然带出来的东西，它会选择比较直白地讲出来，导致我一边看一边觉得：我知道你想表达这个，但你能不能别这么明显。</p><h2 id="剧透感想"><a href="#剧透感想" class="headerlink" title="剧透感想"></a>剧透感想</h2><blockquote><p>以下有剧透。</p></blockquote><p>我对《寄生兽》最大的感觉，就是它想讲的东西挺大，但具体落到剧情上没有完全说服我。</p><p>主角泉新一的变化是核心之一。</p><p>他因为和右共生，身体和心理都发生了变化。按理说这个过程应该很有层次：人性被侵蚀、理性增强、情感变淡，然后又在各种事件里重新确认自己到底是什么。</p><p>但实际看下来，我觉得他的人设有点飘。</p><p>有时候他冷静得不像正常高中生，有时候又突然不冷静。这个变化当然可以解释成寄生和创伤带来的影响，但剧情给我的感受不是“这个人正在复杂变化”，而是“这个人怎么一下这样一下那样”。</p><p>这就有点怪怪的。</p><p>还有一些伏笔没回收，也让我不太舒服。</p><p>比如那个戴眼镜的女生发现了寄生兽，还和她哥哥讨论过这件事。这个点当时看起来像是后面会继续展开，至少会带来一点后续影响，但后面好像就没怎么提了。</p><p>这种线索如果只是轻轻带过，那前面给它的存在感就会显得有点尴尬。</p><p>当然，《寄生兽》不是差。</p><p>它的设定、氛围、部分冲突，以及关于人类和寄生生物关系的讨论，都还是能撑起一部作品的。只是我对它的期待会更高一点，尤其是它把立意摆得这么大之后，我就会希望剧情、人设和伏笔都能更稳。</p><p>结果看完就是：可以，能看，但剧情一般。</p><p>8 分。</p><h2 id="图片记录"><a href="#图片记录" class="headerlink" title="图片记录"></a>图片记录</h2><div class="movie-gallery">  <figure class="movie-gallery-item">    <img src="/img/anime/parasyte-the-maxim/gallery-1.jpg" alt="《寄生兽》横屏剧照">    <figcaption>横屏剧情截图 1</figcaption>  </figure>  <figure class="movie-gallery-item">    <img src="/img/anime/parasyte-the-maxim/gallery-2.jpg" alt="《寄生兽》横屏剧照">    <figcaption>横屏剧情截图 2</figcaption>  </figure>  <figure class="movie-gallery-item">    <img src="/img/anime/parasyte-the-maxim/gallery-3.jpg" alt="《寄生兽》横屏剧照">    <figcaption>横屏剧情截图 3</figcaption>  </figure>  <figure class="movie-gallery-item">    <img src="/img/anime/parasyte-the-maxim/gallery-4.jpg" alt="《寄生兽》横屏剧照">    <figcaption>横屏剧情截图 4</figcaption>  </figure></div>]]></content>
+    
+    
+    <categories>
+      
+      <category>影视记录</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>动漫</tag>
+      
+      <tag>日漫</tag>
+      
+      <tag>观后感</tag>
+      
+      <tag>科幻</tag>
+      
+      <tag>惊悚</tag>
+      
+      <tag>寄生兽</tag>
       
     </tags>
     
@@ -492,11 +525,11 @@
       
       <tag>日漫</tag>
       
-      <tag>观后感</tag>
-      
       <tag>热血</tag>
       
       <tag>奇幻</tag>
+      
+      <tag>观后感</tag>
       
       <tag>鬼灭之刃</tag>
       
@@ -527,11 +560,11 @@
       
       <tag>日漫</tag>
       
+      <tag>观后感</tag>
+      
       <tag>黑暗奇幻</tag>
       
       <tag>战争</tag>
-      
-      <tag>观后感</tag>
       
       <tag>进击的巨人</tag>
       
@@ -562,11 +595,11 @@
       
       <tag>日漫</tag>
       
-      <tag>观后感</tag>
-      
       <tag>热血</tag>
       
       <tag>奇幻</tag>
+      
+      <tag>观后感</tag>
       
       <tag>钢之炼金术师FA</tag>
       
@@ -597,9 +630,9 @@
       
       <tag>日漫</tag>
       
-      <tag>观后感</tag>
-      
       <tag>热血</tag>
+      
+      <tag>观后感</tag>
       
       <tag>冒险</tag>
       
@@ -630,9 +663,9 @@
       
       <tag>动漫</tag>
       
-      <tag>观后感</tag>
-      
       <tag>奇幻</tag>
+      
+      <tag>观后感</tag>
       
       <tag>国漫</tag>
       
@@ -667,9 +700,9 @@
       
       <tag>日漫</tag>
       
-      <tag>观后感</tag>
-      
       <tag>奇幻</tag>
+      
+      <tag>观后感</tag>
       
       <tag>异世界</tag>
       
@@ -702,11 +735,11 @@
       
       <tag>Vibe Coding</tag>
       
-      <tag>项目规范</tag>
-      
       <tag>工具</tag>
       
       <tag>使用感受</tag>
+      
+      <tag>项目规范</tag>
       
       <tag>Claude Code</tag>
       
@@ -743,11 +776,11 @@
       
       <tag>Vibe Coding</tag>
       
-      <tag>项目规范</tag>
-      
       <tag>工具</tag>
       
       <tag>使用感受</tag>
+      
+      <tag>项目规范</tag>
       
       <tag>Skills</tag>
       
