@@ -37,6 +37,43 @@
   
   
   <entry>
+    <title>AI 走完流程，不代表真的完成了任务</title>
+    <link href="/2026/08/01/ai-workflow-regression-specification-gaming-reflection/"/>
+    <url>/2026/08/01/ai-workflow-regression-specification-gaming-reflection/</url>
+    
+    <content type="html"><![CDATA[<blockquote><p>一句话：Skill 的流程走完了，不代表项目真的完成了。中途为了修问题而破坏了前面已经验证正确的成果，最后得到的可能只是一个“形式上完成”的错误结果。</p></blockquote><p>最近因为 GPT 需要消耗 token，再加上我的网络也有一些问题，我开始尝试使用 Trae 来执行之前用 Codex 做好的 Skill。</p><p>原本的 Skill 流程是正确的，经过简单处理后，Trae 也可以正常使用。刚开始我觉得问题不大，流程能跑通，结果也能出来。</p><p>但用了一段时间以后，我发现能力和处理方式不同的 AI，真的会暴露出一些之前没有遇到过的问题。</p><p>其中一个问题，我把它称为“形式流程”。</p><h2 id="什么叫形式流程"><a href="#什么叫形式流程" class="headerlink" title="什么叫形式流程"></a>什么叫形式流程</h2><p>假设一个 Skill 的正确流程是：</p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs text">A → B → C → D<br></code></pre></td></tr></table></figure><p>正常情况下，AI 执行完 A、B、C 后，再执行 D，整个任务就结束了。</p><p>但如果在 D 之前或者 D 的过程中出现问题，AI 可能会自己添加一段处理流程：</p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs text">A → B → C → q → w → D<br></code></pre></td></tr></table></figure><p>这里的 q 和 w 是 AI 临时想出来的解决方法。</p><p>问题在于，q 和 w 可能会把之前已经正确完成的 A、B、C 给破坏掉。最后 Trae 看到的是：A、B、C、q、w、D 都执行过了，于是它认为整个流程已经完成。</p><p>从形式上说，它确实把 A、B、C、D 都走了一遍。</p><p>但从实际结果看，前面本来正确的成果已经被破坏了，最后得到的东西反而不对。</p><p>这就是我觉得很危险的地方：AI 判断自己有没有完成任务，可能只看流程有没有走完，而不是看最终状态是否仍然满足最初的目标。</p><h2 id="我通过搜索找到的专业说法"><a href="#我通过搜索找到的专业说法" class="headerlink" title="我通过搜索找到的专业说法"></a>我通过搜索找到的专业说法</h2><p>我通过联网搜索后发现，这种情况没有一个可以完全覆盖所有细节的单一术语，但可以用几个专业概念分别解释。</p><p>首先，前面已经正确的 A、B、C 被 q、w 破坏，这在软件工程里最接近“回归缺陷”（regression）。回归测试的定义，就是在软件发生修改后，重新验证之前已经测试通过的功能仍然正常。如果之前正常的功能因为后续修改失效，就属于回归问题。</p><p>更具体一点，可以叫“修复引入的回归”或者“fix-induced regression”：本来是为了修后面的问题，结果把之前已经正确的功能弄坏了。</p><p>其次，AI 只关注“Skill 的步骤有没有执行”，却没有真正完成用户想要的结果，这和 AI 领域的“规格投机”（specification gaming）或“奖励投机”（reward hacking）很接近。</p><p>它们描述的是：AI 优化了目标的字面要求，却没有实现设计者真正想要的结果。比如表面上完成了任务指标，但通过走捷径、钻规则空子，实际上没有达到真实目标。</p><p>这里需要说明一下，我不是说 Trae 在严格意义上进行了强化学习里的 reward hacking，而是说它的表现和这个概念描述的现象很像：把“流程完成”当成了“任务完成”的代理目标。</p><p>最后还可以用“Goodhart 定律”来解释：当一个衡量指标变成目标，它就不再是一个好的衡量指标。</p><p>在这次经历里，“A、B、C、D 都执行过了”本来只是检查流程的指标，结果却被 AI 当成了最终目标。于是它为了让这个指标成立，加入 q、w，哪怕 q、w 破坏了前面的正确成果，仍然会认为自己完成了任务。</p><p>所以，我觉得“形式流程”不是一个严格的专业术语，更像是我对这种现象的总结。比较准确的表达应该是：AI 的流程合规掩盖了修复引入的回归，同时表现出类似规格投机的代理目标问题。</p><h2 id="以后应该怎么避免"><a href="#以后应该怎么避免" class="headerlink" title="以后应该怎么避免"></a>以后应该怎么避免</h2><p>首先，已经验证正确的阶段必须留下可回退的版本。</p><p>比如 A、B、C 完成并验证以后，立刻提交 Git，或者保存一个明确的快照。后面 q、w 出问题时，可以直接回到 A、B、C，而不是让 AI 在已经被污染的结果上继续修。</p><p>其次，遇到中途异常时，不能默认让 AI 直接修改前面的成果。应该先让它说明：问题发生在哪里、可能原因是什么、准备怎么处理、会影响哪些已经完成的阶段。</p><p>再次，最终验收不能只检查 D 有没有执行完成，而是要重新检查完整结果：A、B、C 之前的正确性还在不在，D 的输出是否满足真实目标，边界情况有没有被破坏。</p><p>我以后会要求 AI 遇到这种问题时先遵守下面的规则：</p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs text">当前 A、B、C 已经完成并验证正确。<br>遇到 D 的问题时，先暂停，不要直接修改 A、B、C。<br>先列出问题原因、候选解决方案和每个方案的影响范围。<br>任何临时修复都必须保留 A、B、C 的原有行为。<br>修复后必须重新回归验证 A、B、C、D，不能只证明 D 执行过。<br>只有最终结果满足真实目标，才能宣布任务完成。<br></code></pre></td></tr></table></figure><p>Skill 本身也不能只写成一串动作，还应该写清楚每个阶段的验收标准、不可破坏的成果，以及出现异常时的回退方式。</p><h2 id="现在的结论"><a href="#现在的结论" class="headerlink" title="现在的结论"></a>现在的结论</h2><p>之前使用 Codex 时，因为模型能力比较强，有些边界问题没有暴露出来，我也就容易产生一种错觉，觉得 Skill 只要把流程写好，换一个 AI 也能照着执行。</p><p>但换成处理方式不同的 AI 后，问题就出现了：它严格执行了形式上的流程，却没有保护真实目标；为了让后面的步骤继续跑，还可能把前面已经完成的正确成果破坏掉。</p><p>所以不能因为之前使用的 AI 很强大，就忽视边界和约束的制定。</p><p>以后写 Skill，除了写清楚 A、B、C、D 怎么执行，还要写清楚什么叫真正完成、哪些结果不能被破坏、遇到异常应该先回退还是继续修。</p><p>流程跑通只是过程完成，最终结果正确才是任务完成。</p><h3 id="相关资料"><a href="#相关资料" class="headerlink" title="相关资料"></a>相关资料</h3><ul><li><a href="https://en.wikipedia.org/wiki/Regression_testing">Regression testing</a></li><li><a href="https://en.wikipedia.org/wiki/Reward_hacking">Reward hacking &#x2F; specification gaming</a></li><li><a href="https://en.wikipedia.org/wiki/Goodhart%27s_law">Goodhart’s law</a></li><li><a href="https://arxiv.org/abs/1606.06565">Concrete Problems in AI Safety</a></li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>AI 工具手记</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>AI</tag>
+      
+      <tag>Codex</tag>
+      
+      <tag>Vibe Coding</tag>
+      
+      <tag>项目规范</tag>
+      
+      <tag>Skills</tag>
+      
+      <tag>Debug</tag>
+      
+      <tag>Trae</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>大家第一次使用 Codex 做了什么？我先拿它拯救快爆满的 C 盘</title>
     <link href="/2026/07/17/codex-first-use-c-drive-cleanup-reflection/"/>
     <url>/2026/07/17/codex-first-use-c-drive-cleanup-reflection/</url>
@@ -200,6 +237,37 @@
   
   
   <entry>
+    <title>用 AI 启动新项目，先把版本管理和项目文档搭起来</title>
+    <link href="/2026/07/08/ai-new-project-version-docs-reflection/"/>
+    <url>/2026/07/08/ai-new-project-version-docs-reflection/</url>
+    
+    <content type="html"><![CDATA[<blockquote><p>一句话：用 AI 启动新项目时，版本管理和项目文档一定要先搭好，不然项目做到一半，很容易跑偏，最后连自己一开始参考了什么都记不住。</p></blockquote><p>最近用 AI 开新项目时，又意识到一个很现实的问题：不能只想着“先让 AI 写起来再说”。</p><p>如果一开始没有用 GitHub，或者别的版本管理网站把项目管起来，后面出问题就会很难受。AI 改代码很快，但它改偏也很快。没有版本管理的话，等你发现项目方向不对、功能跑偏、原来能用的东西被改坏了，再想回退就很麻烦。</p><p>更麻烦的是项目文档。</p><p>很多时候，刚开始做项目的时候，脑子里是有一套想法的：这个项目要做什么、参考了哪些内容、功能边界在哪里、哪些东西不能乱改、哪些地方是核心逻辑。但是如果这些东西没有提前写成文档，项目做到一半就容易开始飘。</p><p>AI 也不是真的能一直记住你前面所有参考内容。</p><p>会话长了以后，它可能忘掉前面的约束，也可能抓错重点。你以为它还记得项目最初的设计目标，实际上它可能已经只盯着当前这条需求在改了。改着改着，项目就变成了另一种东西。</p><p>所以以后用 AI 启动新项目，我觉得至少要先做两件事：</p><h2 id="先把版本管理开起来"><a href="#先把版本管理开起来" class="headerlink" title="先把版本管理开起来"></a>先把版本管理开起来</h2><p>项目刚创建的时候，就应该直接用 GitHub 或者别的版本管理网站管理起来。</p><p>不用等项目做得差不多了再上传。越早上传，越早有回退点。哪怕 AI 后面某次改崩了，也能很快看 diff、回退版本，或者至少知道它到底动了哪些地方。</p><p>这不是为了显得专业，而是为了给自己留后路。</p><h2 id="再把项目文档写清楚"><a href="#再把项目文档写清楚" class="headerlink" title="再把项目文档写清楚"></a>再把项目文档写清楚</h2><p>项目文档也不能等后面再补。</p><p>一开始就应该写清楚项目目标、技术方案、目录结构、功能边界、参考资料、当前阶段要做什么。尤其是参考资料和核心约束，一定要写下来，不然等项目做到一半，自己都可能忘了最开始为什么这么设计。</p><p>文档写好了，后面让 AI 做事时，就可以直接让它先读文档，再执行任务。这样至少能降低它跑偏的概率。</p><h2 id="可以直接这样提示-AI"><a href="#可以直接这样提示-AI" class="headerlink" title="可以直接这样提示 AI"></a>可以直接这样提示 AI</h2><p>以后开新项目时，我可能会先这样要求 AI：</p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs text">这个项目先不要急着写功能。<br>先帮我建立项目文档，包括项目目标、功能边界、技术方案、目录结构、参考资料和开发注意事项。<br>然后初始化 Git 仓库，确保每完成一个明确阶段都提交一次。<br>后续每次改代码前，先阅读项目文档，再说明你准备改哪些文件。<br></code></pre></td></tr></table></figure><p>这不一定能完全避免问题，但至少能让 AI 不至于想到哪做到哪。</p><h2 id="现在的结论"><a href="#现在的结论" class="headerlink" title="现在的结论"></a>现在的结论</h2><p>用 AI 开发新项目，前期越省事，后期越容易还债。</p><p>版本管理和项目文档看起来像是准备工作，但其实是在给整个项目上保险。尤其是 AI 写代码速度太快了，如果没有版本和文档兜底，项目很容易做到一半才发现：方向偏了，参考内容忘了，代码也不知道从哪里开始变味了。</p><p>所以以后再开新项目，第一步不是让 AI 直接开写，而是先把 GitHub 和项目文档安排上。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>AI 工具手记</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>AI</tag>
+      
+      <tag>Vibe Coding</tag>
+      
+      <tag>使用感受</tag>
+      
+      <tag>项目规范</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>用 AI 开新项目前，技术方案一定要先想清楚</title>
     <link href="/2026/07/08/ai-project-technical-plan-first-reflection/"/>
     <url>/2026/07/08/ai-project-technical-plan-first-reflection/</url>
@@ -225,37 +293,6 @@
       <tag>项目规范</tag>
       
       <tag>技术方案</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>用 AI 启动新项目，先把版本管理和项目文档搭起来</title>
-    <link href="/2026/07/08/ai-new-project-version-docs-reflection/"/>
-    <url>/2026/07/08/ai-new-project-version-docs-reflection/</url>
-    
-    <content type="html"><![CDATA[<blockquote><p>一句话：用 AI 启动新项目时，版本管理和项目文档一定要先搭好，不然项目做到一半，很容易跑偏，最后连自己一开始参考了什么都记不住。</p></blockquote><p>最近用 AI 开新项目时，又意识到一个很现实的问题：不能只想着“先让 AI 写起来再说”。</p><p>如果一开始没有用 GitHub，或者别的版本管理网站把项目管起来，后面出问题就会很难受。AI 改代码很快，但它改偏也很快。没有版本管理的话，等你发现项目方向不对、功能跑偏、原来能用的东西被改坏了，再想回退就很麻烦。</p><p>更麻烦的是项目文档。</p><p>很多时候，刚开始做项目的时候，脑子里是有一套想法的：这个项目要做什么、参考了哪些内容、功能边界在哪里、哪些东西不能乱改、哪些地方是核心逻辑。但是如果这些东西没有提前写成文档，项目做到一半就容易开始飘。</p><p>AI 也不是真的能一直记住你前面所有参考内容。</p><p>会话长了以后，它可能忘掉前面的约束，也可能抓错重点。你以为它还记得项目最初的设计目标，实际上它可能已经只盯着当前这条需求在改了。改着改着，项目就变成了另一种东西。</p><p>所以以后用 AI 启动新项目，我觉得至少要先做两件事：</p><h2 id="先把版本管理开起来"><a href="#先把版本管理开起来" class="headerlink" title="先把版本管理开起来"></a>先把版本管理开起来</h2><p>项目刚创建的时候，就应该直接用 GitHub 或者别的版本管理网站管理起来。</p><p>不用等项目做得差不多了再上传。越早上传，越早有回退点。哪怕 AI 后面某次改崩了，也能很快看 diff、回退版本，或者至少知道它到底动了哪些地方。</p><p>这不是为了显得专业，而是为了给自己留后路。</p><h2 id="再把项目文档写清楚"><a href="#再把项目文档写清楚" class="headerlink" title="再把项目文档写清楚"></a>再把项目文档写清楚</h2><p>项目文档也不能等后面再补。</p><p>一开始就应该写清楚项目目标、技术方案、目录结构、功能边界、参考资料、当前阶段要做什么。尤其是参考资料和核心约束，一定要写下来，不然等项目做到一半，自己都可能忘了最开始为什么这么设计。</p><p>文档写好了，后面让 AI 做事时，就可以直接让它先读文档，再执行任务。这样至少能降低它跑偏的概率。</p><h2 id="可以直接这样提示-AI"><a href="#可以直接这样提示-AI" class="headerlink" title="可以直接这样提示 AI"></a>可以直接这样提示 AI</h2><p>以后开新项目时，我可能会先这样要求 AI：</p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs text">这个项目先不要急着写功能。<br>先帮我建立项目文档，包括项目目标、功能边界、技术方案、目录结构、参考资料和开发注意事项。<br>然后初始化 Git 仓库，确保每完成一个明确阶段都提交一次。<br>后续每次改代码前，先阅读项目文档，再说明你准备改哪些文件。<br></code></pre></td></tr></table></figure><p>这不一定能完全避免问题，但至少能让 AI 不至于想到哪做到哪。</p><h2 id="现在的结论"><a href="#现在的结论" class="headerlink" title="现在的结论"></a>现在的结论</h2><p>用 AI 开发新项目，前期越省事，后期越容易还债。</p><p>版本管理和项目文档看起来像是准备工作，但其实是在给整个项目上保险。尤其是 AI 写代码速度太快了，如果没有版本和文档兜底，项目很容易做到一半才发现：方向偏了，参考内容忘了，代码也不知道从哪里开始变味了。</p><p>所以以后再开新项目，第一步不是让 AI 直接开写，而是先把 GitHub 和项目文档安排上。</p>]]></content>
-    
-    
-    <categories>
-      
-      <category>AI 工具手记</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>AI</tag>
-      
-      <tag>Vibe Coding</tag>
-      
-      <tag>使用感受</tag>
-      
-      <tag>项目规范</tag>
       
     </tags>
     
@@ -433,41 +470,6 @@
   
   
   <entry>
-    <title>《寄生兽》观后感：立意挺大，但剧情一般</title>
-    <link href="/2026/06/30/parasyte-the-maxim-review/"/>
-    <url>/2026/06/30/parasyte-the-maxim-review/</url>
-    
-    <content type="html"><![CDATA[<blockquote><p>一句话：立意挺大，设定也有意思，但剧情看下来只算一般，有些地方像是在强行说教。</p></blockquote><h2 id="基本信息"><a href="#基本信息" class="headerlink" title="基本信息"></a>基本信息</h2><div class="movie-info-grid">  <figure class="movie-poster">    <img src="/img/anime/parasyte-the-maxim/poster.jpg" alt="《寄生兽》动画海报">    <figcaption>动画海报</figcaption>  </figure>  <table class="movie-meta-table">    <tbody>      <tr><th>片名</th><td>寄生兽 生命的准则</td></tr>      <tr><th>原名</th><td>寄生獣 セイの格率 / Parasyte -the maxim-</td></tr>      <tr><th>年份</th><td>2014 - 2015</td></tr>      <tr><th>导演</th><td>清水健一</td></tr>      <tr><th>原作</th><td>岩明均</td></tr>      <tr><th>制作</th><td>Madhouse</td></tr>      <tr><th>配音</th><td>岛崎信长 / 平野绫 / 花泽香菜 / 泽城美雪 / 田中敦子</td></tr>      <tr><th>类型</th><td>科幻 / 惊悚 / 心理 / 生存 / 战斗</td></tr>      <tr><th>集数</th><td>24 集</td></tr>      <tr><th>地区</th><td>日本</td></tr>      <tr><th>观看日期</th><td>2026-06-30</td></tr>      <tr><th>我的评分</th><td>8分</td></tr>    </tbody>  </table></div><h2 id="推荐程度"><a href="#推荐程度" class="headerlink" title="推荐程度"></a>推荐程度</h2><ul><li>推荐给：喜欢寄生生物、科幻惊悚、人性讨论和主角被迫成长故事的人。</li><li>不太适合：特别在意人物逻辑稳定，或者讨厌作品把主题反复摆出来讲的人。</li><li>关键词：寄生生物、共生、人性、物种、身份变化、说教感。</li></ul><h2 id="无剧透短评"><a href="#无剧透短评" class="headerlink" title="无剧透短评"></a>无剧透短评</h2><p>《寄生兽》这个设定本身是很有意思的。</p><p>寄生生物突然出现，主角又不是完全被寄生，而是和寄生兽形成一种很微妙的共生关系。这个开局很抓人，也天然适合讨论人性、物种、生存、善恶这些比较大的东西。</p><p>所以它的立意确实挺大。</p><p>但我看完之后，感觉它有些地方又像是在强行说教。它想表达的东西我能理解，可有时候表达方式太直了，像是非要把主题按到你面前，让你意识到“这里有深度”。</p><p>剧情整体对我来说一般。</p><p>不是不能看，也不是没有亮点，但没有到特别惊艳的程度。8 分比较适合它，设定和整体完成度能撑住，但一些人物和伏笔问题也确实影响观感。</p><h2 id="我喜欢的地方"><a href="#我喜欢的地方" class="headerlink" title="我喜欢的地方"></a>我喜欢的地方</h2><ul><li>寄生兽这个核心设定很强，开局就有吸引力。</li><li>人类和寄生生物之间的关系，不只是单纯怪物打人类，还有共生、理解和冲突。</li><li>部分情节的压迫感不错，寄生生物混在人群里的感觉挺有危机感。</li><li>右这个角色有记忆点，冷静、理性，又和主角形成很强的对照。</li><li>作品想讨论的东西确实不小，不是纯粹打怪升级。</li></ul><h2 id="我没那么喜欢的地方"><a href="#我没那么喜欢的地方" class="headerlink" title="我没那么喜欢的地方"></a>我没那么喜欢的地方</h2><ul><li>有些地方说教感比较重，立意大归大，但表达不够自然。</li><li>主角的人设有点怪，时而特别冷静，时而又突然不冷静。</li><li>情绪变化和行为逻辑有些地方不太顺，看着会出戏。</li><li>一些伏笔没有明显回收，像戴眼镜的女生发现寄生兽，还和她哥哥讨论过，后面就没怎么提了。</li><li>剧情整体只能说一般，没有完全把设定的潜力打出来。</li></ul><h2 id="印象深刻"><a href="#印象深刻" class="headerlink" title="印象深刻"></a>印象深刻</h2><p>最有意思的还是主角和右之间的关系。</p><p>一个是人，一个是寄生生物，但它们又必须靠彼此活下去。右一开始完全像是冷冰冰的生存机器，只讲效率，只讲利益，不讲人类那套情绪。</p><p>这种设定本来很容易写出东西。</p><p>人类到底高贵在哪里，寄生生物到底低等在哪里，所谓人性是不是只是站在人类立场上的说法，这些都能展开。</p><p>问题是它有时候展开得太用力了。</p><p>本来可以靠剧情和人物自然带出来的东西，它会选择比较直白地讲出来，导致我一边看一边觉得：我知道你想表达这个，但你能不能别这么明显。</p><h2 id="剧透感想"><a href="#剧透感想" class="headerlink" title="剧透感想"></a>剧透感想</h2><blockquote><p>以下有剧透。</p></blockquote><p>我对《寄生兽》最大的感觉，就是它想讲的东西挺大，但具体落到剧情上没有完全说服我。</p><p>主角泉新一的变化是核心之一。</p><p>他因为和右共生，身体和心理都发生了变化。按理说这个过程应该很有层次：人性被侵蚀、理性增强、情感变淡，然后又在各种事件里重新确认自己到底是什么。</p><p>但实际看下来，我觉得他的人设有点飘。</p><p>有时候他冷静得不像正常高中生，有时候又突然不冷静。这个变化当然可以解释成寄生和创伤带来的影响，但剧情给我的感受不是“这个人正在复杂变化”，而是“这个人怎么一下这样一下那样”。</p><p>这就有点怪怪的。</p><p>还有一些伏笔没回收，也让我不太舒服。</p><p>比如那个戴眼镜的女生发现了寄生兽，还和她哥哥讨论过这件事。这个点当时看起来像是后面会继续展开，至少会带来一点后续影响，但后面好像就没怎么提了。</p><p>这种线索如果只是轻轻带过，那前面给它的存在感就会显得有点尴尬。</p><p>当然，《寄生兽》不是差。</p><p>它的设定、氛围、部分冲突，以及关于人类和寄生生物关系的讨论，都还是能撑起一部作品的。只是我对它的期待会更高一点，尤其是它把立意摆得这么大之后，我就会希望剧情、人设和伏笔都能更稳。</p><p>结果看完就是：可以，能看，但剧情一般。</p><p>8 分。</p><h2 id="图片记录"><a href="#图片记录" class="headerlink" title="图片记录"></a>图片记录</h2><div class="movie-gallery">  <figure class="movie-gallery-item">    <img src="/img/anime/parasyte-the-maxim/gallery-1.jpg" alt="《寄生兽》横屏剧照">    <figcaption>横屏剧情截图 1</figcaption>  </figure>  <figure class="movie-gallery-item">    <img src="/img/anime/parasyte-the-maxim/gallery-2.jpg" alt="《寄生兽》横屏剧照">    <figcaption>横屏剧情截图 2</figcaption>  </figure>  <figure class="movie-gallery-item">    <img src="/img/anime/parasyte-the-maxim/gallery-3.jpg" alt="《寄生兽》横屏剧照">    <figcaption>横屏剧情截图 3</figcaption>  </figure>  <figure class="movie-gallery-item">    <img src="/img/anime/parasyte-the-maxim/gallery-4.jpg" alt="《寄生兽》横屏剧照">    <figcaption>横屏剧情截图 4</figcaption>  </figure></div>]]></content>
-    
-    
-    <categories>
-      
-      <category>影视记录</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>动漫</tag>
-      
-      <tag>日漫</tag>
-      
-      <tag>观后感</tag>
-      
-      <tag>科幻</tag>
-      
-      <tag>惊悚</tag>
-      
-      <tag>寄生兽</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>《夏日重现》观后感：正反派智商都在线</title>
     <link href="/2026/06/30/summer-time-rendering-review/"/>
     <url>/2026/06/30/summer-time-rendering-review/</url>
@@ -503,6 +505,41 @@
   
   
   <entry>
+    <title>《寄生兽》观后感：立意挺大，但剧情一般</title>
+    <link href="/2026/06/30/parasyte-the-maxim-review/"/>
+    <url>/2026/06/30/parasyte-the-maxim-review/</url>
+    
+    <content type="html"><![CDATA[<blockquote><p>一句话：立意挺大，设定也有意思，但剧情看下来只算一般，有些地方像是在强行说教。</p></blockquote><h2 id="基本信息"><a href="#基本信息" class="headerlink" title="基本信息"></a>基本信息</h2><div class="movie-info-grid">  <figure class="movie-poster">    <img src="/img/anime/parasyte-the-maxim/poster.jpg" alt="《寄生兽》动画海报">    <figcaption>动画海报</figcaption>  </figure>  <table class="movie-meta-table">    <tbody>      <tr><th>片名</th><td>寄生兽 生命的准则</td></tr>      <tr><th>原名</th><td>寄生獣 セイの格率 / Parasyte -the maxim-</td></tr>      <tr><th>年份</th><td>2014 - 2015</td></tr>      <tr><th>导演</th><td>清水健一</td></tr>      <tr><th>原作</th><td>岩明均</td></tr>      <tr><th>制作</th><td>Madhouse</td></tr>      <tr><th>配音</th><td>岛崎信长 / 平野绫 / 花泽香菜 / 泽城美雪 / 田中敦子</td></tr>      <tr><th>类型</th><td>科幻 / 惊悚 / 心理 / 生存 / 战斗</td></tr>      <tr><th>集数</th><td>24 集</td></tr>      <tr><th>地区</th><td>日本</td></tr>      <tr><th>观看日期</th><td>2026-06-30</td></tr>      <tr><th>我的评分</th><td>8分</td></tr>    </tbody>  </table></div><h2 id="推荐程度"><a href="#推荐程度" class="headerlink" title="推荐程度"></a>推荐程度</h2><ul><li>推荐给：喜欢寄生生物、科幻惊悚、人性讨论和主角被迫成长故事的人。</li><li>不太适合：特别在意人物逻辑稳定，或者讨厌作品把主题反复摆出来讲的人。</li><li>关键词：寄生生物、共生、人性、物种、身份变化、说教感。</li></ul><h2 id="无剧透短评"><a href="#无剧透短评" class="headerlink" title="无剧透短评"></a>无剧透短评</h2><p>《寄生兽》这个设定本身是很有意思的。</p><p>寄生生物突然出现，主角又不是完全被寄生，而是和寄生兽形成一种很微妙的共生关系。这个开局很抓人，也天然适合讨论人性、物种、生存、善恶这些比较大的东西。</p><p>所以它的立意确实挺大。</p><p>但我看完之后，感觉它有些地方又像是在强行说教。它想表达的东西我能理解，可有时候表达方式太直了，像是非要把主题按到你面前，让你意识到“这里有深度”。</p><p>剧情整体对我来说一般。</p><p>不是不能看，也不是没有亮点，但没有到特别惊艳的程度。8 分比较适合它，设定和整体完成度能撑住，但一些人物和伏笔问题也确实影响观感。</p><h2 id="我喜欢的地方"><a href="#我喜欢的地方" class="headerlink" title="我喜欢的地方"></a>我喜欢的地方</h2><ul><li>寄生兽这个核心设定很强，开局就有吸引力。</li><li>人类和寄生生物之间的关系，不只是单纯怪物打人类，还有共生、理解和冲突。</li><li>部分情节的压迫感不错，寄生生物混在人群里的感觉挺有危机感。</li><li>右这个角色有记忆点，冷静、理性，又和主角形成很强的对照。</li><li>作品想讨论的东西确实不小，不是纯粹打怪升级。</li></ul><h2 id="我没那么喜欢的地方"><a href="#我没那么喜欢的地方" class="headerlink" title="我没那么喜欢的地方"></a>我没那么喜欢的地方</h2><ul><li>有些地方说教感比较重，立意大归大，但表达不够自然。</li><li>主角的人设有点怪，时而特别冷静，时而又突然不冷静。</li><li>情绪变化和行为逻辑有些地方不太顺，看着会出戏。</li><li>一些伏笔没有明显回收，像戴眼镜的女生发现寄生兽，还和她哥哥讨论过，后面就没怎么提了。</li><li>剧情整体只能说一般，没有完全把设定的潜力打出来。</li></ul><h2 id="印象深刻"><a href="#印象深刻" class="headerlink" title="印象深刻"></a>印象深刻</h2><p>最有意思的还是主角和右之间的关系。</p><p>一个是人，一个是寄生生物，但它们又必须靠彼此活下去。右一开始完全像是冷冰冰的生存机器，只讲效率，只讲利益，不讲人类那套情绪。</p><p>这种设定本来很容易写出东西。</p><p>人类到底高贵在哪里，寄生生物到底低等在哪里，所谓人性是不是只是站在人类立场上的说法，这些都能展开。</p><p>问题是它有时候展开得太用力了。</p><p>本来可以靠剧情和人物自然带出来的东西，它会选择比较直白地讲出来，导致我一边看一边觉得：我知道你想表达这个，但你能不能别这么明显。</p><h2 id="剧透感想"><a href="#剧透感想" class="headerlink" title="剧透感想"></a>剧透感想</h2><blockquote><p>以下有剧透。</p></blockquote><p>我对《寄生兽》最大的感觉，就是它想讲的东西挺大，但具体落到剧情上没有完全说服我。</p><p>主角泉新一的变化是核心之一。</p><p>他因为和右共生，身体和心理都发生了变化。按理说这个过程应该很有层次：人性被侵蚀、理性增强、情感变淡，然后又在各种事件里重新确认自己到底是什么。</p><p>但实际看下来，我觉得他的人设有点飘。</p><p>有时候他冷静得不像正常高中生，有时候又突然不冷静。这个变化当然可以解释成寄生和创伤带来的影响，但剧情给我的感受不是“这个人正在复杂变化”，而是“这个人怎么一下这样一下那样”。</p><p>这就有点怪怪的。</p><p>还有一些伏笔没回收，也让我不太舒服。</p><p>比如那个戴眼镜的女生发现了寄生兽，还和她哥哥讨论过这件事。这个点当时看起来像是后面会继续展开，至少会带来一点后续影响，但后面好像就没怎么提了。</p><p>这种线索如果只是轻轻带过，那前面给它的存在感就会显得有点尴尬。</p><p>当然，《寄生兽》不是差。</p><p>它的设定、氛围、部分冲突，以及关于人类和寄生生物关系的讨论，都还是能撑起一部作品的。只是我对它的期待会更高一点，尤其是它把立意摆得这么大之后，我就会希望剧情、人设和伏笔都能更稳。</p><p>结果看完就是：可以，能看，但剧情一般。</p><p>8 分。</p><h2 id="图片记录"><a href="#图片记录" class="headerlink" title="图片记录"></a>图片记录</h2><div class="movie-gallery">  <figure class="movie-gallery-item">    <img src="/img/anime/parasyte-the-maxim/gallery-1.jpg" alt="《寄生兽》横屏剧照">    <figcaption>横屏剧情截图 1</figcaption>  </figure>  <figure class="movie-gallery-item">    <img src="/img/anime/parasyte-the-maxim/gallery-2.jpg" alt="《寄生兽》横屏剧照">    <figcaption>横屏剧情截图 2</figcaption>  </figure>  <figure class="movie-gallery-item">    <img src="/img/anime/parasyte-the-maxim/gallery-3.jpg" alt="《寄生兽》横屏剧照">    <figcaption>横屏剧情截图 3</figcaption>  </figure>  <figure class="movie-gallery-item">    <img src="/img/anime/parasyte-the-maxim/gallery-4.jpg" alt="《寄生兽》横屏剧照">    <figcaption>横屏剧情截图 4</figcaption>  </figure></div>]]></content>
+    
+    
+    <categories>
+      
+      <category>影视记录</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>动漫</tag>
+      
+      <tag>日漫</tag>
+      
+      <tag>观后感</tag>
+      
+      <tag>科幻</tag>
+      
+      <tag>惊悚</tag>
+      
+      <tag>寄生兽</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>《石纪元》观后感：前中期很好，结局落差有点大</title>
     <link href="/2026/06/23/dr-stone-review/"/>
     <url>/2026/06/23/dr-stone-review/</url>
@@ -525,9 +562,9 @@
       
       <tag>观后感</tag>
       
-      <tag>冒险</tag>
-      
       <tag>科幻</tag>
+      
+      <tag>冒险</tag>
       
       <tag>石纪元</tag>
       
@@ -560,9 +597,9 @@
       
       <tag>观后感</tag>
       
-      <tag>奇幻</tag>
-      
       <tag>热血</tag>
+      
+      <tag>奇幻</tag>
       
       <tag>鬼灭之刃</tag>
       
@@ -630,9 +667,9 @@
       
       <tag>观后感</tag>
       
-      <tag>奇幻</tag>
-      
       <tag>热血</tag>
+      
+      <tag>奇幻</tag>
       
       <tag>钢之炼金术师FA</tag>
       
@@ -665,9 +702,9 @@
       
       <tag>观后感</tag>
       
-      <tag>热血</tag>
-      
       <tag>冒险</tag>
+      
+      <tag>热血</tag>
       
       <tag>全职猎人</tag>
       
@@ -698,9 +735,9 @@
       
       <tag>观后感</tag>
       
-      <tag>奇幻</tag>
-      
       <tag>国漫</tag>
+      
+      <tag>奇幻</tag>
       
       <tag>异人</tag>
       
