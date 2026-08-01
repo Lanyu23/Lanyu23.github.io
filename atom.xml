@@ -6,7 +6,7 @@
   <link href="https://lanyu23.github.io/atom.xml" rel="self"/>
   
   <link href="https://lanyu23.github.io/"/>
-  <updated>2026-07-16T19:57:24.897Z</updated>
+  <updated>2026-08-01T04:39:57.251Z</updated>
   <id>https://lanyu23.github.io/</id>
   
   <author>
@@ -15,6 +15,41 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>选 AI 不只看上限，更要看它能不能保住下限</title>
+    <link href="https://lanyu23.github.io/2026/08/01/ai-model-lower-bound-reflection/"/>
+    <id>https://lanyu23.github.io/2026/08/01/ai-model-lower-bound-reflection/</id>
+    <published>2026-07-31T16:00:00.000Z</published>
+    <updated>2026-08-01T04:39:57.251Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>一句话：不同 AI 用起来体感差别很大。大家都有能力上限很正常，但有的 AI 连下限都保不住，同一个目标最后能做出 90 分，也能做出 10 分。</p></blockquote><p>最近用了几个不同的 AI，我越来越明显地感觉到：虽然它们都叫 AI，但用起来完全不是一回事。</p><p>大家都有自己的能力上限，这很正常。毕竟不可能要求每个模型都能处理最复杂的问题。但是让我比较在意的，其实不是它们的上限，而是它们能不能保住下限。</p><p>有的 AI 偶尔答得不好，但大多数时候至少知道自己哪里不确定，会先分析问题，会尝试排查原因，也知道什么时候应该停下来问清楚。</p><p>有的 AI 就不一样了。它可能也能做出正确结果，但执行过程中很容易跑偏，遇到问题不会主动怀疑方案，最后直接给出一个看起来完成、实际质量很差的结果。</p><h2 id="同一个模型也能做出-90-分和-10-分"><a href="#同一个模型也能做出-90-分和-10-分" class="headerlink" title="同一个模型也能做出 90 分和 10 分"></a>同一个模型也能做出 90 分和 10 分</h2><p>更有意思的是，就算是同一个模型，使用方式不同，最后的结果也可能差距非常大。</p><p>同一个模型、同一个目标内容，有人可以用出 90 分，有人只能用出 10 分。</p><p>这中间有模型本身的能力差异，也有上下文、提示方式、项目文档、边界约束和验证流程的影响。会不会把任务拆开，会不会让 AI 先分析再动手，会不会在中途检查结果，都会直接影响最后质量。</p><p>但问题是，使用方法可以提高模型的发挥，却不一定能彻底弥补模型本身的下限。</p><p>如果模型在遇到问题时不会自我排查，只会随便猜一个原因；如果它不知道什么时候该停止修改；如果它把流程走完就当成任务完成，那你就算写了很多约束，也可能需要一直盯着它收拾残局。</p><h2 id="这有点像公司招人"><a href="#这有点像公司招人" class="headerlink" title="这有点像公司招人"></a>这有点像公司招人</h2><p>我现在觉得，选择 AI 有点像公司招聘应届生。</p><p>虽然大家都是应届生，但公司通常会更喜欢 985、211 的学生。这里不一定代表普通学校的学生就一定做不好，而是从概率上看，能够通过这类竞争性筛选的人，通常具备更强的学习能力、问题解决能力和自我驱动力。</p><p>工作中遇到问题时，他们可能会自己排查真正原因，找到相对正确的方案，再把事情推进下去。对管理层来说，需要额外手把手教导和纠正的地方可能少一些。</p><p>而另一些人也可能最终做出同样的成果，只是管理者需要投入更多时间去教他怎么分析、怎么验证、怎么避免反复犯错。</p><p>这不是说学历可以直接决定一个人的能力，而是说招聘时，企业往往会把学历当成一种筛选信号。因为在还不了解一个人的时候，管理成本和交付稳定性本身就很重要。</p><p>AI 也是类似的道理。</p><h2 id="这也解释了为什么面试造火箭，工作拧螺丝"><a href="#这也解释了为什么面试造火箭，工作拧螺丝" class="headerlink" title="这也解释了为什么面试造火箭，工作拧螺丝"></a>这也解释了为什么面试造火箭，工作拧螺丝</h2><p>以前经常听到一句话：面试造火箭，工作拧螺丝。</p><p>表面上看，面试考的东西和日常工作不一样，但面试题真正想考察的，很多时候并不是你以后每天会不会写那个题，而是你遇到陌生问题时有没有分析能力、学习能力和解决问题的能力。</p><p>工作里不可能每次都有标准答案，也不可能所有问题都有人把每一步告诉你。真正重要的是，出了问题以后能不能自己定位原因，能不能找到合适的方案，能不能在执行后验证结果。</p><p>AI 的选择也一样。</p><p>我更希望它不只是偶尔能做出一个漂亮答案，而是遇到普通问题时也不至于离谱，遇到错误时不会一直在错误道路上狂奔。</p><h2 id="为什么-AI-的下限很重要"><a href="#为什么-AI-的下限很重要" class="headerlink" title="为什么 AI 的下限很重要"></a>为什么 AI 的下限很重要</h2><p>如果 AI 的上限很高，但下限很低，使用起来就会很不稳定。</p><p>你可能刚刚还觉得它非常聪明，下一次就会发现它完全没有理解人话。前一轮它能正确排查问题，后一轮它可能直接凭感觉修改代码。你不知道它这次会给你 90 分，还是给你 10 分。</p><p>这种不稳定会带来额外的管理成本：</p><ul><li>需要把需求拆得更细。</li><li>需要频繁检查它有没有跑偏。</li><li>需要反复提醒已经写过的边界。</li><li>需要自己验证它所谓的“已完成”到底是不是真的完成。</li><li>出问题后，还要花时间清理它为了凑结果留下的代码。</li></ul><p>AI 越不聪明，使用者就越像项目经理、测试人员和保姆的结合体。</p><h2 id="现在的结论"><a href="#现在的结论" class="headerlink" title="现在的结论"></a>现在的结论</h2><p>所以现在选择 AI，我肯定会优先选择更聪明、更稳定的模型。</p><p>不只是因为它能处理更复杂的问题，更是因为它在普通问题上也更容易保住下限。它可能偶尔也会犯错，但至少更有可能自己发现问题、解释原因、执行相对正确的方案。</p><p>当然，强模型也不能完全不设边界。再聪明的 AI，也需要项目文档、版本管理、明确约束和结果验证。</p><p>但强模型配合这些约束，往往能把管理成本降下来；弱模型如果连下限都保不住，就算最终也能做出成果，过程中消耗的时间和精力也可能不值得。</p><p>对我来说，AI 的上限决定它能走多远，下限决定我敢不敢把事情交给它。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;一句话：不同 AI 用起来体感差别很大。大家都有能力上限很正常，但有的 AI 连下限都保不住，同一个目标最后能做出 90 分，也能做出 10 分。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;最近用了几个不同的 AI，我越来越明显地感觉到：虽然它们都</summary>
+      
+    
+    
+    
+    <category term="AI 工具手记" scheme="https://lanyu23.github.io/categories/AI-%E5%B7%A5%E5%85%B7%E6%89%8B%E8%AE%B0/"/>
+    
+    
+    <category term="AI" scheme="https://lanyu23.github.io/tags/AI/"/>
+    
+    <category term="Codex" scheme="https://lanyu23.github.io/tags/Codex/"/>
+    
+    <category term="Vibe Coding" scheme="https://lanyu23.github.io/tags/Vibe-Coding/"/>
+    
+    <category term="使用感受" scheme="https://lanyu23.github.io/tags/%E4%BD%BF%E7%94%A8%E6%84%9F%E5%8F%97/"/>
+    
+    <category term="模型选择" scheme="https://lanyu23.github.io/tags/%E6%A8%A1%E5%9E%8B%E9%80%89%E6%8B%A9/"/>
+    
+  </entry>
   
   <entry>
     <title>大家第一次使用 Codex 做了什么？我先拿它拯救快爆满的 C 盘</title>
@@ -193,39 +228,6 @@
   </entry>
   
   <entry>
-    <title>用 AI 启动新项目，先把版本管理和项目文档搭起来</title>
-    <link href="https://lanyu23.github.io/2026/07/08/ai-new-project-version-docs-reflection/"/>
-    <id>https://lanyu23.github.io/2026/07/08/ai-new-project-version-docs-reflection/</id>
-    <published>2026-07-07T16:00:00.000Z</published>
-    <updated>2026-07-07T20:26:06.183Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><p>一句话：用 AI 启动新项目时，版本管理和项目文档一定要先搭好，不然项目做到一半，很容易跑偏，最后连自己一开始参考了什么都记不住。</p></blockquote><p>最近用 AI 开新项目时，又意识到一个很现实的问题：不能只想着“先让 AI 写起来再说”。</p><p>如果一开始没有用 GitHub，或者别的版本管理网站把项目管起来，后面出问题就会很难受。AI 改代码很快，但它改偏也很快。没有版本管理的话，等你发现项目方向不对、功能跑偏、原来能用的东西被改坏了，再想回退就很麻烦。</p><p>更麻烦的是项目文档。</p><p>很多时候，刚开始做项目的时候，脑子里是有一套想法的：这个项目要做什么、参考了哪些内容、功能边界在哪里、哪些东西不能乱改、哪些地方是核心逻辑。但是如果这些东西没有提前写成文档，项目做到一半就容易开始飘。</p><p>AI 也不是真的能一直记住你前面所有参考内容。</p><p>会话长了以后，它可能忘掉前面的约束，也可能抓错重点。你以为它还记得项目最初的设计目标，实际上它可能已经只盯着当前这条需求在改了。改着改着，项目就变成了另一种东西。</p><p>所以以后用 AI 启动新项目，我觉得至少要先做两件事：</p><h2 id="先把版本管理开起来"><a href="#先把版本管理开起来" class="headerlink" title="先把版本管理开起来"></a>先把版本管理开起来</h2><p>项目刚创建的时候，就应该直接用 GitHub 或者别的版本管理网站管理起来。</p><p>不用等项目做得差不多了再上传。越早上传，越早有回退点。哪怕 AI 后面某次改崩了，也能很快看 diff、回退版本，或者至少知道它到底动了哪些地方。</p><p>这不是为了显得专业，而是为了给自己留后路。</p><h2 id="再把项目文档写清楚"><a href="#再把项目文档写清楚" class="headerlink" title="再把项目文档写清楚"></a>再把项目文档写清楚</h2><p>项目文档也不能等后面再补。</p><p>一开始就应该写清楚项目目标、技术方案、目录结构、功能边界、参考资料、当前阶段要做什么。尤其是参考资料和核心约束，一定要写下来，不然等项目做到一半，自己都可能忘了最开始为什么这么设计。</p><p>文档写好了，后面让 AI 做事时，就可以直接让它先读文档，再执行任务。这样至少能降低它跑偏的概率。</p><h2 id="可以直接这样提示-AI"><a href="#可以直接这样提示-AI" class="headerlink" title="可以直接这样提示 AI"></a>可以直接这样提示 AI</h2><p>以后开新项目时，我可能会先这样要求 AI：</p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs text">这个项目先不要急着写功能。<br>先帮我建立项目文档，包括项目目标、功能边界、技术方案、目录结构、参考资料和开发注意事项。<br>然后初始化 Git 仓库，确保每完成一个明确阶段都提交一次。<br>后续每次改代码前，先阅读项目文档，再说明你准备改哪些文件。<br></code></pre></td></tr></table></figure><p>这不一定能完全避免问题，但至少能让 AI 不至于想到哪做到哪。</p><h2 id="现在的结论"><a href="#现在的结论" class="headerlink" title="现在的结论"></a>现在的结论</h2><p>用 AI 开发新项目，前期越省事，后期越容易还债。</p><p>版本管理和项目文档看起来像是准备工作，但其实是在给整个项目上保险。尤其是 AI 写代码速度太快了，如果没有版本和文档兜底，项目很容易做到一半才发现：方向偏了，参考内容忘了，代码也不知道从哪里开始变味了。</p><p>所以以后再开新项目，第一步不是让 AI 直接开写，而是先把 GitHub 和项目文档安排上。</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;一句话：用 AI 启动新项目时，版本管理和项目文档一定要先搭好，不然项目做到一半，很容易跑偏，最后连自己一开始参考了什么都记不住。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;最近用 AI 开新项目时，又意识到一个很现实的问题：不能只想着“先让 AI</summary>
-      
-    
-    
-    
-    <category term="AI 工具手记" scheme="https://lanyu23.github.io/categories/AI-%E5%B7%A5%E5%85%B7%E6%89%8B%E8%AE%B0/"/>
-    
-    
-    <category term="AI" scheme="https://lanyu23.github.io/tags/AI/"/>
-    
-    <category term="Vibe Coding" scheme="https://lanyu23.github.io/tags/Vibe-Coding/"/>
-    
-    <category term="使用感受" scheme="https://lanyu23.github.io/tags/%E4%BD%BF%E7%94%A8%E6%84%9F%E5%8F%97/"/>
-    
-    <category term="项目规范" scheme="https://lanyu23.github.io/tags/%E9%A1%B9%E7%9B%AE%E8%A7%84%E8%8C%83/"/>
-    
-  </entry>
-  
-  <entry>
     <title>用 AI 开新项目前，技术方案一定要先想清楚</title>
     <link href="https://lanyu23.github.io/2026/07/08/ai-project-technical-plan-first-reflection/"/>
     <id>https://lanyu23.github.io/2026/07/08/ai-project-technical-plan-first-reflection/</id>
@@ -258,6 +260,39 @@
     <category term="项目规范" scheme="https://lanyu23.github.io/tags/%E9%A1%B9%E7%9B%AE%E8%A7%84%E8%8C%83/"/>
     
     <category term="技术方案" scheme="https://lanyu23.github.io/tags/%E6%8A%80%E6%9C%AF%E6%96%B9%E6%A1%88/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>用 AI 启动新项目，先把版本管理和项目文档搭起来</title>
+    <link href="https://lanyu23.github.io/2026/07/08/ai-new-project-version-docs-reflection/"/>
+    <id>https://lanyu23.github.io/2026/07/08/ai-new-project-version-docs-reflection/</id>
+    <published>2026-07-07T16:00:00.000Z</published>
+    <updated>2026-07-07T20:26:06.183Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>一句话：用 AI 启动新项目时，版本管理和项目文档一定要先搭好，不然项目做到一半，很容易跑偏，最后连自己一开始参考了什么都记不住。</p></blockquote><p>最近用 AI 开新项目时，又意识到一个很现实的问题：不能只想着“先让 AI 写起来再说”。</p><p>如果一开始没有用 GitHub，或者别的版本管理网站把项目管起来，后面出问题就会很难受。AI 改代码很快，但它改偏也很快。没有版本管理的话，等你发现项目方向不对、功能跑偏、原来能用的东西被改坏了，再想回退就很麻烦。</p><p>更麻烦的是项目文档。</p><p>很多时候，刚开始做项目的时候，脑子里是有一套想法的：这个项目要做什么、参考了哪些内容、功能边界在哪里、哪些东西不能乱改、哪些地方是核心逻辑。但是如果这些东西没有提前写成文档，项目做到一半就容易开始飘。</p><p>AI 也不是真的能一直记住你前面所有参考内容。</p><p>会话长了以后，它可能忘掉前面的约束，也可能抓错重点。你以为它还记得项目最初的设计目标，实际上它可能已经只盯着当前这条需求在改了。改着改着，项目就变成了另一种东西。</p><p>所以以后用 AI 启动新项目，我觉得至少要先做两件事：</p><h2 id="先把版本管理开起来"><a href="#先把版本管理开起来" class="headerlink" title="先把版本管理开起来"></a>先把版本管理开起来</h2><p>项目刚创建的时候，就应该直接用 GitHub 或者别的版本管理网站管理起来。</p><p>不用等项目做得差不多了再上传。越早上传，越早有回退点。哪怕 AI 后面某次改崩了，也能很快看 diff、回退版本，或者至少知道它到底动了哪些地方。</p><p>这不是为了显得专业，而是为了给自己留后路。</p><h2 id="再把项目文档写清楚"><a href="#再把项目文档写清楚" class="headerlink" title="再把项目文档写清楚"></a>再把项目文档写清楚</h2><p>项目文档也不能等后面再补。</p><p>一开始就应该写清楚项目目标、技术方案、目录结构、功能边界、参考资料、当前阶段要做什么。尤其是参考资料和核心约束，一定要写下来，不然等项目做到一半，自己都可能忘了最开始为什么这么设计。</p><p>文档写好了，后面让 AI 做事时，就可以直接让它先读文档，再执行任务。这样至少能降低它跑偏的概率。</p><h2 id="可以直接这样提示-AI"><a href="#可以直接这样提示-AI" class="headerlink" title="可以直接这样提示 AI"></a>可以直接这样提示 AI</h2><p>以后开新项目时，我可能会先这样要求 AI：</p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs text">这个项目先不要急着写功能。<br>先帮我建立项目文档，包括项目目标、功能边界、技术方案、目录结构、参考资料和开发注意事项。<br>然后初始化 Git 仓库，确保每完成一个明确阶段都提交一次。<br>后续每次改代码前，先阅读项目文档，再说明你准备改哪些文件。<br></code></pre></td></tr></table></figure><p>这不一定能完全避免问题，但至少能让 AI 不至于想到哪做到哪。</p><h2 id="现在的结论"><a href="#现在的结论" class="headerlink" title="现在的结论"></a>现在的结论</h2><p>用 AI 开发新项目，前期越省事，后期越容易还债。</p><p>版本管理和项目文档看起来像是准备工作，但其实是在给整个项目上保险。尤其是 AI 写代码速度太快了，如果没有版本和文档兜底，项目很容易做到一半才发现：方向偏了，参考内容忘了，代码也不知道从哪里开始变味了。</p><p>所以以后再开新项目，第一步不是让 AI 直接开写，而是先把 GitHub 和项目文档安排上。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;一句话：用 AI 启动新项目时，版本管理和项目文档一定要先搭好，不然项目做到一半，很容易跑偏，最后连自己一开始参考了什么都记不住。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;最近用 AI 开新项目时，又意识到一个很现实的问题：不能只想着“先让 AI</summary>
+      
+    
+    
+    
+    <category term="AI 工具手记" scheme="https://lanyu23.github.io/categories/AI-%E5%B7%A5%E5%85%B7%E6%89%8B%E8%AE%B0/"/>
+    
+    
+    <category term="AI" scheme="https://lanyu23.github.io/tags/AI/"/>
+    
+    <category term="Vibe Coding" scheme="https://lanyu23.github.io/tags/Vibe-Coding/"/>
+    
+    <category term="使用感受" scheme="https://lanyu23.github.io/tags/%E4%BD%BF%E7%94%A8%E6%84%9F%E5%8F%97/"/>
+    
+    <category term="项目规范" scheme="https://lanyu23.github.io/tags/%E9%A1%B9%E7%9B%AE%E8%A7%84%E8%8C%83/"/>
     
   </entry>
   
@@ -370,44 +405,6 @@
   </entry>
   
   <entry>
-    <title>使用 AI 开发东西，一定要先定好项目框架</title>
-    <link href="https://lanyu23.github.io/2026/07/04/ai-project-framework-first-reflection/"/>
-    <id>https://lanyu23.github.io/2026/07/04/ai-project-framework-first-reflection/</id>
-    <published>2026-07-03T16:00:00.000Z</published>
-    <updated>2026-07-04T02:02:37.012Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><p>一句话：使用 AI 开发东西，项目框架一定要先定好；中途边想边加，很容易把代码加成屎山。</p></blockquote><p>最近用 AI 开发东西，又发现一个很现实的问题：项目框架一定要提前定好。</p><p>这里说的框架，不一定是多么复杂的架构设计，也不是一上来就搞一堆抽象、接口、分层文档。我的意思更简单：这个项目大概有哪些模块，数据怎么流，文件放哪里，哪些地方负责 UI，哪些地方负责状态，哪些地方负责业务逻辑，这些最好一开始就讲清楚。</p><p>不然中途再加东西，很容易出问题。</p><p>AI 会很快。</p><p>但它快的时候，也很容易只盯着当前需求，把原来项目里已经存在的框架内容忽略掉。</p><p>最后功能是加上去了，代码也能跑，但结构开始变味。</p><h2 id="这次遇到的问题"><a href="#这次遇到的问题" class="headerlink" title="这次遇到的问题"></a>这次遇到的问题</h2><p>使用 AI 做项目的时候，如果一开始没有项目框架，它就会按当前上下文临时发挥。</p><p>你让它加一个按钮，它可能直接在页面里塞逻辑。</p><p>你让它加一个配置，它可能随手放到当前文件。</p><p>你让它修一个状态问题，它可能绕过原来的状态管理，自己新建一套变量。</p><p>你让它补一个功能，它可能不去复用原来的模块，而是在旁边再写一份类似逻辑。</p><p>短期看，好像很快。</p><p>长期看，就开始难受了。</p><p>因为这些东西不是按同一个框架长出来的，而是一块一块贴上去的。每次贴的时候都能用，但贴多了之后，项目就会越来越像临时拼出来的。</p><p>这就是我说的屎山感。</p><h2 id="最容易踩的坑"><a href="#最容易踩的坑" class="headerlink" title="最容易踩的坑"></a>最容易踩的坑</h2><p>最大的坑，是以为 AI 会自动尊重原有框架。</p><p>实际不一定。</p><p>如果你没有明确告诉它“项目现在是按这个结构来的”，它可能只会根据当前打开的几个文件判断。它看到哪里方便，就在哪里加。</p><p>尤其是中途加功能的时候，这个问题更明显。</p><p>一开始做功能 A，AI 写了一套逻辑。</p><p>后面做功能 B，AI 又写一套差不多的逻辑。</p><p>再后面做功能 C，它可能又补一层兼容。</p><p>等你回头看，发现同一种状态在三个地方维护，同一种数据处理在两个文件里重复，同一个 UI 行为有好几套实现。</p><p>这时候再想维护就很麻烦。</p><p>因为你已经不知道改哪里才是正确入口，也不知道删哪段会不会影响别的功能。</p><h2 id="为什么后期会很难受"><a href="#为什么后期会很难受" class="headerlink" title="为什么后期会很难受"></a>为什么后期会很难受</h2><p>这种问题前期不明显。</p><p>前期项目小，文件少，功能也少，AI 怎么写你都能看懂。就算有点乱，也还能接受。</p><p>但项目一大，问题就出来了。</p><p>第一，维护困难。</p><p>因为功能不是按统一框架组织的，你要修 bug，就得先猜这段逻辑到底走哪条路。</p><p>第二，重构麻烦。</p><p>如果一开始结构清楚，重构只是移动和整理。但如果一开始就是乱贴的，重构就像拆炸弹，动一处可能牵出一堆隐藏依赖。</p><p>第三，AI 后面也更容易迷路。</p><p>项目越乱，AI 越难判断什么是正确模式。它会在混乱代码里继续学习混乱代码，然后写出更混乱的新代码。</p><p>这就是一个循环。</p><p>旧代码越乱，新代码越乱。</p><p>新代码越乱，下次修 bug 越难。</p><h2 id="更好的做法"><a href="#更好的做法" class="headerlink" title="更好的做法"></a>更好的做法</h2><p>以后用 AI 开发项目，我觉得要先做一个很薄的项目框架。</p><p>不用一开始就设计得特别大。</p><p>但至少要明确几件事。</p><p>第一，目录结构。</p><p>哪些文件放页面，哪些文件放组件，哪些文件放状态，哪些文件放工具函数，哪些文件放配置。</p><p>第二，模块边界。</p><p>哪个模块负责什么，哪些逻辑不能互相乱调用，公共逻辑应该放在哪里。</p><p>第三，数据流。</p><p>数据从哪里来，在哪里转换，在哪里保存，UI 怎么读取，不要每个功能各玩各的。</p><p>第四，修改规则。</p><p>新功能必须优先复用现有模块；如果要新增模块，先说明为什么旧模块不够用。</p><p>第五，验证方式。</p><p>每次加功能之后，不只看新功能能不能用，还要确认原有框架没有被绕开。</p><p>这个框架不需要很重。</p><p>越轻越好。</p><p>但必须存在。</p><h2 id="可以直接这样提示-AI"><a href="#可以直接这样提示-AI" class="headerlink" title="可以直接这样提示 AI"></a>可以直接这样提示 AI</h2><p>以后开新项目或者加大功能，我会先这样提示：</p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs text">先不要直接写功能代码。<br><br>请先根据当前项目整理一个最小项目框架：<br>1. 目录结构应该怎么分<br>2. 每个模块负责什么<br>3. 数据流应该怎么走<br>4. 新功能应该接入哪个模块<br>5. 哪些已有结构不能绕开<br><br>后续实现时必须优先复用这个框架。<br>如果你认为需要新增模块或改变框架，请先说明原因、影响范围和替代方案，等我确认后再改。<br><br>不要为了当前功能方便，把逻辑直接塞进临时位置。<br>不要重复实现已有逻辑。<br>不要绕过原有状态、配置、服务或工具函数。<br></code></pre></td></tr></table></figure><p>这段提示的核心，就是先让 AI 知道项目是有骨架的。</p><p>有骨架，它才会往骨架上长肉。</p><p>没有骨架，它就可能一块一块往上贴。</p><h2 id="现在的结论"><a href="#现在的结论" class="headerlink" title="现在的结论"></a>现在的结论</h2><p>使用 AI 开发东西，不能只盯着“这次功能做出来没有”。</p><p>功能做出来只是第一层。</p><p>代码放在哪里、怎么接进原有结构、后面能不能维护，这些也很重要。</p><p>如果一开始不定好项目框架，中途不断加东西，AI 很容易完全忽视原有框架内容，哪里方便写哪里。短期看是快，长期看就是维护困难、重构麻烦，最后自己给自己挖坑。</p><p>所以以后我会更注意这一点：</p><p>先搭框架。</p><p>再加功能。</p><p>先定规则。</p><p>再让 AI 发挥。</p><p>不然 AI 写代码确实快，但快着快着，项目可能也就快成屎山了。</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;一句话：使用 AI 开发东西，项目框架一定要先定好；中途边想边加，很容易把代码加成屎山。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;最近用 AI 开发东西，又发现一个很现实的问题：项目框架一定要提前定好。&lt;/p&gt;
-&lt;p&gt;这里说的框架，不一定是多么复</summary>
-      
-    
-    
-    
-    <category term="AI 工具手记" scheme="https://lanyu23.github.io/categories/AI-%E5%B7%A5%E5%85%B7%E6%89%8B%E8%AE%B0/"/>
-    
-    
-    <category term="AI" scheme="https://lanyu23.github.io/tags/AI/"/>
-    
-    <category term="Codex" scheme="https://lanyu23.github.io/tags/Codex/"/>
-    
-    <category term="Vibe Coding" scheme="https://lanyu23.github.io/tags/Vibe-Coding/"/>
-    
-    <category term="工具" scheme="https://lanyu23.github.io/tags/%E5%B7%A5%E5%85%B7/"/>
-    
-    <category term="使用感受" scheme="https://lanyu23.github.io/tags/%E4%BD%BF%E7%94%A8%E6%84%9F%E5%8F%97/"/>
-    
-    <category term="项目规范" scheme="https://lanyu23.github.io/tags/%E9%A1%B9%E7%9B%AE%E8%A7%84%E8%8C%83/"/>
-    
-  </entry>
-  
-  <entry>
     <title>使用 AI 对话做东西，一定要先设置好约束</title>
     <link href="https://lanyu23.github.io/2026/07/04/ai-conversation-boundaries-reflection/"/>
     <id>https://lanyu23.github.io/2026/07/04/ai-conversation-boundaries-reflection/</id>
@@ -446,39 +443,40 @@
   </entry>
   
   <entry>
-    <title>《夏日重现》观后感：正反派智商都在线</title>
-    <link href="https://lanyu23.github.io/2026/06/30/summer-time-rendering-review/"/>
-    <id>https://lanyu23.github.io/2026/06/30/summer-time-rendering-review/</id>
-    <published>2026-06-29T16:00:00.000Z</published>
-    <updated>2026-06-30T08:26:35.740Z</updated>
+    <title>使用 AI 开发东西，一定要先定好项目框架</title>
+    <link href="https://lanyu23.github.io/2026/07/04/ai-project-framework-first-reflection/"/>
+    <id>https://lanyu23.github.io/2026/07/04/ai-project-framework-first-reflection/</id>
+    <published>2026-07-03T16:00:00.000Z</published>
+    <updated>2026-07-04T02:02:37.012Z</updated>
     
-    <content type="html"><![CDATA[<blockquote><p>一句话：剧情好，正派反派智商都在线，结局也不错，看得很舒服。</p></blockquote><h2 id="基本信息"><a href="#基本信息" class="headerlink" title="基本信息"></a>基本信息</h2><div class="movie-info-grid">  <figure class="movie-poster">    <img src="/img/anime/summer-time-rendering/poster.jpg" alt="《夏日重现》动画海报">    <figcaption>动画海报</figcaption>  </figure>  <table class="movie-meta-table">    <tbody>      <tr><th>片名</th><td>夏日重现</td></tr>      <tr><th>原名</th><td>サマータイムレンダ / Summer Time Rendering</td></tr>      <tr><th>年份</th><td>2022</td></tr>      <tr><th>导演</th><td>渡边步</td></tr>      <tr><th>原作</th><td>田中靖规</td></tr>      <tr><th>制作</th><td>OLM</td></tr>      <tr><th>配音</th><td>花江夏树 / 永濑安娜 / 白砂沙帆 / 日笠阳子 / 小野贤章</td></tr>      <tr><th>类型</th><td>悬疑 / 奇幻 / 惊悚 / 时间循环 / 战斗</td></tr>      <tr><th>集数</th><td>25 集</td></tr>      <tr><th>地区</th><td>日本</td></tr>      <tr><th>观看日期</th><td>2026-06-30</td></tr>      <tr><th>我的评分</th><td>9.5分</td></tr>    </tbody>  </table></div><h2 id="推荐程度"><a href="#推荐程度" class="headerlink" title="推荐程度"></a>推荐程度</h2><ul><li>推荐给：喜欢悬疑、时间循环、智斗和剧情不断推进的人。</li><li>不太适合：只想轻松看日常，或者不喜欢前期信息量比较密的人。</li><li>关键词：影子、时间循环、智斗、孤岛、悬疑、收束。</li></ul><h2 id="无剧透短评"><a href="#无剧透短评" class="headerlink" title="无剧透短评"></a>无剧透短评</h2><p>《夏日重现》我给 9.5 分。</p><p>这部最舒服的地方，就是剧情真的好。它不是只靠设定唬人，也不是单纯靠反转堆刺激，而是每一轮信息都在往前推，主角这边会思考，反派那边也会应对。</p><p>正派反派智商都在线，这点很难得。</p><p>很多作品为了让主角赢，会强行让反派降智；或者为了制造危机，让主角突然犯蠢。但《夏日重现》不是这种感觉。它的双方都在利用自己知道的信息，都在试探对方，都在不断调整策略。</p><p>这就让整个故事很有拉扯感。</p><p>而且结局也不错。</p><p>不是那种前面铺得很大，最后突然泄气的结局。它整体收得比较稳，该交代的情绪也交代到了，看完会有一种“可以，这趟没白追”的感觉。</p><h2 id="我喜欢的地方"><a href="#我喜欢的地方" class="headerlink" title="我喜欢的地方"></a>我喜欢的地方</h2><ul><li>剧情推进很稳，悬疑、战斗和信息差结合得不错。</li><li>正派智商在线，不是靠运气一路莽过去。</li><li>反派也不是傻站着等输，会根据局势主动调整。</li><li>时间循环不是单纯重复刷副本，而是每次都能带来新信息。</li><li>结局收得住，没有烂尾，也没有强行把情绪做崩。</li></ul><h2 id="我没那么喜欢的地方"><a href="#我没那么喜欢的地方" class="headerlink" title="我没那么喜欢的地方"></a>我没那么喜欢的地方</h2><ul><li>前期信息量比较密，刚开始需要集中一点看。</li><li>有些设定如果稍微走神，后面可能会漏掉关键点。</li><li>后期战斗比重上来后，悬疑味会稍微变淡一点。</li></ul><h2 id="印象深刻"><a href="#印象深刻" class="headerlink" title="印象深刻"></a>印象深刻</h2><p>我最喜欢的是它那种双方都在动脑子的感觉。</p><p>主角不是单纯开挂重来，然后靠次数把敌人磨死。每一次循环都要付出代价，也不是所有信息都能轻松保留下来。反派也不是工具人，它们会观察，会反制，会把主角逼到很难受的位置。</p><p>这种正反派都在线的剧情，看起来就很爽。</p><p>不是无脑爽，而是那种你能感觉到双方都在认真打牌的爽。</p><h2 id="剧透感想"><a href="#剧透感想" class="headerlink" title="剧透感想"></a>剧透感想</h2><blockquote><p>以下有剧透。</p></blockquote><p>《夏日重现》的时间循环设定用得很舒服。</p><p>慎平每次回到过去，都不只是简单多一条命。他要带着上一轮得到的信息，重新判断谁可信、哪里会出事、影子会怎么行动。这个过程如果写不好，很容易变成机械重复，但它没有。</p><p>它每一轮都在加码。</p><p>主角知道的信息变多，反派知道的信息也变多。主角这边在利用循环，反派那边也在想办法破解循环。这个互相博弈的过程，就是这部最好看的地方。</p><p>我尤其喜欢它没有靠反派降智来推进。</p><p>影子阵营的威胁感是持续在线的，不是前期神秘强大，后期突然变成送经验。正派这边也不是全靠主角光环，而是大家各自把能做的事做到位。</p><p>结局也算不错。</p><p>它没有为了悲壮强行虐，也没有为了圆满强行糊弄。前面一路铺下来的命运感、牺牲感、夏天小岛的氛围，最后都有一个比较完整的回收。</p><p>所以我看完之后的评价很简单。</p><p>剧情好，正派反派智商都在线，结局也不错。</p><p>9.5 分。</p><h2 id="图片记录"><a href="#图片记录" class="headerlink" title="图片记录"></a>图片记录</h2><div class="movie-gallery">  <figure class="movie-gallery-item">    <img src="/img/anime/summer-time-rendering/gallery-1.jpg" alt="《夏日重现》横屏剧照">    <figcaption>横屏剧情截图 1</figcaption>  </figure>  <figure class="movie-gallery-item">    <img src="/img/anime/summer-time-rendering/gallery-2.jpg" alt="《夏日重现》横屏剧照">    <figcaption>横屏剧情截图 2</figcaption>  </figure>  <figure class="movie-gallery-item">    <img src="/img/anime/summer-time-rendering/gallery-3.jpg" alt="《夏日重现》横屏剧照">    <figcaption>横屏剧情截图 3</figcaption>  </figure>  <figure class="movie-gallery-item">    <img src="/img/anime/summer-time-rendering/gallery-4.jpg" alt="《夏日重现》横屏剧照">    <figcaption>横屏剧情截图 4</figcaption>  </figure></div>]]></content>
+    <content type="html"><![CDATA[<blockquote><p>一句话：使用 AI 开发东西，项目框架一定要先定好；中途边想边加，很容易把代码加成屎山。</p></blockquote><p>最近用 AI 开发东西，又发现一个很现实的问题：项目框架一定要提前定好。</p><p>这里说的框架，不一定是多么复杂的架构设计，也不是一上来就搞一堆抽象、接口、分层文档。我的意思更简单：这个项目大概有哪些模块，数据怎么流，文件放哪里，哪些地方负责 UI，哪些地方负责状态，哪些地方负责业务逻辑，这些最好一开始就讲清楚。</p><p>不然中途再加东西，很容易出问题。</p><p>AI 会很快。</p><p>但它快的时候，也很容易只盯着当前需求，把原来项目里已经存在的框架内容忽略掉。</p><p>最后功能是加上去了，代码也能跑，但结构开始变味。</p><h2 id="这次遇到的问题"><a href="#这次遇到的问题" class="headerlink" title="这次遇到的问题"></a>这次遇到的问题</h2><p>使用 AI 做项目的时候，如果一开始没有项目框架，它就会按当前上下文临时发挥。</p><p>你让它加一个按钮，它可能直接在页面里塞逻辑。</p><p>你让它加一个配置，它可能随手放到当前文件。</p><p>你让它修一个状态问题，它可能绕过原来的状态管理，自己新建一套变量。</p><p>你让它补一个功能，它可能不去复用原来的模块，而是在旁边再写一份类似逻辑。</p><p>短期看，好像很快。</p><p>长期看，就开始难受了。</p><p>因为这些东西不是按同一个框架长出来的，而是一块一块贴上去的。每次贴的时候都能用，但贴多了之后，项目就会越来越像临时拼出来的。</p><p>这就是我说的屎山感。</p><h2 id="最容易踩的坑"><a href="#最容易踩的坑" class="headerlink" title="最容易踩的坑"></a>最容易踩的坑</h2><p>最大的坑，是以为 AI 会自动尊重原有框架。</p><p>实际不一定。</p><p>如果你没有明确告诉它“项目现在是按这个结构来的”，它可能只会根据当前打开的几个文件判断。它看到哪里方便，就在哪里加。</p><p>尤其是中途加功能的时候，这个问题更明显。</p><p>一开始做功能 A，AI 写了一套逻辑。</p><p>后面做功能 B，AI 又写一套差不多的逻辑。</p><p>再后面做功能 C，它可能又补一层兼容。</p><p>等你回头看，发现同一种状态在三个地方维护，同一种数据处理在两个文件里重复，同一个 UI 行为有好几套实现。</p><p>这时候再想维护就很麻烦。</p><p>因为你已经不知道改哪里才是正确入口，也不知道删哪段会不会影响别的功能。</p><h2 id="为什么后期会很难受"><a href="#为什么后期会很难受" class="headerlink" title="为什么后期会很难受"></a>为什么后期会很难受</h2><p>这种问题前期不明显。</p><p>前期项目小，文件少，功能也少，AI 怎么写你都能看懂。就算有点乱，也还能接受。</p><p>但项目一大，问题就出来了。</p><p>第一，维护困难。</p><p>因为功能不是按统一框架组织的，你要修 bug，就得先猜这段逻辑到底走哪条路。</p><p>第二，重构麻烦。</p><p>如果一开始结构清楚，重构只是移动和整理。但如果一开始就是乱贴的，重构就像拆炸弹，动一处可能牵出一堆隐藏依赖。</p><p>第三，AI 后面也更容易迷路。</p><p>项目越乱，AI 越难判断什么是正确模式。它会在混乱代码里继续学习混乱代码，然后写出更混乱的新代码。</p><p>这就是一个循环。</p><p>旧代码越乱，新代码越乱。</p><p>新代码越乱，下次修 bug 越难。</p><h2 id="更好的做法"><a href="#更好的做法" class="headerlink" title="更好的做法"></a>更好的做法</h2><p>以后用 AI 开发项目，我觉得要先做一个很薄的项目框架。</p><p>不用一开始就设计得特别大。</p><p>但至少要明确几件事。</p><p>第一，目录结构。</p><p>哪些文件放页面，哪些文件放组件，哪些文件放状态，哪些文件放工具函数，哪些文件放配置。</p><p>第二，模块边界。</p><p>哪个模块负责什么，哪些逻辑不能互相乱调用，公共逻辑应该放在哪里。</p><p>第三，数据流。</p><p>数据从哪里来，在哪里转换，在哪里保存，UI 怎么读取，不要每个功能各玩各的。</p><p>第四，修改规则。</p><p>新功能必须优先复用现有模块；如果要新增模块，先说明为什么旧模块不够用。</p><p>第五，验证方式。</p><p>每次加功能之后，不只看新功能能不能用，还要确认原有框架没有被绕开。</p><p>这个框架不需要很重。</p><p>越轻越好。</p><p>但必须存在。</p><h2 id="可以直接这样提示-AI"><a href="#可以直接这样提示-AI" class="headerlink" title="可以直接这样提示 AI"></a>可以直接这样提示 AI</h2><p>以后开新项目或者加大功能，我会先这样提示：</p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs text">先不要直接写功能代码。<br><br>请先根据当前项目整理一个最小项目框架：<br>1. 目录结构应该怎么分<br>2. 每个模块负责什么<br>3. 数据流应该怎么走<br>4. 新功能应该接入哪个模块<br>5. 哪些已有结构不能绕开<br><br>后续实现时必须优先复用这个框架。<br>如果你认为需要新增模块或改变框架，请先说明原因、影响范围和替代方案，等我确认后再改。<br><br>不要为了当前功能方便，把逻辑直接塞进临时位置。<br>不要重复实现已有逻辑。<br>不要绕过原有状态、配置、服务或工具函数。<br></code></pre></td></tr></table></figure><p>这段提示的核心，就是先让 AI 知道项目是有骨架的。</p><p>有骨架，它才会往骨架上长肉。</p><p>没有骨架，它就可能一块一块往上贴。</p><h2 id="现在的结论"><a href="#现在的结论" class="headerlink" title="现在的结论"></a>现在的结论</h2><p>使用 AI 开发东西，不能只盯着“这次功能做出来没有”。</p><p>功能做出来只是第一层。</p><p>代码放在哪里、怎么接进原有结构、后面能不能维护，这些也很重要。</p><p>如果一开始不定好项目框架，中途不断加东西，AI 很容易完全忽视原有框架内容，哪里方便写哪里。短期看是快，长期看就是维护困难、重构麻烦，最后自己给自己挖坑。</p><p>所以以后我会更注意这一点：</p><p>先搭框架。</p><p>再加功能。</p><p>先定规则。</p><p>再让 AI 发挥。</p><p>不然 AI 写代码确实快，但快着快着，项目可能也就快成屎山了。</p>]]></content>
     
     
       
       
     <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;一句话：剧情好，正派反派智商都在线，结局也不错，看得很舒服。&lt;/p&gt;
+&lt;p&gt;一句话：使用 AI 开发东西，项目框架一定要先定好；中途边想边加，很容易把代码加成屎山。&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h2 id=&quot;基本信息&quot;&gt;&lt;a href=&quot;#基本信息&quot; class=&quot;headerlink&quot; title=&quot;基本信息&quot;&gt;&lt;/a&gt;基本信息&lt;/h2&gt;</summary>
+&lt;p&gt;最近用 AI 开发东西，又发现一个很现实的问题：项目框架一定要提前定好。&lt;/p&gt;
+&lt;p&gt;这里说的框架，不一定是多么复</summary>
       
     
     
     
-    <category term="影视记录" scheme="https://lanyu23.github.io/categories/%E5%BD%B1%E8%A7%86%E8%AE%B0%E5%BD%95/"/>
+    <category term="AI 工具手记" scheme="https://lanyu23.github.io/categories/AI-%E5%B7%A5%E5%85%B7%E6%89%8B%E8%AE%B0/"/>
     
     
-    <category term="动漫" scheme="https://lanyu23.github.io/tags/%E5%8A%A8%E6%BC%AB/"/>
+    <category term="AI" scheme="https://lanyu23.github.io/tags/AI/"/>
     
-    <category term="日漫" scheme="https://lanyu23.github.io/tags/%E6%97%A5%E6%BC%AB/"/>
+    <category term="Codex" scheme="https://lanyu23.github.io/tags/Codex/"/>
     
-    <category term="观后感" scheme="https://lanyu23.github.io/tags/%E8%A7%82%E5%90%8E%E6%84%9F/"/>
+    <category term="Vibe Coding" scheme="https://lanyu23.github.io/tags/Vibe-Coding/"/>
     
-    <category term="悬疑" scheme="https://lanyu23.github.io/tags/%E6%82%AC%E7%96%91/"/>
+    <category term="工具" scheme="https://lanyu23.github.io/tags/%E5%B7%A5%E5%85%B7/"/>
     
-    <category term="时间循环" scheme="https://lanyu23.github.io/tags/%E6%97%B6%E9%97%B4%E5%BE%AA%E7%8E%AF/"/>
+    <category term="使用感受" scheme="https://lanyu23.github.io/tags/%E4%BD%BF%E7%94%A8%E6%84%9F%E5%8F%97/"/>
     
-    <category term="夏日重现" scheme="https://lanyu23.github.io/tags/%E5%A4%8F%E6%97%A5%E9%87%8D%E7%8E%B0/"/>
+    <category term="项目规范" scheme="https://lanyu23.github.io/tags/%E9%A1%B9%E7%9B%AE%E8%A7%84%E8%8C%83/"/>
     
   </entry>
   
@@ -520,6 +518,43 @@
   </entry>
   
   <entry>
+    <title>《夏日重现》观后感：正反派智商都在线</title>
+    <link href="https://lanyu23.github.io/2026/06/30/summer-time-rendering-review/"/>
+    <id>https://lanyu23.github.io/2026/06/30/summer-time-rendering-review/</id>
+    <published>2026-06-29T16:00:00.000Z</published>
+    <updated>2026-06-30T08:26:35.740Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>一句话：剧情好，正派反派智商都在线，结局也不错，看得很舒服。</p></blockquote><h2 id="基本信息"><a href="#基本信息" class="headerlink" title="基本信息"></a>基本信息</h2><div class="movie-info-grid">  <figure class="movie-poster">    <img src="/img/anime/summer-time-rendering/poster.jpg" alt="《夏日重现》动画海报">    <figcaption>动画海报</figcaption>  </figure>  <table class="movie-meta-table">    <tbody>      <tr><th>片名</th><td>夏日重现</td></tr>      <tr><th>原名</th><td>サマータイムレンダ / Summer Time Rendering</td></tr>      <tr><th>年份</th><td>2022</td></tr>      <tr><th>导演</th><td>渡边步</td></tr>      <tr><th>原作</th><td>田中靖规</td></tr>      <tr><th>制作</th><td>OLM</td></tr>      <tr><th>配音</th><td>花江夏树 / 永濑安娜 / 白砂沙帆 / 日笠阳子 / 小野贤章</td></tr>      <tr><th>类型</th><td>悬疑 / 奇幻 / 惊悚 / 时间循环 / 战斗</td></tr>      <tr><th>集数</th><td>25 集</td></tr>      <tr><th>地区</th><td>日本</td></tr>      <tr><th>观看日期</th><td>2026-06-30</td></tr>      <tr><th>我的评分</th><td>9.5分</td></tr>    </tbody>  </table></div><h2 id="推荐程度"><a href="#推荐程度" class="headerlink" title="推荐程度"></a>推荐程度</h2><ul><li>推荐给：喜欢悬疑、时间循环、智斗和剧情不断推进的人。</li><li>不太适合：只想轻松看日常，或者不喜欢前期信息量比较密的人。</li><li>关键词：影子、时间循环、智斗、孤岛、悬疑、收束。</li></ul><h2 id="无剧透短评"><a href="#无剧透短评" class="headerlink" title="无剧透短评"></a>无剧透短评</h2><p>《夏日重现》我给 9.5 分。</p><p>这部最舒服的地方，就是剧情真的好。它不是只靠设定唬人，也不是单纯靠反转堆刺激，而是每一轮信息都在往前推，主角这边会思考，反派那边也会应对。</p><p>正派反派智商都在线，这点很难得。</p><p>很多作品为了让主角赢，会强行让反派降智；或者为了制造危机，让主角突然犯蠢。但《夏日重现》不是这种感觉。它的双方都在利用自己知道的信息，都在试探对方，都在不断调整策略。</p><p>这就让整个故事很有拉扯感。</p><p>而且结局也不错。</p><p>不是那种前面铺得很大，最后突然泄气的结局。它整体收得比较稳，该交代的情绪也交代到了，看完会有一种“可以，这趟没白追”的感觉。</p><h2 id="我喜欢的地方"><a href="#我喜欢的地方" class="headerlink" title="我喜欢的地方"></a>我喜欢的地方</h2><ul><li>剧情推进很稳，悬疑、战斗和信息差结合得不错。</li><li>正派智商在线，不是靠运气一路莽过去。</li><li>反派也不是傻站着等输，会根据局势主动调整。</li><li>时间循环不是单纯重复刷副本，而是每次都能带来新信息。</li><li>结局收得住，没有烂尾，也没有强行把情绪做崩。</li></ul><h2 id="我没那么喜欢的地方"><a href="#我没那么喜欢的地方" class="headerlink" title="我没那么喜欢的地方"></a>我没那么喜欢的地方</h2><ul><li>前期信息量比较密，刚开始需要集中一点看。</li><li>有些设定如果稍微走神，后面可能会漏掉关键点。</li><li>后期战斗比重上来后，悬疑味会稍微变淡一点。</li></ul><h2 id="印象深刻"><a href="#印象深刻" class="headerlink" title="印象深刻"></a>印象深刻</h2><p>我最喜欢的是它那种双方都在动脑子的感觉。</p><p>主角不是单纯开挂重来，然后靠次数把敌人磨死。每一次循环都要付出代价，也不是所有信息都能轻松保留下来。反派也不是工具人，它们会观察，会反制，会把主角逼到很难受的位置。</p><p>这种正反派都在线的剧情，看起来就很爽。</p><p>不是无脑爽，而是那种你能感觉到双方都在认真打牌的爽。</p><h2 id="剧透感想"><a href="#剧透感想" class="headerlink" title="剧透感想"></a>剧透感想</h2><blockquote><p>以下有剧透。</p></blockquote><p>《夏日重现》的时间循环设定用得很舒服。</p><p>慎平每次回到过去，都不只是简单多一条命。他要带着上一轮得到的信息，重新判断谁可信、哪里会出事、影子会怎么行动。这个过程如果写不好，很容易变成机械重复，但它没有。</p><p>它每一轮都在加码。</p><p>主角知道的信息变多，反派知道的信息也变多。主角这边在利用循环，反派那边也在想办法破解循环。这个互相博弈的过程，就是这部最好看的地方。</p><p>我尤其喜欢它没有靠反派降智来推进。</p><p>影子阵营的威胁感是持续在线的，不是前期神秘强大，后期突然变成送经验。正派这边也不是全靠主角光环，而是大家各自把能做的事做到位。</p><p>结局也算不错。</p><p>它没有为了悲壮强行虐，也没有为了圆满强行糊弄。前面一路铺下来的命运感、牺牲感、夏天小岛的氛围，最后都有一个比较完整的回收。</p><p>所以我看完之后的评价很简单。</p><p>剧情好，正派反派智商都在线，结局也不错。</p><p>9.5 分。</p><h2 id="图片记录"><a href="#图片记录" class="headerlink" title="图片记录"></a>图片记录</h2><div class="movie-gallery">  <figure class="movie-gallery-item">    <img src="/img/anime/summer-time-rendering/gallery-1.jpg" alt="《夏日重现》横屏剧照">    <figcaption>横屏剧情截图 1</figcaption>  </figure>  <figure class="movie-gallery-item">    <img src="/img/anime/summer-time-rendering/gallery-2.jpg" alt="《夏日重现》横屏剧照">    <figcaption>横屏剧情截图 2</figcaption>  </figure>  <figure class="movie-gallery-item">    <img src="/img/anime/summer-time-rendering/gallery-3.jpg" alt="《夏日重现》横屏剧照">    <figcaption>横屏剧情截图 3</figcaption>  </figure>  <figure class="movie-gallery-item">    <img src="/img/anime/summer-time-rendering/gallery-4.jpg" alt="《夏日重现》横屏剧照">    <figcaption>横屏剧情截图 4</figcaption>  </figure></div>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;一句话：剧情好，正派反派智商都在线，结局也不错，看得很舒服。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;基本信息&quot;&gt;&lt;a href=&quot;#基本信息&quot; class=&quot;headerlink&quot; title=&quot;基本信息&quot;&gt;&lt;/a&gt;基本信息&lt;/h2&gt;</summary>
+      
+    
+    
+    
+    <category term="影视记录" scheme="https://lanyu23.github.io/categories/%E5%BD%B1%E8%A7%86%E8%AE%B0%E5%BD%95/"/>
+    
+    
+    <category term="动漫" scheme="https://lanyu23.github.io/tags/%E5%8A%A8%E6%BC%AB/"/>
+    
+    <category term="日漫" scheme="https://lanyu23.github.io/tags/%E6%97%A5%E6%BC%AB/"/>
+    
+    <category term="观后感" scheme="https://lanyu23.github.io/tags/%E8%A7%82%E5%90%8E%E6%84%9F/"/>
+    
+    <category term="悬疑" scheme="https://lanyu23.github.io/tags/%E6%82%AC%E7%96%91/"/>
+    
+    <category term="时间循环" scheme="https://lanyu23.github.io/tags/%E6%97%B6%E9%97%B4%E5%BE%AA%E7%8E%AF/"/>
+    
+    <category term="夏日重现" scheme="https://lanyu23.github.io/tags/%E5%A4%8F%E6%97%A5%E9%87%8D%E7%8E%B0/"/>
+    
+  </entry>
+  
+  <entry>
     <title>《石纪元》观后感：前中期很好，结局落差有点大</title>
     <link href="https://lanyu23.github.io/2026/06/23/dr-stone-review/"/>
     <id>https://lanyu23.github.io/2026/06/23/dr-stone-review/</id>
@@ -548,9 +583,9 @@
     
     <category term="观后感" scheme="https://lanyu23.github.io/tags/%E8%A7%82%E5%90%8E%E6%84%9F/"/>
     
-    <category term="科幻" scheme="https://lanyu23.github.io/tags/%E7%A7%91%E5%B9%BB/"/>
-    
     <category term="冒险" scheme="https://lanyu23.github.io/tags/%E5%86%92%E9%99%A9/"/>
+    
+    <category term="科幻" scheme="https://lanyu23.github.io/tags/%E7%A7%91%E5%B9%BB/"/>
     
     <category term="石纪元" scheme="https://lanyu23.github.io/tags/%E7%9F%B3%E7%BA%AA%E5%85%83/"/>
     
@@ -583,11 +618,11 @@
     
     <category term="日漫" scheme="https://lanyu23.github.io/tags/%E6%97%A5%E6%BC%AB/"/>
     
-    <category term="热血" scheme="https://lanyu23.github.io/tags/%E7%83%AD%E8%A1%80/"/>
+    <category term="观后感" scheme="https://lanyu23.github.io/tags/%E8%A7%82%E5%90%8E%E6%84%9F/"/>
     
     <category term="奇幻" scheme="https://lanyu23.github.io/tags/%E5%A5%87%E5%B9%BB/"/>
     
-    <category term="观后感" scheme="https://lanyu23.github.io/tags/%E8%A7%82%E5%90%8E%E6%84%9F/"/>
+    <category term="热血" scheme="https://lanyu23.github.io/tags/%E7%83%AD%E8%A1%80/"/>
     
     <category term="鬼灭之刃" scheme="https://lanyu23.github.io/tags/%E9%AC%BC%E7%81%AD%E4%B9%8B%E5%88%83/"/>
     
@@ -620,11 +655,11 @@
     
     <category term="日漫" scheme="https://lanyu23.github.io/tags/%E6%97%A5%E6%BC%AB/"/>
     
-    <category term="观后感" scheme="https://lanyu23.github.io/tags/%E8%A7%82%E5%90%8E%E6%84%9F/"/>
-    
     <category term="黑暗奇幻" scheme="https://lanyu23.github.io/tags/%E9%BB%91%E6%9A%97%E5%A5%87%E5%B9%BB/"/>
     
     <category term="战争" scheme="https://lanyu23.github.io/tags/%E6%88%98%E4%BA%89/"/>
+    
+    <category term="观后感" scheme="https://lanyu23.github.io/tags/%E8%A7%82%E5%90%8E%E6%84%9F/"/>
     
     <category term="进击的巨人" scheme="https://lanyu23.github.io/tags/%E8%BF%9B%E5%87%BB%E7%9A%84%E5%B7%A8%E4%BA%BA/"/>
     
@@ -657,11 +692,11 @@
     
     <category term="日漫" scheme="https://lanyu23.github.io/tags/%E6%97%A5%E6%BC%AB/"/>
     
-    <category term="热血" scheme="https://lanyu23.github.io/tags/%E7%83%AD%E8%A1%80/"/>
+    <category term="观后感" scheme="https://lanyu23.github.io/tags/%E8%A7%82%E5%90%8E%E6%84%9F/"/>
     
     <category term="奇幻" scheme="https://lanyu23.github.io/tags/%E5%A5%87%E5%B9%BB/"/>
     
-    <category term="观后感" scheme="https://lanyu23.github.io/tags/%E8%A7%82%E5%90%8E%E6%84%9F/"/>
+    <category term="热血" scheme="https://lanyu23.github.io/tags/%E7%83%AD%E8%A1%80/"/>
     
     <category term="钢之炼金术师FA" scheme="https://lanyu23.github.io/tags/%E9%92%A2%E4%B9%8B%E7%82%BC%E9%87%91%E6%9C%AF%E5%B8%88FA/"/>
     
@@ -694,50 +729,13 @@
     
     <category term="日漫" scheme="https://lanyu23.github.io/tags/%E6%97%A5%E6%BC%AB/"/>
     
-    <category term="热血" scheme="https://lanyu23.github.io/tags/%E7%83%AD%E8%A1%80/"/>
-    
     <category term="观后感" scheme="https://lanyu23.github.io/tags/%E8%A7%82%E5%90%8E%E6%84%9F/"/>
+    
+    <category term="热血" scheme="https://lanyu23.github.io/tags/%E7%83%AD%E8%A1%80/"/>
     
     <category term="冒险" scheme="https://lanyu23.github.io/tags/%E5%86%92%E9%99%A9/"/>
     
     <category term="全职猎人" scheme="https://lanyu23.github.io/tags/%E5%85%A8%E8%81%8C%E7%8C%8E%E4%BA%BA/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>《一人之下》观后感：剧情究极无敌好评</title>
-    <link href="https://lanyu23.github.io/2026/06/23/yi-ren-zhi-xia-review/"/>
-    <id>https://lanyu23.github.io/2026/06/23/yi-ren-zhi-xia-review/</id>
-    <published>2026-06-23T13:18:17.000Z</published>
-    <updated>2026-06-23T13:56:46.304Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><p>一句话：剧情究极无敌好评，国漫里能把世界观、人物和悬念做得这么有味道的作品，真的很难不喜欢。</p></blockquote><h2 id="基本信息"><a href="#基本信息" class="headerlink" title="基本信息"></a>基本信息</h2><div class="movie-info-grid">  <figure class="movie-poster">    <img src="/img/anime/yi-ren-zhi-xia/poster.jpg" alt="《一人之下》动画海报">    <figcaption>动画海报</figcaption>  </figure>  <table class="movie-meta-table">    <tbody>      <tr><th>片名</th><td>一人之下</td></tr>      <tr><th>原名</th><td>Under One Person / Hitori no Shita: The Outcast</td></tr>      <tr><th>年份</th><td>2016 - </td></tr>      <tr><th>原作</th><td>米二</td></tr>      <tr><th>类型</th><td>奇幻 / 动作 / 异人 / 国漫</td></tr>      <tr><th>地区</th><td>中国</td></tr>      <tr><th>观看日期</th><td>2026-06-23</td></tr>      <tr><th>我的评分</th><td>9.9分</td></tr>    </tbody>  </table></div><h2 id="推荐程度"><a href="#推荐程度" class="headerlink" title="推荐程度"></a>推荐程度</h2><ul><li>推荐给：喜欢国漫、异能体系、江湖门派、悬念铺垫和群像人物的人。</li><li>不太适合：只想看纯爽文打斗，或者不喜欢慢慢铺世界观的人。</li><li>关键词：异人、八奇技、张楚岚、冯宝宝、甲申之乱、国漫。</li></ul><h2 id="无剧透短评"><a href="#无剧透短评" class="headerlink" title="无剧透短评"></a>无剧透短评</h2><p>《一人之下》给我的感觉就是剧情究极无敌好评。</p><p>它不是那种单纯靠打斗往前推的作品，而是越看越能发现里面埋了很多东西。异人世界、门派关系、八奇技、甲申之乱、老一辈的秘密，这些东西不是一口气倒出来，而是慢慢铺开。</p><p>最舒服的是，它有国漫自己的味道。</p><p>很多角色不是套模板出来的，有市井气，有江湖气，也有一点说不清的荒诞感。张楚岚看起来不正经，冯宝宝看起来更不正经，但两个人凑在一起反而很有记忆点。</p><p>我给 9.9 分。</p><p>基本就是非常喜欢，只差一点点留给继续更新和后面能不能一直稳住。</p><h2 id="我喜欢的地方"><a href="#我喜欢的地方" class="headerlink" title="我喜欢的地方"></a>我喜欢的地方</h2><ul><li>世界观很有辨识度，不是随便套一个异能壳子。</li><li>悬念铺得很舒服，越看越想知道甲申之乱到底怎么回事。</li><li>人物很有味道，很多角色不是单纯好人坏人，而是都有自己的立场。</li><li>国漫味很足，江湖、门派、术法和现实社会混在一起，很对味。</li><li>剧情能吊住人，不是靠硬塞反转，而是靠线索慢慢收拢。</li></ul><h2 id="我没那么喜欢的地方"><a href="#我没那么喜欢的地方" class="headerlink" title="我没那么喜欢的地方"></a>我没那么喜欢的地方</h2><ul><li>部分阶段节奏会稍微慢一点，需要耐心。</li><li>坑很多，追起来会有一种“快点给我讲完”的感觉。</li><li>动画不同阶段的制作观感会有差异，不是每一季都完全一样稳。</li></ul><h2 id="印象深刻"><a href="#印象深刻" class="headerlink" title="印象深刻"></a>印象深刻</h2><p>《一人之下》最让我喜欢的是它的“藏”。</p><p>很多作品讲秘密，是直接把谜底摆到你面前。但《一人之下》更像是在一点点把你往深处带。你一开始以为只是张楚岚和冯宝宝的故事，后面慢慢发现牵出来的是整个异人界几十年前的旧账。</p><p>这种感觉很爽。</p><p>不是单纯战力升级的爽，而是剧情越看越有东西的爽。</p><h2 id="剧透感想"><a href="#剧透感想" class="headerlink" title="剧透感想"></a>剧透感想</h2><blockquote><p>以下有剧透。</p></blockquote><p>《一人之下》最强的地方，还是甲申之乱和八奇技这条主线。</p><p>这条线把很多人物都串起来了。老一辈的选择、各门各派的态度、冯宝宝的身世、张楚岚爷爷留下的东西，全都不是孤立的。它让整个故事有一种很强的纵深感。</p><p>我很喜欢这种写法。</p><p>主角不是一上来就知道所有真相，然后一路打过去。他也是被推着走，一边装糊涂，一边试探，一边在各种势力里周旋。张楚岚这个角色很妙，他不是什么传统热血男主，甚至很多时候看起来有点滑、有点怂，但关键时候又能看出脑子和担当。</p><p>冯宝宝也是这部作品的灵魂之一。</p><p>她看起来像一个脱线角色，但她身上的谜团和孤独感其实很重。越往后看，越会觉得这个角色不是单纯拿来搞笑的，而是整个故事最重要的核心之一。</p><p>所以我对《一人之下》的评价很高。</p><p>剧情究极无敌好评。</p><p>如果后面能把这些大坑稳稳收住，那它在我这里就是国漫里非常顶的一档。</p><h2 id="图片记录"><a href="#图片记录" class="headerlink" title="图片记录"></a>图片记录</h2><div class="movie-gallery">  <figure class="movie-gallery-item">    <img src="/img/anime/yi-ren-zhi-xia/gallery-1.jpg" alt="《一人之下》横屏剧照">    <figcaption>横屏剧情截图 1</figcaption>  </figure>  <figure class="movie-gallery-item">    <img src="/img/anime/yi-ren-zhi-xia/gallery-2.jpg" alt="《一人之下》横屏剧照">    <figcaption>横屏剧情截图 2</figcaption>  </figure>  <figure class="movie-gallery-item">    <img src="/img/anime/yi-ren-zhi-xia/gallery-3.jpg" alt="《一人之下》横屏剧照">    <figcaption>横屏剧情截图 3</figcaption>  </figure>  <figure class="movie-gallery-item">    <img src="/img/anime/yi-ren-zhi-xia/gallery-4.jpg" alt="《一人之下》横屏剧照">    <figcaption>横屏剧情截图 4</figcaption>  </figure></div>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;一句话：剧情究极无敌好评，国漫里能把世界观、人物和悬念做得这么有味道的作品，真的很难不喜欢。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&quot;基本信息&quot;&gt;&lt;a href=&quot;#基本信息&quot; class=&quot;headerlink&quot; title=&quot;基本信</summary>
-      
-    
-    
-    
-    <category term="影视记录" scheme="https://lanyu23.github.io/categories/%E5%BD%B1%E8%A7%86%E8%AE%B0%E5%BD%95/"/>
-    
-    
-    <category term="动漫" scheme="https://lanyu23.github.io/tags/%E5%8A%A8%E6%BC%AB/"/>
-    
-    <category term="奇幻" scheme="https://lanyu23.github.io/tags/%E5%A5%87%E5%B9%BB/"/>
-    
-    <category term="观后感" scheme="https://lanyu23.github.io/tags/%E8%A7%82%E5%90%8E%E6%84%9F/"/>
-    
-    <category term="国漫" scheme="https://lanyu23.github.io/tags/%E5%9B%BD%E6%BC%AB/"/>
-    
-    <category term="异人" scheme="https://lanyu23.github.io/tags/%E5%BC%82%E4%BA%BA/"/>
-    
-    <category term="一人之下" scheme="https://lanyu23.github.io/tags/%E4%B8%80%E4%BA%BA%E4%B9%8B%E4%B8%8B/"/>
     
   </entry>
   
